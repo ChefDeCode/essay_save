@@ -1,0 +1,104 @@
+{
+  "name": "essay-app",
+  "version": "1.0.0",
+  "description": "智能写作助手 - 论文写作与文献管理",
+  "author": "EssayFlow",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "node scripts/build.js",
+    "check:architecture": "node scripts/check-architecture.js",
+    "test:unit": "node scripts/run-tests.js --suite unit",
+    "test:repository": "node scripts/run-tests.js --suite repository",
+    "test:migration": "node scripts/run-tests.js --suite migration",
+    "test:ipc": "node scripts/run-tests.js --suite ipc",
+    "test:e2e": "node scripts/run-tests.js --suite e2e",
+    "test:crash": "node scripts/run-tests.js --suite crash",
+    "test:integrity": "node scripts/run-tests.js --suite integrity",
+    "test:security": "node scripts/run-tests.js --suite security",
+    "test:upgrade": "node scripts/run-tests.js --suite upgrade",
+    "test:m1-e2e": "node scripts/run-tests.js --suite m1-e2e",
+    "test:m2-e2e": "node scripts/run-tests.js --suite m2-e2e",
+    "test:m3-e2e": "node scripts/run-tests.js --suite m3-e2e",
+    "test:m4-e2e": "node scripts/run-tests.js --suite m4-e2e",
+    "test:m5-e2e": "node scripts/run-tests.js --suite m5-e2e",
+    "test:evidence": "node scripts/run-tests.js --suite evidence",
+    "test:trusted-ai": "node scripts/run-tests.js --suite trusted-ai",
+    "test:matrix": "node scripts/run-tests.js --suite matrix",
+    "test:citation": "node scripts/run-tests.js --suite citation",
+    "test:paper-normalize": "node scripts/run-tests.js --suite paper-normalize",
+    "test:a11y": "node scripts/run-tests.js --suite a11y",
+    "test:artifact": "node scripts/test-artifact.js",
+    "test:offline": "node scripts/test-offline.js",
+    "test:perf": "node scripts/test-performance.js",
+    "test:m5-perf": "node scripts/test-m5-performance.js",
+    "verify:package": "node scripts/verify-package.js",
+    "verify:data": "node scripts/verify-data.js",
+    "verify:dependencies": "node scripts/verify-dependencies.js",
+    "verify:evidence": "node scripts/verify-evidence.js",
+    "gate:m0": "node scripts/run-gate.js --milestone m0",
+    "gate:m1": "node scripts/run-gate.js --milestone m1",
+    "gate:m2": "node scripts/run-gate.js --milestone m2",
+    "gate:m3": "node scripts/run-gate.js --milestone m3",
+    "gate:m4": "node scripts/run-gate.js --milestone m4",
+    "gate:m5": "node scripts/run-gate.js --milestone m5",
+    "gate:pr": "node scripts/run-gate.js --milestone m0",
+    "gate:release": "node scripts/run-release-gate.js"
+  },
+  "devDependencies": {
+    "@electron/asar": "3.4.1",
+    "axe-core": "4.12.1",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "dependencies": {
+    "@citation-js/core": "0.7.18",
+    "@citation-js/plugin-bibtex": "0.7.18",
+    "@citation-js/plugin-csl": "0.7.18",
+    "@citation-js/plugin-ris": "0.7.18",
+    "html2pdf.js": "0.10.1",
+    "jszip": "3.10.1",
+    "mammoth": "1.6.0",
+    "pdfjs-dist": "3.11.174",
+    "quill": "1.3.6",
+    "yauzl": "2.10.0"
+  },
+  "build": {
+    "appId": "com.essay.app",
+    "productName": "EssayFlow",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "build/**/*",
+      "package.json"
+    ],
+    "electronDownload": {
+      "mirror": "https://npmmirror.com/mirrors/electron/"
+    },
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "build/icon.png"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "build/icon.png",
+      "category": "public.app-category.productivity"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

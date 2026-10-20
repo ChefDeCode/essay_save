@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "packageLockSha256": "6fda94c57626b763cbbeadca2140d87f04e225124086422d6e2dbef69c3c5b4d",
+  "lockfileVersion": 3,
+  "lockConsistent": true,
+  "electron": {
+    "installedVersion": "28.3.3",
+    "supported": false,
+    "supportedMajorsAsOf": "2026-07-17",
+    "supportedMajors": [
+      41,
+      42,
+      43
+    ],
+    "policyUrl": "https://www.electronjs.org/docs/latest/tutorial/electron-timelines",
+    "releasesUrl": "https://releases.electronjs.org/"
+  },
+  "runtimePackageCount": 162,
+  "highOrCritical": 5,
+  "auditExitCode": 1,
+  "failures": [
+    "Electron 28.3.3 不在官方最新三个稳定 major 41/42/43 内",
+    "运行时依赖存在 5 个 high/critical 漏洞且无书面限期豁免"
+  ],
+  "passed": false
+}

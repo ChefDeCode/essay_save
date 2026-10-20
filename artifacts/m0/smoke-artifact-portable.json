@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "target": "artifact-portable",
+  "applicationPath": "C:\\Users\\KMYZl\\Desktop\\essay_save\\dist\\EssayFlow 1.0.0.exe",
+  "startedAt": "2026-07-17T16:32:21.898Z",
+  "completedAt": "2026-07-17T16:32:28.521Z",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "isolatedProfile": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93",
+  "defaultProfile": "C:\\Users\\KMYZl\\AppData\\Roaming\\essay-app",
+  "defaultProfileBefore": {
+    "fileCount": 59,
+    "contentTreeSha256": "528ef9b4aa8943ca35784d3e19b6c3b80fe96246bc6cb67ae05aabbeec6fc690"
+  },
+  "defaultProfileAfter": {
+    "fileCount": 59,
+    "contentTreeSha256": "528ef9b4aa8943ca35784d3e19b6c3b80fe96246bc6cb67ae05aabbeec6fc690"
+  },
+  "defaultProfileUnchanged": true,
+  "renderer": {
+    "title": "EssayFlow",
+    "projectCount": 0,
+    "quillVersion": "1.3.6",
+    "editorEnabled": true,
+    "pdfjsWindowType": "object",
+    "pdfjsGlobalType": "object",
+    "scriptSources": [
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/node_modules/pdfjs-dist/build/pdf.min.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/pdf-runtime.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/runtime-bootstrap.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/node_modules/quill/dist/quill.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/node_modules/html2pdf.js/dist/html2pdf.bundle.min.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/node_modules/mammoth/mammoth.browser.min.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/data-client.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/app.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/ai-assistant.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/settings.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/pdf-evidence.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/evidence.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/trusted-ai-ui.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/search.js",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/review-matrix-ui.js"
+    ],
+    "styleSources": [
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/node_modules/quill/dist/quill.snow.css",
+      "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/src/style.css"
+    ],
+    "pdfRuntime": {
+      "workerSrc": "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/node_modules/pdfjs-dist/build/pdf.worker.min.js",
+      "cMapUrl": "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/node_modules/pdfjs-dist/cmaps/",
+      "standardFontDataUrl": "file:///C:/Users/KMYZl/AppData/Local/Temp/3GdeZOcip7D7TFjexXFkFl8x3a7/resources/app.asar/node_modules/pdfjs-dist/standard_fonts/",
+      "cMapPacked": true,
+      "isEvalSupported": false
+    },
+    "csp": "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; frame-src 'none'; worker-src 'self' blob:; child-src 'self' blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: file: https: http:; connect-src 'self' blob: file: https: http:; media-src 'self' blob: file:"
+  },
+  "profileReport": {
+    "schemaVersion": 1,
+    "automation": true,
+    "profileIsolated": true,
+    "networkBlocked": true,
+    "networkPolicy": {
+      "httpHttps": "blocked",
+      "sessionResources": "blocked",
+      "mainProcessNet": "blocked",
+      "externalBrowserOpen": "blocked",
+      "localFileAssets": "allowed"
+    },
+    "defaultUserData": "C:\\Users\\KMYZl\\AppData\\Roaming\\essay-app",
+    "activeUserData": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93",
+    "sessionData": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\SessionData",
+    "logs": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\Logs",
+    "crashDumps": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\CrashDumps",
+    "testExports": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports",
+    "deterministicExports": {
+      "pdf": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports\\EssayFlow.pdf",
+      "docx": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports\\EssayFlow.docx",
+      "essay": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports\\EssayFlow.essay",
+      "bib": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports\\EssayFlow-Library.bib",
+      "ris": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports\\EssayFlow-Library.ris",
+      "json": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports\\EssayFlow-Library.json",
+      "zip": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports\\EssayFlow-Matrix-CSV.zip",
+      "xlsx": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\TestExports\\EssayFlow-Matrix.xlsx"
+    },
+    "reportPath": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-artifact-portable-smoke-fj3V93\\profile-report.json",
+    "pid": 24208,
+    "packaged": true,
+    "appVersion": "1.0.0"
+  },
+  "passed": true
+}

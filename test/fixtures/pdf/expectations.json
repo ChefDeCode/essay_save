@@ -1,0 +1,36 @@
+{
+  "files": {
+    "text-layer-zh.pdf": {
+      "textIncludes": "中文文本层合成样本",
+      "pageCount": 1,
+      "rotation": 0
+    },
+    "text-layer-en.pdf": {
+      "textIncludes": "English text layer fixture",
+      "pageCount": 1,
+      "rotation": 0
+    },
+    "text-layer-rotated-90.pdf": {
+      "textIncludes": "Rotated text layer fixture",
+      "pageCount": 1,
+      "rotation": 90
+    },
+    "scanned-no-text.pdf": {
+      "textItemCount": 0,
+      "pageCount": 1,
+      "expectedStatus": "ocr-unsupported"
+    },
+    "corrupt.pdf": {
+      "expectedError": "invalid-pdf"
+    }
+  },
+  "replacedSource": {
+    "logicalPath": "managed/source.pdf",
+    "originalFile": "source-original.pdf",
+    "replacementFile": "source-replaced.pdf",
+    "originalSha256": "1409af3f697e4a1a8e5f43195bd305f51979eb500444a032016ae0a03c11a630",
+    "replacementSha256": "ee518d9895effe5625f1d268068a51983945ac2ddc2bb180d155b5d96ac7a48a",
+    "expectedStatus": "source-mismatch"
+  },
+  "synthetic": true
+}

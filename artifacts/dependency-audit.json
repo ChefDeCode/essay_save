@@ -1,0 +1,802 @@
+{
+  "schemaVersion": 1,
+  "command": "npm audit --omit=dev --audit-level=high --json",
+  "exitCode": 1,
+  "vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 3,
+    "high": 4,
+    "critical": 1,
+    "total": 8
+  },
+  "raw": {
+    "auditReportVersion": 2,
+    "vulnerabilities": {
+      "@mapbox/node-pre-gyp": {
+        "name": "@mapbox/node-pre-gyp",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          "tar"
+        ],
+        "effects": [],
+        "range": "<=1.0.11",
+        "nodes": [
+          "node_modules/@mapbox/node-pre-gyp"
+        ],
+        "fixAvailable": true
+      },
+      "dompurify": {
+        "name": "dompurify",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1105772,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify allows Cross-site Scripting (XSS)",
+            "url": "https://github.com/advisories/GHSA-vhxf-7vqr-mrjg",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 4.5,
+              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N"
+            },
+            "range": "<3.2.4"
+          },
+          {
+            "source": 1115921,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify ADD_ATTR predicate skips URI validation",
+            "url": "https://github.com/advisories/GHSA-cjmm-f4jc-qw8r",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-183"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=3.3.1"
+          },
+          {
+            "source": 1115922,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify USE_PROFILES prototype pollution allows event handlers",
+            "url": "https://github.com/advisories/GHSA-cj63-jhhr-wcxv",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-1321"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=3.3.1"
+          },
+          {
+            "source": 1116663,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify's ADD_TAGS function form bypasses FORBID_TAGS due to short-circuit evaluation",
+            "url": "https://github.com/advisories/GHSA-39q2-94rc-95cp",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-783"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=3.3.3"
+          },
+          {
+            "source": 1117138,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify: FORBID_TAGS bypassed by function-based ADD_TAGS predicate (asymmetry with FORBID_ATTR fix)",
+            "url": "https://github.com/advisories/GHSA-h7mw-gpvr-xq4m",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79",
+              "CWE-183"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<3.4.0"
+          },
+          {
+            "source": 1117139,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify has a SAFE_FOR_TEMPLATES bypass in RETURN_DOM mode",
+            "url": "https://github.com/advisories/GHSA-crv5-9vww-q3g8",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79",
+              "CWE-1289"
+            ],
+            "cvss": {
+              "score": 6.8,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            },
+            "range": ">=1.0.10 <3.4.0"
+          },
+          {
+            "source": 1117795,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify is vulnerable to mutation-XSS via Re-Contextualization ",
+            "url": "https://github.com/advisories/GHSA-h8r8-wccr-v5f2",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<3.3.2"
+          },
+          {
+            "source": 1120800,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify: `IN_PLACE` mode trusts attacker-controlled `nodeName` on live non-form nodes, allowing script retention and XSS via attacker-supplied DOM objects",
+            "url": "https://github.com/advisories/GHSA-x4vx-rjvf-j5p4",
+            "severity": "low",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=3.4.6"
+          },
+          {
+            "source": 1120801,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify: Hook mutation of `data.allowedTags` / `data.allowedAttributes` permanently pollutes `DEFAULT_ALLOWED_TAGS` / `DEFAULT_ALLOWED_ATTR`",
+            "url": "https://github.com/advisories/GHSA-76mc-f452-cxcm",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-501",
+              "CWE-693"
+            ],
+            "cvss": {
+              "score": 6.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
+            "range": "<3.4.7"
+          },
+          {
+            "source": 1120802,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify: Cross-realm IN_PLACE sanitization leaves executable markup intact via realm-bound `instanceof` checks",
+            "url": "https://github.com/advisories/GHSA-hpcv-96wg-7vj8",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79",
+              "CWE-501",
+              "CWE-693"
+            ],
+            "cvss": {
+              "score": 6.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
+            "range": "<=3.4.5"
+          },
+          {
+            "source": 1120803,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify: IN_PLACE mode preserves attributes of a clobbered root element, allowing XSS via attacker-controlled root DOM",
+            "url": "https://github.com/advisories/GHSA-r47g-fvhr-h676",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79",
+              "CWE-693",
+              "CWE-1321"
+            ],
+            "cvss": {
+              "score": 6.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
+            "range": "<=3.4.5"
+          },
+          {
+            "source": 1120805,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify: Trusted Types policy survives `clearConfig()` and can poison later `RETURN_TRUSTED_TYPE` output",
+            "url": "https://github.com/advisories/GHSA-vxr8-fq34-vvx9",
+            "severity": "low",
+            "cwe": [
+              "CWE-693"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<3.4.9"
+          },
+          {
+            "source": 1120813,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify IN_PLACE Sanitization Bypass via Attached Shadow Root Inside <template>.content",
+            "url": "https://github.com/advisories/GHSA-rp9w-3fw7-7cwq",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=3.4.6"
+          },
+          {
+            "source": 1121192,
+            "name": "dompurify",
+            "dependency": "dompurify",
+            "title": "DOMPurify: Permanent `ALLOWED_ATTR` pollution via `setConfig()` bypassing the hook clone-guard (incomplete fix of the 3.4.7 hook-pollution patch)",
+            "url": "https://github.com/advisories/GHSA-cmwh-pvxp-8882",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79",
+              "CWE-471",
+              "CWE-665"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=3.4.10"
+          }
+        ],
+        "effects": [
+          "jspdf"
+        ],
+        "range": "<=3.4.10",
+        "nodes": [
+          "node_modules/dompurify"
+        ],
+        "fixAvailable": {
+          "name": "html2pdf.js",
+          "version": "0.14.0",
+          "isSemVerMajor": true
+        }
+      },
+      "html2pdf.js": {
+        "name": "html2pdf.js",
+        "severity": "high",
+        "isDirect": true,
+        "via": [
+          {
+            "source": 1112433,
+            "name": "html2pdf.js",
+            "dependency": "html2pdf.js",
+            "title": "html2pdf.js contains a cross-site scripting vulnerability",
+            "url": "https://github.com/advisories/GHSA-w8x4-x68c-m6fc",
+            "severity": "high",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<0.14.0"
+          },
+          "jspdf"
+        ],
+        "effects": [],
+        "range": "<=0.13.0",
+        "nodes": [
+          "node_modules/html2pdf.js"
+        ],
+        "fixAvailable": {
+          "name": "html2pdf.js",
+          "version": "0.14.0",
+          "isSemVerMajor": true
+        }
+      },
+      "jspdf": {
+        "name": "jspdf",
+        "severity": "critical",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1103308,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF Bypass Regular Expression Denial of Service (ReDoS)",
+            "url": "https://github.com/advisories/GHSA-w532-jxjh-hjhj",
+            "severity": "high",
+            "cwe": [
+              "CWE-400",
+              "CWE-770"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<3.0.1"
+          },
+          {
+            "source": 1107412,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF Denial of Service (DoS)",
+            "url": "https://github.com/advisories/GHSA-8mvj-3j78-4qmw",
+            "severity": "high",
+            "cwe": [
+              "CWE-20",
+              "CWE-835"
+            ],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<=3.0.1"
+          },
+          {
+            "source": 1112264,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF has Local File Inclusion/Path Traversal vulnerability",
+            "url": "https://github.com/advisories/GHSA-f8cm-6447-x5h2",
+            "severity": "critical",
+            "cwe": [
+              "CWE-22",
+              "CWE-35",
+              "CWE-73"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=3.0.4"
+          },
+          {
+            "source": 1112801,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF has PDF Injection in AcroFormChoiceField that allows Arbitrary JavaScript Execution",
+            "url": "https://github.com/advisories/GHSA-pqxr-3g65-p328",
+            "severity": "high",
+            "cwe": [
+              "CWE-116"
+            ],
+            "cvss": {
+              "score": 8.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            },
+            "range": "<=4.0.0"
+          },
+          {
+            "source": 1112802,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF Vulnerable to Denial of Service (DoS) via Unvalidated BMP Dimensions in BMPDecoder",
+            "url": "https://github.com/advisories/GHSA-95fx-jjr5-f39c",
+            "severity": "high",
+            "cwe": [
+              "CWE-20",
+              "CWE-400",
+              "CWE-770"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=4.0.0"
+          },
+          {
+            "source": 1112803,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF Vulnerable to Stored XMP Metadata Injection (Spoofing & Integrity Violation)",
+            "url": "https://github.com/advisories/GHSA-vm32-vv63-w422",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-20",
+              "CWE-74"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=4.0.0"
+          },
+          {
+            "source": 1112804,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF has Shared State Race Condition in addJS Plugin",
+            "url": "https://github.com/advisories/GHSA-cjw8-79x6-5cj4",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-200",
+              "CWE-362"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=4.0.0"
+          },
+          {
+            "source": 1113310,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF has a PDF Object Injection via Unsanitized Input in addJS Method",
+            "url": "https://github.com/advisories/GHSA-9vjf-qc39-jprp",
+            "severity": "high",
+            "cwe": [
+              "CWE-94",
+              "CWE-116"
+            ],
+            "cvss": {
+              "score": 8.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            },
+            "range": "<4.2.0"
+          },
+          {
+            "source": 1113324,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF Affected by Client-Side/Server-Side Denial of Service via Malicious GIF Dimensions",
+            "url": "https://github.com/advisories/GHSA-67pg-wm7f-q7fj",
+            "severity": "high",
+            "cwe": [
+              "CWE-770"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<4.2.0"
+          },
+          {
+            "source": 1114396,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF has a PDF Injection in AcroForm module allows Arbitrary JavaScript Execution (RadioButton.createOption and \"AS\" property)",
+            "url": "https://github.com/advisories/GHSA-p5xg-68wr-hm3m",
+            "severity": "high",
+            "cwe": [
+              "CWE-116"
+            ],
+            "cvss": {
+              "score": 8.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            },
+            "range": "<4.2.0"
+          },
+          {
+            "source": 1114950,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF has a PDF Object Injection via FreeText color",
+            "url": "https://github.com/advisories/GHSA-7x6v-j9x4-qf24",
+            "severity": "high",
+            "cwe": [
+              "CWE-116"
+            ],
+            "cvss": {
+              "score": 8.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            },
+            "range": "<=4.2.0"
+          },
+          {
+            "source": 1114974,
+            "name": "jspdf",
+            "dependency": "jspdf",
+            "title": "jsPDF has HTML Injection in New Window paths",
+            "url": "https://github.com/advisories/GHSA-wfv2-pwc8-crg5",
+            "severity": "critical",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 9.6,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L"
+            },
+            "range": "<=4.2.0"
+          },
+          "dompurify"
+        ],
+        "effects": [
+          "html2pdf.js"
+        ],
+        "range": "<=4.2.0",
+        "nodes": [
+          "node_modules/jspdf"
+        ],
+        "fixAvailable": {
+          "name": "html2pdf.js",
+          "version": "0.14.0",
+          "isSemVerMajor": true
+        }
+      },
+      "mammoth": {
+        "name": "mammoth",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          {
+            "source": 1109073,
+            "name": "mammoth",
+            "dependency": "mammoth",
+            "title": "Mammoth is vulnerable to Directory Traversal",
+            "url": "https://github.com/advisories/GHSA-rmjr-87wv-gf87",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-22"
+            ],
+            "cvss": {
+              "score": 9.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:H"
+            },
+            "range": ">=0.3.25 <1.11.0"
+          }
+        ],
+        "effects": [],
+        "range": "0.3.25 - 1.10.0",
+        "nodes": [
+          "node_modules/mammoth"
+        ],
+        "fixAvailable": {
+          "name": "mammoth",
+          "version": "1.12.0",
+          "isSemVerMajor": false
+        }
+      },
+      "pdfjs-dist": {
+        "name": "pdfjs-dist",
+        "severity": "high",
+        "isDirect": true,
+        "via": [
+          {
+            "source": 1118732,
+            "name": "pdfjs-dist",
+            "dependency": "pdfjs-dist",
+            "title": "PDF.js vulnerable to arbitrary JavaScript execution upon opening a malicious PDF",
+            "url": "https://github.com/advisories/GHSA-wgrm-67xf-hhpq",
+            "severity": "high",
+            "cwe": [
+              "CWE-754"
+            ],
+            "cvss": {
+              "score": 8.8,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+            },
+            "range": "<=4.1.392"
+          }
+        ],
+        "effects": [],
+        "range": "<=4.1.392",
+        "nodes": [
+          "node_modules/pdfjs-dist"
+        ],
+        "fixAvailable": {
+          "name": "pdfjs-dist",
+          "version": "6.1.200",
+          "isSemVerMajor": true
+        }
+      },
+      "quill": {
+        "name": "quill",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          {
+            "source": 1086866,
+            "name": "quill",
+            "dependency": "quill",
+            "title": "Reverse Tabnabbing in quill",
+            "url": "https://github.com/advisories/GHSA-588m-9qg5-35pq",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-1022"
+            ],
+            "cvss": {
+              "score": 6.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "range": "<1.3.7"
+          },
+          {
+            "source": 1098574,
+            "name": "quill",
+            "dependency": "quill",
+            "title": "Cross-site Scripting in quill",
+            "url": "https://github.com/advisories/GHSA-4943-9vgg-gr5r",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 4.2,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N"
+            },
+            "range": "<=1.3.7"
+          }
+        ],
+        "effects": [],
+        "range": "<=1.3.7",
+        "nodes": [
+          "node_modules/quill"
+        ],
+        "fixAvailable": {
+          "name": "quill",
+          "version": "1.3.7",
+          "isSemVerMajor": false
+        }
+      },
+      "tar": {
+        "name": "tar",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1112659,
+            "name": "tar",
+            "dependency": "tar",
+            "title": "node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal",
+            "url": "https://github.com/advisories/GHSA-34x7-hfp2-rc4v",
+            "severity": "high",
+            "cwe": [
+              "CWE-22",
+              "CWE-59"
+            ],
+            "cvss": {
+              "score": 8.2,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N"
+            },
+            "range": "<7.5.7"
+          },
+          {
+            "source": 1113300,
+            "name": "tar",
+            "dependency": "tar",
+            "title": "node-tar is Vulnerable to Arbitrary File Overwrite and Symlink Poisoning via Insufficient Path Sanitization",
+            "url": "https://github.com/advisories/GHSA-8qq5-rm4j-mr97",
+            "severity": "high",
+            "cwe": [
+              "CWE-22"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=7.5.2"
+          },
+          {
+            "source": 1113375,
+            "name": "tar",
+            "dependency": "tar",
+            "title": "Arbitrary File Read/Write via Hardlink Target Escape Through Symlink Chain in node-tar Extraction",
+            "url": "https://github.com/advisories/GHSA-83g3-92jg-28cx",
+            "severity": "high",
+            "cwe": [
+              "CWE-22"
+            ],
+            "cvss": {
+              "score": 7.1,
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+            },
+            "range": "<7.5.8"
+          },
+          {
+            "source": 1114200,
+            "name": "tar",
+            "dependency": "tar",
+            "title": "tar has Hardlink Path Traversal via Drive-Relative Linkpath",
+            "url": "https://github.com/advisories/GHSA-qffp-2rhf-9h96",
+            "severity": "high",
+            "cwe": [
+              "CWE-22",
+              "CWE-59"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=7.5.9"
+          },
+          {
+            "source": 1114302,
+            "name": "tar",
+            "dependency": "tar",
+            "title": "node-tar Symlink Path Traversal via Drive-Relative Linkpath",
+            "url": "https://github.com/advisories/GHSA-9ppj-qmqm-q256",
+            "severity": "high",
+            "cwe": [
+              "CWE-22"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=7.5.10"
+          },
+          {
+            "source": 1114680,
+            "name": "tar",
+            "dependency": "tar",
+            "title": "Race Condition in node-tar Path Reservations via Unicode Ligature Collisions on macOS APFS",
+            "url": "https://github.com/advisories/GHSA-r6q2-hw4h-h46w",
+            "severity": "high",
+            "cwe": [
+              "CWE-176",
+              "CWE-367"
+            ],
+            "cvss": {
+              "score": 8.8,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:H/A:L"
+            },
+            "range": "<=7.5.3"
+          },
+          {
+            "source": 1120782,
+            "name": "tar",
+            "dependency": "tar",
+            "title": "node-tar applies PAX size override to intermediary GNU long-name/long-link headers, causing tar parser interpretation differential (file smuggling)",
+            "url": "https://github.com/advisories/GHSA-vmf3-w455-68vh",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-436"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=7.5.15"
+          }
+        ],
+        "effects": [
+          "@mapbox/node-pre-gyp"
+        ],
+        "range": "<=7.5.15",
+        "nodes": [
+          "node_modules/tar"
+        ],
+        "fixAvailable": true
+      }
+    },
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 3,
+        "high": 4,
+        "critical": 1,
+        "total": 8
+      },
+      "dependencies": {
+        "prod": 127,
+        "dev": 263,
+        "optional": 65,
+        "peer": 28,
+        "peerOptional": 0,
+        "total": 425
+      }
+    }
+  }
+}

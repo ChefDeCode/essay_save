@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "suite": "matrix",
+  "generatedAt": "2026-07-17T16:28:43.295Z",
+  "startedAt": "2026-07-17T16:28:34.421Z",
+  "nodeVersion": "v24.18.0",
+  "platform": "win32-x64",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "thresholds": {
+    "lines": 85,
+    "functions": 85,
+    "branches": 80
+  },
+  "maximumBaselineDropPercentagePoints": 2,
+  "baselineMode": "compare",
+  "acceptedBaselinePath": "test/baseline/coverage.json",
+  "acceptedBaselineMetrics": null,
+  "passed": true,
+  "processExitCode": 0,
+  "failures": [],
+  "testFiles": [
+    "test/matrix/matrix-service.test.js"
+  ],
+  "lcov": {
+    "path": "artifacts/coverage/matrix/lcov.info",
+    "sha256": "58903039085937bdf85237595f18fe37db087eb3b25d554d8aa1fb1284d794e8"
+  },
+  "coverage": {
+    "totals": {
+      "lines": {
+        "found": 696,
+        "hit": 695,
+        "percent": 99.86
+      },
+      "functions": {
+        "found": 96,
+        "hit": 92,
+        "percent": 95.83
+      },
+      "branches": {
+        "found": 312,
+        "hit": 251,
+        "percent": 80.45
+      }
+    },
+    "files": [
+      {
+        "file": "src/main/matrix/matrix-export.js",
+        "lines": {
+          "found": 105,
+          "hit": 105,
+          "percent": 100
+        },
+        "functions": {
+          "found": 16,
+          "hit": 16,
+          "percent": 100
+        },
+        "branches": {
+          "found": 44,
+          "hit": 32,
+          "percent": 72.73
+        }
+      },
+      {
+        "file": "src/main/matrix/matrix-service.js",
+        "lines": {
+          "found": 591,
+          "hit": 590,
+          "percent": 99.83
+        },
+        "functions": {
+          "found": 80,
+          "hit": 76,
+          "percent": 95
+        },
+        "branches": {
+          "found": 268,
+          "hit": 219,
+          "percent": 81.72
+        }
+      }
+    ]
+  }
+}

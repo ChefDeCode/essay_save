@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "target": "development",
+  "applicationPath": null,
+  "startedAt": "2026-07-17T16:27:10.304Z",
+  "completedAt": "2026-07-17T16:27:11.713Z",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "isolatedProfile": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt",
+  "defaultProfile": "C:\\Users\\KMYZl\\AppData\\Roaming\\essay-app",
+  "defaultProfileBefore": {
+    "fileCount": 59,
+    "contentTreeSha256": "30d236072d79504d6fa48885389652fa3a0ddaa21f5978b1b93cb068ad9d5803"
+  },
+  "defaultProfileAfter": {
+    "fileCount": 59,
+    "contentTreeSha256": "30d236072d79504d6fa48885389652fa3a0ddaa21f5978b1b93cb068ad9d5803"
+  },
+  "defaultProfileUnchanged": true,
+  "renderer": {
+    "title": "EssayFlow",
+    "projectCount": 0,
+    "quillVersion": "1.3.6",
+    "editorEnabled": true,
+    "pdfjsWindowType": "object",
+    "pdfjsGlobalType": "object",
+    "scriptSources": [
+      "file:///C:/Users/KMYZl/Desktop/essay_save/node_modules/pdfjs-dist/build/pdf.min.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/pdf-runtime.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/runtime-bootstrap.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/node_modules/quill/dist/quill.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/node_modules/html2pdf.js/dist/html2pdf.bundle.min.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/node_modules/mammoth/mammoth.browser.min.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/data-client.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/app.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/ai-assistant.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/settings.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/pdf-evidence.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/evidence.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/trusted-ai-ui.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/search.js",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/review-matrix-ui.js"
+    ],
+    "styleSources": [
+      "file:///C:/Users/KMYZl/Desktop/essay_save/node_modules/quill/dist/quill.snow.css",
+      "file:///C:/Users/KMYZl/Desktop/essay_save/src/style.css"
+    ],
+    "pdfRuntime": {
+      "workerSrc": "file:///C:/Users/KMYZl/Desktop/essay_save/node_modules/pdfjs-dist/build/pdf.worker.min.js",
+      "cMapUrl": "file:///C:/Users/KMYZl/Desktop/essay_save/node_modules/pdfjs-dist/cmaps/",
+      "standardFontDataUrl": "file:///C:/Users/KMYZl/Desktop/essay_save/node_modules/pdfjs-dist/standard_fonts/",
+      "cMapPacked": true,
+      "isEvalSupported": false
+    },
+    "csp": "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; frame-src 'none'; worker-src 'self' blob:; child-src 'self' blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: file: https: http:; connect-src 'self' blob: file: https: http:; media-src 'self' blob: file:"
+  },
+  "profileReport": {
+    "schemaVersion": 1,
+    "automation": true,
+    "profileIsolated": true,
+    "networkBlocked": true,
+    "networkPolicy": {
+      "httpHttps": "blocked",
+      "sessionResources": "blocked",
+      "mainProcessNet": "blocked",
+      "externalBrowserOpen": "blocked",
+      "localFileAssets": "allowed"
+    },
+    "defaultUserData": "C:\\Users\\KMYZl\\AppData\\Roaming\\essay-app",
+    "activeUserData": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt",
+    "sessionData": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\SessionData",
+    "logs": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\Logs",
+    "crashDumps": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\CrashDumps",
+    "testExports": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports",
+    "deterministicExports": {
+      "pdf": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports\\EssayFlow.pdf",
+      "docx": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports\\EssayFlow.docx",
+      "essay": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports\\EssayFlow.essay",
+      "bib": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports\\EssayFlow-Library.bib",
+      "ris": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports\\EssayFlow-Library.ris",
+      "json": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports\\EssayFlow-Library.json",
+      "zip": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports\\EssayFlow-Matrix-CSV.zip",
+      "xlsx": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\TestExports\\EssayFlow-Matrix.xlsx"
+    },
+    "reportPath": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-development-smoke-y7xYHt\\profile-report.json",
+    "pid": 42008,
+    "packaged": false,
+    "appVersion": "1.0.0"
+  },
+  "passed": true
+}

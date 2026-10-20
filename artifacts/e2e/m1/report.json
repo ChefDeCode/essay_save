@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "milestone": "m1",
+  "passed": true,
+  "sourceTreeSha256": "a77aeced17718e47a785f3f435f6b0691854f892237cad24548d0a52d72271cd",
+  "result": {
+    "projectId": "20906e1b-a718-4c4c-861d-0e346f64040e",
+    "checkpointId": "b2bf0651-c6b6-4d1e-b3ed-c8ba0d070e60",
+    "revision": 6,
+    "content": "<h1>M1 数据核心</h1><p>版本一</p>",
+    "title": "项目中心改名成功",
+    "trashDialogTitle": "移除“项目中心改名成功”？",
+    "trashDialogDetails": 3,
+    "trashCount": 0,
+    "projectCount": 1
+  }
+}

@@ -1,0 +1,144 @@
+[
+  {
+    "id": "synthetic-article",
+    "type": "article-journal",
+    "title": "合成证据研究 Synthetic Evidence Study",
+    "author": [
+      {
+        "family": "王",
+        "given": "伟"
+      },
+      {
+        "family": "Wang",
+        "given": "Wei"
+      },
+      {
+        "literal": "Synthetic Research Institute"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "container-title": "Fixture Journal",
+    "volume": "12",
+    "issue": "3",
+    "page": "10-24",
+    "DOI": "10.5555/essayflow.article"
+  },
+  {
+    "id": "synthetic-chapter",
+    "type": "chapter",
+    "title": "A Synthetic Book Chapter",
+    "author": [
+      {
+        "family": "Fixture",
+        "given": "Alice"
+      }
+    ],
+    "editor": [
+      {
+        "family": "Example",
+        "given": "Erin"
+      }
+    ],
+    "container-title": "Handbook of Generated Scholarship",
+    "publisher": "Fixture Press",
+    "page": "101-120",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    }
+  },
+  {
+    "id": "synthetic-conference",
+    "type": "paper-conference",
+    "title": "Deterministic Conference Fixture",
+    "author": [
+      {
+        "family": "Tester",
+        "given": "Bo"
+      }
+    ],
+    "container-title": "Proceedings of the Synthetic Methods Conference",
+    "page": "1-8",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    }
+  },
+  {
+    "id": "synthetic-thesis",
+    "type": "thesis",
+    "title": "合成学位论文",
+    "author": [
+      {
+        "family": "Li",
+        "given": "Ming"
+      }
+    ],
+    "publisher": "Synthetic University",
+    "genre": "PhD thesis",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "synthetic-institution",
+    "type": "report",
+    "title": "Institutional Fixture Report",
+    "author": [
+      {
+        "literal": "Synthetic Research Institute"
+      }
+    ],
+    "publisher": "Synthetic Research Institute",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    }
+  },
+  {
+    "id": "synthetic-web",
+    "type": "webpage",
+    "title": "Synthetic Web Resource",
+    "author": [
+      {
+        "literal": "EssayFlow Fixture Group"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          16
+        ]
+      ]
+    },
+    "URL": "https://example.invalid/synthetic-resource"
+  }
+]

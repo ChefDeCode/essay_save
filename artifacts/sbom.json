@@ -1,0 +1,1798 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:55808453-1c1d-4d86-aa4b-dadb15ee398a",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "essay-app",
+      "version": "1.0.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "@babel/runtime",
+      "version": "7.29.7",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@babel/runtime"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@citation-js/core",
+      "version": "0.7.18",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@citation-js/core"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@citation-js/date",
+      "version": "0.5.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@citation-js/date"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@citation-js/name",
+      "version": "0.4.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@citation-js/name"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@citation-js/plugin-bibtex",
+      "version": "0.7.18",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@citation-js/plugin-bibtex"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@citation-js/plugin-csl",
+      "version": "0.7.18",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@citation-js/plugin-csl"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@citation-js/plugin-ris",
+      "version": "0.7.18",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@citation-js/plugin-ris"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@mapbox/node-pre-gyp",
+      "version": "1.0.11",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@mapbox/node-pre-gyp"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "semver",
+      "version": "7.8.5",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@mapbox/node-pre-gyp/node_modules/semver"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@types/raf",
+      "version": "3.4.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "@types/raf"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "abbrev",
+      "version": "1.1.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "abbrev"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "agent-base",
+      "version": "6.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "agent-base"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ansi-regex",
+      "version": "5.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "ansi-regex"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "aproba",
+      "version": "2.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "aproba"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "are-we-there-yet",
+      "version": "2.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "are-we-there-yet"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "atob",
+      "version": "2.1.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "atob"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "balanced-match",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "balanced-match"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "base64-arraybuffer",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "base64-arraybuffer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "base64-js",
+      "version": "1.5.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "base64-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "btoa",
+      "version": "1.2.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "btoa"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "buffer",
+      "version": "5.7.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "buffer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "buffer-crc32",
+      "version": "0.2.13",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "buffer-crc32"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "call-bind",
+      "version": "1.0.9",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "call-bind"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "call-bind-apply-helpers",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "call-bind-apply-helpers"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "call-bound",
+      "version": "1.0.4",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "call-bound"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "canvas",
+      "version": "2.11.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "canvas"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "canvg",
+      "version": "3.0.11",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "canvg"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "chownr",
+      "version": "2.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "chownr"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "citeproc",
+      "version": "2.4.63",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "citeproc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "clone",
+      "version": "2.1.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "clone"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "color-support",
+      "version": "1.1.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "color-support"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "concat-map",
+      "version": "0.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "concat-map"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "console-control-strings",
+      "version": "1.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "console-control-strings"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "core-js",
+      "version": "3.49.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "core-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "core-util-is",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "core-util-is"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "css-line-break",
+      "version": "2.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "css-line-break"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "debug",
+      "version": "4.4.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "debug"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "deep-equal",
+      "version": "1.1.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "deep-equal"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "define-data-property",
+      "version": "1.1.4",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "define-data-property"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "define-properties",
+      "version": "1.2.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "define-properties"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "delegates",
+      "version": "1.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "delegates"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "detect-libc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "dingbat-to-unicode",
+      "version": "1.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "dingbat-to-unicode"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "dompurify",
+      "version": "2.5.9",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "dompurify"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "duck",
+      "version": "0.1.12",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "duck"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "dunder-proto",
+      "version": "1.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "dunder-proto"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "emoji-regex",
+      "version": "8.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "emoji-regex"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "es-define-property",
+      "version": "1.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "es-define-property"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "es-errors",
+      "version": "1.3.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "es-errors"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "es-object-atoms",
+      "version": "1.1.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "es-object-atoms"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "es6-promise",
+      "version": "4.2.8",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "es6-promise"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "eventemitter3",
+      "version": "2.0.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "eventemitter3"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "extend",
+      "version": "3.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "extend"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fast-diff",
+      "version": "1.1.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "fast-diff"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fd-slicer",
+      "version": "1.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "fd-slicer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fetch-ponyfill",
+      "version": "7.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "fetch-ponyfill"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "node-fetch",
+      "version": "2.6.13",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "fetch-ponyfill/node_modules/node-fetch"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fflate",
+      "version": "0.8.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "fflate"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fs-minipass",
+      "version": "2.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "fs-minipass"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minipass",
+      "version": "3.3.6",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "fs-minipass/node_modules/minipass"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fs.realpath",
+      "version": "1.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "fs.realpath"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "function-bind",
+      "version": "1.1.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "function-bind"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "functions-have-names",
+      "version": "1.2.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "functions-have-names"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "gauge",
+      "version": "3.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "gauge"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "signal-exit",
+      "version": "3.0.7",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "gauge/node_modules/signal-exit"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "get-intrinsic",
+      "version": "1.3.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "get-intrinsic"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "get-proto",
+      "version": "1.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "get-proto"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "glob",
+      "version": "7.2.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "glob"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "1.1.14",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "glob/node_modules/brace-expansion"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minimatch",
+      "version": "3.1.5",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "glob/node_modules/minimatch"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "gopd",
+      "version": "1.2.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "gopd"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has-property-descriptors",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "has-property-descriptors"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has-symbols",
+      "version": "1.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "has-symbols"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has-tostringtag",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "has-tostringtag"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "has-unicode",
+      "version": "2.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "has-unicode"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "hasown",
+      "version": "2.0.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "hasown"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "html2canvas",
+      "version": "1.4.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "html2canvas"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "html2pdf.js",
+      "version": "0.10.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "html2pdf.js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "https-proxy-agent",
+      "version": "5.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "https-proxy-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ieee754",
+      "version": "1.2.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "ieee754"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "immediate",
+      "version": "3.0.6",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "immediate"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "inflight",
+      "version": "1.0.6",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "inflight"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "inherits",
+      "version": "2.0.4",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "inherits"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-arguments",
+      "version": "1.2.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "is-arguments"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-date-object",
+      "version": "1.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "is-date-object"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-fullwidth-code-point",
+      "version": "3.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "is-fullwidth-code-point"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-regex",
+      "version": "1.2.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "is-regex"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "isarray",
+      "version": "1.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "isarray"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jspdf",
+      "version": "2.5.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "jspdf"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jszip",
+      "version": "3.10.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "jszip"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pako",
+      "version": "1.0.11",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "jszip/node_modules/pako"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "readable-stream",
+      "version": "2.3.8",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "jszip/node_modules/readable-stream"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safe-buffer",
+      "version": "5.1.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "jszip/node_modules/safe-buffer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string_decoder",
+      "version": "1.1.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "jszip/node_modules/string_decoder"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lie",
+      "version": "3.3.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "lie"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lop",
+      "version": "0.4.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "lop"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "make-dir",
+      "version": "3.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "make-dir"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mammoth",
+      "version": "1.6.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "mammoth"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@xmldom/xmldom",
+      "version": "0.8.13",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "mammoth/node_modules/@xmldom/xmldom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "argparse",
+      "version": "1.0.10",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "mammoth/node_modules/argparse"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "bluebird",
+      "version": "3.4.7",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "mammoth/node_modules/bluebird"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sprintf-js",
+      "version": "1.0.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "mammoth/node_modules/sprintf-js"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "xmlbuilder",
+      "version": "10.1.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "mammoth/node_modules/xmlbuilder"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "math-intrinsics",
+      "version": "1.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "math-intrinsics"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minipass",
+      "version": "5.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "minipass"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minizlib",
+      "version": "2.1.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "minizlib"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minipass",
+      "version": "3.3.6",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "minizlib/node_modules/minipass"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mkdirp",
+      "version": "1.0.4",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "mkdirp"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "moo",
+      "version": "0.5.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "moo"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ms",
+      "version": "2.1.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "ms"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "nan",
+      "version": "2.28.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "nan"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "node-fetch",
+      "version": "2.7.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "node-fetch"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "nopt",
+      "version": "5.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "nopt"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "npmlog",
+      "version": "5.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "npmlog"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "object-assign",
+      "version": "4.1.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "object-assign"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "object-is",
+      "version": "1.1.6",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "object-is"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "object-keys",
+      "version": "1.1.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "object-keys"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "once",
+      "version": "1.4.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "once"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "option",
+      "version": "0.2.4",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "option"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "parchment",
+      "version": "1.1.4",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "parchment"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path-is-absolute",
+      "version": "1.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "path-is-absolute"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path2d-polyfill",
+      "version": "2.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "path2d-polyfill"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pdfjs-dist",
+      "version": "3.11.174",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "pdfjs-dist"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "pend",
+      "version": "1.2.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "pend"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "performance-now",
+      "version": "2.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "performance-now"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "process-nextick-args",
+      "version": "2.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "process-nextick-args"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "quill",
+      "version": "1.3.6",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "quill"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "quill-delta",
+      "version": "3.6.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "quill-delta"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "raf",
+      "version": "3.4.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "raf"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "readable-stream",
+      "version": "3.6.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "readable-stream"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "regenerator-runtime",
+      "version": "0.13.11",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "regenerator-runtime"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "regexp.prototype.flags",
+      "version": "1.5.4",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "regexp.prototype.flags"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rgbcolor",
+      "version": "1.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "rgbcolor"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "rimraf",
+      "version": "3.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "rimraf"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "safe-buffer",
+      "version": "5.2.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "safe-buffer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "semver",
+      "version": "6.3.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "semver"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "set-blocking",
+      "version": "2.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "set-blocking"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "set-function-length",
+      "version": "1.2.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "set-function-length"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "set-function-name",
+      "version": "2.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "set-function-name"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "setimmediate",
+      "version": "1.0.5",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "setimmediate"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "simple-concat",
+      "version": "1.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "simple-concat"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "simple-get",
+      "version": "3.1.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "simple-get"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "decompress-response",
+      "version": "4.2.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "simple-get/node_modules/decompress-response"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mimic-response",
+      "version": "2.1.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "simple-get/node_modules/mimic-response"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "stackblur-canvas",
+      "version": "2.7.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "stackblur-canvas"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string_decoder",
+      "version": "1.3.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "string_decoder"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string-width",
+      "version": "4.2.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "string-width"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "strip-ansi",
+      "version": "6.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "strip-ansi"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "svg-pathdata",
+      "version": "6.0.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "svg-pathdata"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sync-fetch",
+      "version": "0.4.5",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "sync-fetch"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tar",
+      "version": "6.2.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "tar"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "text-segmentation",
+      "version": "1.0.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "text-segmentation"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tr46",
+      "version": "0.0.3",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "tr46"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "underscore",
+      "version": "1.13.8",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "underscore"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "util-deprecate",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "util-deprecate"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "utrie",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "utrie"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "webidl-conversions",
+      "version": "3.0.1",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "webidl-conversions"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "whatwg-url",
+      "version": "5.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "whatwg-url"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wide-align",
+      "version": "1.1.5",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "wide-align"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wrappy",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "wrappy"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yallist",
+      "version": "4.0.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "yallist"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "yauzl",
+      "version": "2.10.0",
+      "properties": [
+        {
+          "name": "lockPath",
+          "value": "yauzl"
+        }
+      ]
+    }
+  ],
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb"
+}

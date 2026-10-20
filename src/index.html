@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; frame-src 'none'; worker-src 'self' blob:; child-src 'self' blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: file: https: http:; connect-src 'self' blob: file: https: http:; media-src 'self' blob: file:">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EssayFlow</title>
+  <link href="../node_modules/quill/dist/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- PDF.js 用于在搜索面板内直接渲染论文 PDF -->
+  <script src="../node_modules/pdfjs-dist/build/pdf.min.js"></script>
+  <script src="pdf-runtime.js"></script>
+  <!-- 拦截 Quill 的 DOMNodeInserted 废弃事件，改用 MutationObserver -->
+  <script src="runtime-bootstrap.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 左侧极细工具栏 -->
+    <div id="icon-toolbar">
+      <button id="btn-settings" class="tool-btn" data-tooltip="设置">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+      <button id="btn-import" class="tool-btn" data-tooltip="导入 Word 文档">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+          <polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </button>
+      <button id="btn-export-word" class="tool-btn" data-tooltip="导出 Word">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+      </button>
+      <button id="btn-export" class="tool-btn" data-tooltip="导出 PDF">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </button>
+      <button id="btn-new-project" class="tool-btn" data-tooltip="创建新项目">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+      <button id="btn-projects" class="tool-btn" data-tooltip="项目中心">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+        </svg>
+      </button>
+      <button id="btn-import-literature" class="tool-btn" data-tooltip="导入文献到文库">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+          <polyline points="13 2 13 9 20 9"></polyline>
+          <line x1="12" y1="15" x2="12" y2="18"></line>
+          <line x1="9" y1="18" x2="15" y2="18"></line>
+        </svg>
+      </button>
+      <button id="btn-theme" class="tool-btn" data-tooltip="切换深色模式">
+        <svg id="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg id="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 中间工作区 (编辑器) -->
+    <div id="workspace">
+      <div id="editor-container"></div>
+      <div id="citation-scroll-markers"></div>
+      <!-- 段落左侧操作按钮 -->
+      <div id="paragraph-actions" class="paragraph-actions" style="display:none;">
+        <button class="pa-btn pa-add-btn" data-tooltip="点击下方添加段落，Alt+点击上方添加">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+        <button class="pa-btn pa-menu-btn" data-tooltip="点击修改段落格式">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="6" r="1.5"/>
+            <circle cx="12" cy="12" r="1.5"/>
+            <circle cx="12" cy="18" r="1.5"/>
+            <circle cx="18" cy="6" r="1.5"/>
+            <circle cx="18" cy="12" r="1.5"/>
+            <circle cx="18" cy="18" r="1.5"/>
+          </svg>
+        </button>
+      </div>
+      <!-- 段落格式选择浮窗 -->
+      <div id="paragraph-format-panel" class="paragraph-format-panel" style="display:none;">
+        <div class="pf-section">
+          <button class="pf-item" data-format="header" data-value="false">正文</button>
+          <button class="pf-item" data-format="header" data-value="1">标题 1</button>
+          <button class="pf-item" data-format="header" data-value="2">标题 2</button>
+          <button class="pf-item" data-format="header" data-value="3">标题 3</button>
+        </div>
+        <div class="pf-divider"></div>
+        <div class="pf-section">
+          <button class="pf-item" data-format="bold">加粗</button>
+          <button class="pf-item" data-format="italic">斜体</button>
+          <button class="pf-item" data-format="underline">下划线</button>
+          <button class="pf-item" data-format="strike">删除线</button>
+        </div>
+        <div class="pf-divider"></div>
+        <div class="pf-section">
+          <button class="pf-item" data-format="list" data-value="ordered">有序列表</button>
+          <button class="pf-item" data-format="list" data-value="bullet">无序列表</button>
+          <button class="pf-item" data-format="blockquote">引用块</button>
+          <button class="pf-item" data-format="code-block">代码块</button>
+        </div>
+        <div class="pf-divider"></div>
+        <div class="pf-section">
+          <button class="pf-item" data-format="align" data-value="">左对齐</button>
+          <button class="pf-item" data-format="align" data-value="center">居中</button>
+          <button class="pf-item" data-format="align" data-value="right">右对齐</button>
+        </div>
+        <div class="pf-divider"></div>
+        <div class="pf-section">
+          <button class="pf-item pf-dropdown-btn" data-dropdown="color">文字颜色</button>
+          <div class="pf-dropdown-panel" data-dropdown-panel="color">
+            <div class="color-grid">
+              <div class="color-swatch" data-color="#000000" style="background:#000000;"></div>
+              <div class="color-swatch" data-color="#e60000" style="background:#e60000;"></div>
+              <div class="color-swatch" data-color="#ff9900" style="background:#ff9900;"></div>
+              <div class="color-swatch" data-color="#ffff00" style="background:#ffff00;"></div>
+              <div class="color-swatch" data-color="#008a00" style="background:#008a00;"></div>
+              <div class="color-swatch" data-color="#0066cc" style="background:#0066cc;"></div>
+              <div class="color-swatch" data-color="#9933ff" style="background:#9933ff;"></div>
+              <div class="color-swatch color-swatch-white" data-color="" style="background:#ffffff;"></div>
+            </div>
+          </div>
+          <button class="pf-item pf-dropdown-btn" data-dropdown="background">背景颜色</button>
+          <div class="pf-dropdown-panel" data-dropdown-panel="background">
+            <div class="color-grid">
+              <div class="color-swatch color-swatch-white" data-color="" style="background:#ffffff;"></div>
+              <div class="color-swatch" data-color="#e60000" style="background:#e60000;"></div>
+              <div class="color-swatch" data-color="#ff9900" style="background:#ff9900;"></div>
+              <div class="color-swatch" data-color="#ffff00" style="background:#ffff00;"></div>
+              <div class="color-swatch" data-color="#008a00" style="background:#008a00;"></div>
+              <div class="color-swatch" data-color="#0066cc" style="background:#0066cc;"></div>
+              <div class="color-swatch" data-color="#9933ff" style="background:#9933ff;"></div>
+              <div class="color-swatch" data-color="#000000" style="background:#000000;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 块级浮窗工具栏 -->
+      <div id="block-action-toolbar" class="block-action-toolbar" style="display:none;">
+        <div class="block-action-format-group">
+          <button class="block-action-format-btn" data-format="bold" data-tooltip="加粗">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/>
+              <path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/>
+            </svg>
+          </button>
+          <button class="block-action-format-btn" data-format="italic" data-tooltip="斜体">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="4" x2="10" y2="4"/>
+              <line x1="14" y1="20" x2="5" y2="20"/>
+              <line x1="15" y1="4" x2="9" y2="20"/>
+            </svg>
+          </button>
+          <button class="block-action-format-btn" data-format="underline" data-tooltip="下划线">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/>
+              <line x1="4" y1="21" x2="20" y2="21"/>
+            </svg>
+          </button>
+          <button class="block-action-format-btn" data-format="strike" data-tooltip="删除线">
+            <svg width="16" height="16" viewBox="0 0 18 18">
+              <line class="ql-stroke ql-thin" x1="15.5" y1="8.5" x2="2.5" y2="9.5"/>
+              <path class="ql-fill" d="M9.007,8C6.542,7.791,6,7.519,6,6.5,6,5.792,7.283,5,9,5c1.571,0,2.765.679,2.969,1.309a1,1,0,0,0,1.9-.617C13.356,4.106,11.354,3,9,3,6.2,3,4,4.538,4,6.5a3.2,3.2,0,0,0,.5,1.843Z"/>
+              <path class="ql-fill" d="M8.984,10C11.457,10.208,12,10.479,12,11.5c0,0.708-1.283,1.5-3,1.5-1.571,0-2.765-.679-2.969-1.309a1,1,0,1,0-1.9.617C4.644,13.894,6.646,15,9,15c2.8,0,5-1.538,5-3.5a3.2,3.2,0,0,0-.5-1.843Z"/>
+            </svg>
+          </button>
+          <button class="block-action-format-btn block-action-dropdown-btn" data-dropdown="header" data-tooltip="标题样式">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M4 4v16M20 4v16M4 12h16"/>
+            </svg>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dropdown-arrow">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <button class="block-action-format-btn block-action-dropdown-btn" data-dropdown="color" data-tooltip="字体颜色">
+            <svg width="14" height="14" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="5.5 11 9 3 12.5 11"/>
+              <line x1="11.63" y1="9" x2="6.38" y2="9"/>
+              <line x1="3" y1="15" x2="15" y2="15"/>
+            </svg>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dropdown-arrow">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <button class="block-action-format-btn block-action-dropdown-btn" data-dropdown="background" data-tooltip="背景颜色">
+            <svg width="14" height="14" viewBox="0 0 18 18">
+              <polyline class="ql-stroke" points="5.5 11 9 3 12.5 11"/>
+              <line class="ql-stroke" x1="11.63" y1="9" x2="6.38" y2="9"/>
+              <rect class="ql-fill" x="3" y="13" width="12" height="3" rx="0.5"/>
+            </svg>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dropdown-arrow">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- 下拉面板：标题样式 -->
+        <div class="block-action-dropdown" data-dropdown-panel="header">
+          <div class="dropdown-item" data-header="1" style="font-size:20px;font-weight:700;">Heading 1</div>
+          <div class="dropdown-item" data-header="2" style="font-size:17px;font-weight:600;">Heading 2</div>
+          <div class="dropdown-item" data-header="3" style="font-size:15px;font-weight:600;">Heading 3</div>
+          <div class="dropdown-item dropdown-item-active" data-header="false">Normal</div>
+        </div>
+
+        <!-- 下拉面板：字体颜色 -->
+        <div class="block-action-dropdown" data-dropdown-panel="color">
+          <div class="color-grid">
+            <div class="color-swatch" data-color="#000000" style="background:#000000;"></div>
+            <div class="color-swatch" data-color="#e60000" style="background:#e60000;"></div>
+            <div class="color-swatch" data-color="#ff9900" style="background:#ff9900;"></div>
+            <div class="color-swatch" data-color="#ffff00" style="background:#ffff00;"></div>
+            <div class="color-swatch" data-color="#008a00" style="background:#008a00;"></div>
+            <div class="color-swatch" data-color="#0066cc" style="background:#0066cc;"></div>
+            <div class="color-swatch" data-color="#9933ff" style="background:#9933ff;"></div>
+            <div class="color-swatch" data-color="#444444" style="background:#444444;"></div>
+            <div class="color-swatch" data-color="#a10000" style="background:#a10000;"></div>
+            <div class="color-swatch" data-color="#b26b00" style="background:#b26b00;"></div>
+            <div class="color-swatch" data-color="#b2b200" style="background:#b2b200;"></div>
+            <div class="color-swatch" data-color="#006100" style="background:#006100;"></div>
+            <div class="color-swatch" data-color="#0047b2" style="background:#0047b2;"></div>
+            <div class="color-swatch" data-color="#6b24b2" style="background:#6b24b2;"></div>
+            <div class="color-swatch" data-color="#888888" style="background:#888888;"></div>
+            <div class="color-swatch" data-color="#f06666" style="background:#f06666;"></div>
+            <div class="color-swatch" data-color="#ffc266" style="background:#ffc266;"></div>
+            <div class="color-swatch" data-color="#ffff66" style="background:#ffff66;"></div>
+            <div class="color-swatch" data-color="#66b966" style="background:#66b966;"></div>
+            <div class="color-swatch" data-color="#66a3e0" style="background:#66a3e0;"></div>
+            <div class="color-swatch" data-color="#c285ff" style="background:#c285ff;"></div>
+            <div class="color-swatch" data-color="#bbbbbb" style="background:#bbbbbb;"></div>
+            <div class="color-swatch" data-color="#facccc" style="background:#facccc;"></div>
+            <div class="color-swatch" data-color="#ffebcc" style="background:#ffebcc;"></div>
+            <div class="color-swatch" data-color="#ffffcc" style="background:#ffffcc;"></div>
+            <div class="color-swatch" data-color="#cce8cc" style="background:#cce8cc;"></div>
+            <div class="color-swatch" data-color="#cce0f5" style="background:#cce0f5;"></div>
+            <div class="color-swatch" data-color="#ebd6ff" style="background:#ebd6ff;"></div>
+            <div class="color-swatch color-swatch-white" data-color="" style="background:#ffffff;"></div>
+            <div class="color-swatch" data-color="#5c0000" style="background:#5c0000;"></div>
+            <div class="color-swatch" data-color="#663d00" style="background:#663d00;"></div>
+            <div class="color-swatch" data-color="#666600" style="background:#666600;"></div>
+            <div class="color-swatch" data-color="#003700" style="background:#003700;"></div>
+            <div class="color-swatch" data-color="#002966" style="background:#002966;"></div>
+            <div class="color-swatch" data-color="#3d1466" style="background:#3d1466;"></div>
+          </div>
+        </div>
+
+        <!-- 下拉面板：背景颜色 -->
+        <div class="block-action-dropdown" data-dropdown-panel="background">
+          <div class="color-grid">
+            <div class="color-swatch color-swatch-white" data-color="" style="background:#ffffff;"></div>
+            <div class="color-swatch" data-color="#e60000" style="background:#e60000;"></div>
+            <div class="color-swatch" data-color="#ff9900" style="background:#ff9900;"></div>
+            <div class="color-swatch" data-color="#ffff00" style="background:#ffff00;"></div>
+            <div class="color-swatch" data-color="#008a00" style="background:#008a00;"></div>
+            <div class="color-swatch" data-color="#0066cc" style="background:#0066cc;"></div>
+            <div class="color-swatch" data-color="#9933ff" style="background:#9933ff;"></div>
+            <div class="color-swatch" data-color="#444444" style="background:#444444;"></div>
+            <div class="color-swatch" data-color="#a10000" style="background:#a10000;"></div>
+            <div class="color-swatch" data-color="#b26b00" style="background:#b26b00;"></div>
+            <div class="color-swatch" data-color="#b2b200" style="background:#b2b200;"></div>
+            <div class="color-swatch" data-color="#006100" style="background:#006100;"></div>
+            <div class="color-swatch" data-color="#0047b2" style="background:#0047b2;"></div>
+            <div class="color-swatch" data-color="#6b24b2" style="background:#6b24b2;"></div>
+            <div class="color-swatch" data-color="#888888" style="background:#888888;"></div>
+            <div class="color-swatch" data-color="#f06666" style="background:#f06666;"></div>
+            <div class="color-swatch" data-color="#ffc266" style="background:#ffc266;"></div>
+            <div class="color-swatch" data-color="#ffff66" style="background:#ffff66;"></div>
+            <div class="color-swatch" data-color="#66b966" style="background:#66b966;"></div>
+            <div class="color-swatch" data-color="#66a3e0" style="background:#66a3e0;"></div>
+            <div class="color-swatch" data-color="#c285ff" style="background:#c285ff;"></div>
+            <div class="color-swatch" data-color="#bbbbbb" style="background:#bbbbbb;"></div>
+            <div class="color-swatch" data-color="#facccc" style="background:#facccc;"></div>
+            <div class="color-swatch" data-color="#ffebcc" style="background:#ffebcc;"></div>
+            <div class="color-swatch" data-color="#ffffcc" style="background:#ffffcc;"></div>
+            <div class="color-swatch" data-color="#cce8cc" style="background:#cce8cc;"></div>
+            <div class="color-swatch" data-color="#cce0f5" style="background:#cce0f5;"></div>
+            <div class="color-swatch" data-color="#ebd6ff" style="background:#ebd6ff;"></div>
+            <div class="color-swatch" data-color="#ffffff" style="background:#ffffff;"></div>
+            <div class="color-swatch" data-color="#5c0000" style="background:#5c0000;"></div>
+            <div class="color-swatch" data-color="#663d00" style="background:#663d00;"></div>
+            <div class="color-swatch" data-color="#666600" style="background:#666600;"></div>
+            <div class="color-swatch" data-color="#003700" style="background:#003700;"></div>
+            <div class="color-swatch" data-color="#002966" style="background:#002966;"></div>
+            <div class="color-swatch" data-color="#3d1466" style="background:#3d1466;"></div>
+          </div>
+        </div>
+
+        <div class="block-action-divider"></div>
+        <div class="block-action-ai-group">
+          <button class="block-action-btn" data-action="ask-ai" data-tooltip="问AI">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <span>问AI</span>
+          </button>
+          <button class="block-action-btn" data-action="priority-keyword" id="block-priority-btn" data-tooltip="设为优先关键词">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span>设为优先关键词</span>
+          </button>
+        </div>
+      </div>
+      <!-- Notion 式 AI Hint -->
+      <div id="ai-line-hint" class="ai-line-hint" style="display:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="11" width="18" height="10" rx="2"/>
+          <circle cx="12" cy="5" r="2"/>
+          <path d="M12 7v4"/>
+          <path d="M8 15h8"/>
+        </svg>
+        <span>使用 AI 编辑（按空格启用）</span>
+      </div>
+      <!-- AI 输入小浮窗 -->
+      <div id="ai-inline-panel" class="ai-inline-panel" style="display:none;">
+        <textarea id="ai-inline-input" rows="1" placeholder="告诉 AI 要做什么..."></textarea>
+        <button id="ai-inline-send">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+      <!-- 斜杠命令操作面板 -->
+      <div id="slash-action-panel" class="slash-action-panel" style="display:none;">
+        <div class="slash-action-btns">
+          <button class="slash-action-btn" data-action="replace">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="14" height="14" rx="2"/>
+              <rect x="7" y="7" width="14" height="14" rx="2"/>
+            </svg>
+            <span>替换原文</span>
+          </button>
+          <button class="slash-action-btn" data-action="keep">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="12" y2="19"/>
+              <line x1="19" y1="12" x2="12" y2="19"/>
+            </svg>
+            <span>保留两者</span>
+          </button>
+          <button class="slash-action-btn" data-action="regenerate">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10"/>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+            </svg>
+            <span>重新生成</span>
+          </button>
+          <button class="slash-action-btn" data-action="discard">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"/>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+            </svg>
+            <span>不保留</span>
+          </button>
+        </div>
+        <div class="slash-action-divider"></div>
+        <div class="slash-action-continue">
+          <input type="text" id="slash-continue-input" placeholder="继续修改...">
+          <button id="slash-continue-send">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 搜索替换面板 -->
+      <div id="find-replace-panel" class="find-replace-panel" style="display:none;">
+        <div class="find-replace-main">
+          <div class="find-replace-row">
+            <span class="find-replace-label">查找</span>
+            <input type="text" id="find-input" placeholder="查找内容...">
+            <span id="find-match-count" class="find-match-count"></span>
+          </div>
+          <div class="find-replace-row">
+            <span class="find-replace-label">替换</span>
+            <input type="text" id="replace-input" placeholder="替换为...">
+            <div class="find-replace-actions">
+              <button id="fr-select" class="fr-action-btn" data-tooltip="选择替换项">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              </button>
+              <button id="fr-replace-all" class="fr-action-btn" data-tooltip="全部替换">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+              </button>
+              <button id="fr-close" class="fr-action-btn" data-tooltip="关闭">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+              <button id="fr-toggle-advanced" class="fr-toggle-advanced" data-tooltip="更多替换模式">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="find-replace-advanced" style="display:none;">
+          <div class="fr-advanced-options">
+            <label class="fr-checkbox-label">
+              <input type="checkbox" id="fr-regex">
+              <span class="fr-custom-checkbox"></span>
+              <span>正则表达式</span>
+            </label>
+            <label class="fr-checkbox-label">
+              <input type="checkbox" id="fr-case-sensitive">
+              <span class="fr-custom-checkbox"></span>
+              <span>区分大小写</span>
+            </label>
+            <label class="fr-checkbox-label">
+              <input type="checkbox" id="fr-format-replace">
+              <span class="fr-custom-checkbox"></span>
+              <span>格式替换</span>
+            </label>
+          </div>
+          <div id="fr-format-bar" class="fr-format-bar" style="display:none;">
+            <button class="fr-format-btn" data-format="bold" title="加粗">B</button>
+            <button class="fr-format-btn" data-format="italic" title="斜体">I</button>
+            <button class="fr-format-btn" data-format="underline" title="下划线">U</button>
+            <input type="color" id="fr-format-color" class="fr-format-color" title="文字颜色" value="#e6b422">
+          </div>
+        </div>
+        <div id="fr-match-list" class="fr-match-list">
+          <div class="fr-match-list-scroll"></div>
+          <div class="fr-match-list-footer">
+            <button id="fr-match-replace-btn" class="fr-match-replace-btn" data-tooltip="替换当前选中项">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- 字数统计 + 保存状态 -->
+      <div id="word-count-btn" class="word-count-btn">
+        <span id="save-status" class="save-status" data-state="saved" title="已保存" role="status" aria-label="已保存"></span>
+        <span>字数：</span>
+        <span id="word-count-current">0</span>
+        <span id="word-count-goal" style="display:none;"></span>
+      </div>
+    </div>
+
+    <!-- 可拖动分割条 -->
+    <div id="resizer" class="resizer">
+      <button id="search-panel-toggle" class="search-panel-edge-toggle" type="button" aria-label="收起资料栏" aria-expanded="true" aria-controls="search-panel">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 18l-6-6 6-6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 右侧搜索区 -->
+    <div id="search-panel">
+      <div id="search-main" style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+        <div id="search-header">
+          <div class="mode-buttons">
+            <button id="btn-discover" class="search-mode-btn active">发现</button>
+            <button id="btn-library" class="search-mode-btn">文库</button>
+            <button id="btn-evidence" class="search-mode-btn">证据</button>
+          </div>
+          <div id="library-header-actions" class="library-header-actions" hidden>
+            <button id="review-matrix-open" type="button" aria-label="打开综述矩阵" data-tooltip="综述矩阵"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></button>
+            <button id="library-import-standard" type="button" aria-label="导入 BibTeX、RIS 或 CSL-JSON" data-tooltip="导入引用"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M5 14v6h14v-6"/></svg></button>
+            <select id="library-export-format" aria-label="文库导出格式">
+              <option value="csl-json">CSL-JSON</option>
+              <option value="bibtex">BibTeX</option>
+              <option value="ris">RIS</option>
+            </select>
+            <button id="library-export-standard" type="button" aria-label="导出文库" data-tooltip="导出引用"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v12m0 0 4-4m-4 4-4-4"/><path d="M5 20h14"/></svg></button>
+          </div>
+          <div class="search-toggle-wrapper">
+            <button id="search-toggle-btn" class="search-toggle-icon" type="button" aria-label="打开发现搜索" aria-expanded="false" aria-controls="search-expand-area">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+            <div id="search-expand-area" class="search-expand-area" aria-hidden="true">
+              <input type="search" id="search-input" placeholder="快速搜索发现" aria-label="快速搜索发现">
+            </div>
+          </div>
+        </div>
+        <section id="library-controls" class="library-controls" hidden aria-label="文库筛选与批量操作">
+          <div class="library-filter-bar">
+            <label class="library-search-field">
+              <span aria-hidden="true">⌕</span>
+              <input id="library-query" type="search" placeholder="搜标题、作者、DOI、标签或笔记" aria-label="搜索文库">
+            </label>
+            <button id="library-filter-toggle" type="button" class="library-compact-action" aria-expanded="false" aria-controls="library-filter-panel">
+              筛选 <span id="library-filter-count" class="library-control-count" hidden>0</span>
+            </button>
+            <select id="library-sort" class="library-sort-select" aria-label="文库排序"><option value="updatedAt:desc">最近更新</option><option value="title:asc">标题</option><option value="year:desc">年份</option><option value="source:asc">来源</option><option value="type:asc">类型</option></select>
+            <button id="library-clear-filters" type="button" class="library-quiet-action" hidden>清空</button>
+          </div>
+          <div id="library-active-filters" class="library-active-filters" role="list" aria-label="已启用的文库筛选" aria-live="polite"></div>
+          <div id="library-filter-panel" class="library-filter-panel" hidden>
+            <label><span>年份</span><select id="library-year-filter" aria-label="按年份筛选"><option value="">全部年份</option></select></label>
+            <label><span>来源</span><select id="library-source-filter" aria-label="按来源筛选"><option value="">全部来源</option></select></label>
+            <label><span>类型</span><select id="library-type-filter" aria-label="按类型筛选"><option value="">全部类型</option></select></label>
+            <label><span>PDF</span><select id="library-pdf-filter" aria-label="按 PDF 状态筛选"><option value="">全部 PDF</option><option value="yes">有 PDF</option><option value="no">无 PDF</option></select></label>
+            <label><span>星标</span><select id="library-starred-filter" aria-label="按星标筛选"><option value="">全部星标</option><option value="yes">已星标</option><option value="no">未星标</option></select></label>
+            <label><span>集合</span><select id="library-collection-filter" aria-label="按集合筛选"><option value="">全部集合</option></select></label>
+            <label><span>筛选状态</span><select id="library-screening-filter" aria-label="按项目筛选状态筛选"><option value="">全部筛选状态</option><option value="pending">待筛选</option><option value="included">已纳入</option><option value="excluded">已排除</option></select></label>
+            <label><span>阅读状态</span><select id="library-reading-filter" aria-label="按阅读状态筛选"><option value="">全部阅读状态</option><option value="unread">未读</option><option value="to-read">待读</option><option value="reading">阅读中</option><option value="read">已读</option></select></label>
+          </div>
+          <div class="library-action-bar">
+            <label class="library-select-all"><input id="library-select-page" type="checkbox"> 本页全选</label>
+            <span id="library-selection-count" aria-live="polite">已选 0 篇</span>
+            <button id="library-batch-toggle" type="button" class="library-compact-action" aria-expanded="false" aria-controls="library-batch-panel">批量操作</button>
+          </div>
+          <div id="library-batch-panel" class="library-batch-panel" hidden>
+            <select id="library-batch-collection" aria-label="批量集合"><option value="">选择集合</option></select>
+            <button id="library-batch-add-collection" type="button">加入集合</button>
+            <input id="library-batch-tags" type="text" placeholder="标签，逗号分隔" aria-label="批量标签">
+            <button id="library-batch-add-tags" type="button">添加标签</button>
+            <select id="library-batch-screening" aria-label="批量筛选状态"><option value="">筛选状态</option><option value="pending">待筛选</option><option value="included">已纳入</option><option value="excluded">已排除</option></select>
+            <select id="library-batch-reading" aria-label="批量阅读状态"><option value="">阅读状态</option><option value="unread">未读</option><option value="to-read">待读</option><option value="reading">阅读中</option><option value="read">已读</option></select>
+            <button id="library-batch-state" type="button">更新状态</button>
+            <button id="library-batch-star" type="button">加星</button>
+            <button id="library-batch-export" type="button">导出所选</button>
+            <button id="library-batch-delete" type="button" class="danger">移除</button>
+            <button id="library-batch-undo" type="button" disabled>撤销</button>
+          </div>
+        </section>
+        <section id="evidence-controls" class="evidence-controls" hidden aria-label="证据搜索与分组">
+          <input id="evidence-query" type="search" placeholder="搜索原文、笔记、文献或标签" aria-label="搜索证据">
+          <select id="evidence-group" aria-label="证据分组">
+            <option value="source">按文献分组</option>
+            <option value="tag">按标签分组</option>
+            <option value="question">按研究问题分组</option>
+          </select>
+        </section>
+        <div id="search-results">
+          <div id="discover-results" class="tab-results"></div>
+          <div id="library-results" class="tab-results" style="display:none;"></div>
+          <div id="evidence-results" class="tab-results" style="display:none;"></div>
+        </div>
+      </div>
+      <div id="chat-resizer" class="chat-resizer"></div>
+      <div id="ai-chat-panel" style="display:none;flex-direction:column;overflow:hidden;">
+        <div class="ai-chat-header">
+          <span>AI 助手</span>
+          <button id="ai-chat-close" class="ai-chat-close-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <div id="ai-chat-messages" class="ai-chat-messages"></div>
+        <div class="ai-chat-input-area">
+          <button id="ai-chat-attach" class="ai-chat-tool-btn" data-tooltip="上传文件">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+            </svg>
+          </button>
+          <button id="ai-chat-library" class="ai-chat-tool-btn" data-tooltip="从文库选择">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </button>
+          <div class="ai-chat-input-wrapper">
+            <textarea id="ai-chat-input" placeholder="shift+enter换行" rows="1"></textarea>
+          </div>
+          <button id="ai-chat-send" class="ai-chat-send-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 自定义 Tooltip -->
+  <div id="custom-tooltip" class="custom-tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <div id="review-matrix-modal" class="modal review-matrix-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="review-matrix-title">
+    <div class="modal-content review-matrix-content">
+      <div class="review-matrix-heading">
+        <div>
+          <h3 id="review-matrix-title">综述矩阵</h3>
+          <p>AI 预填保持草稿或待审阅；只有用户操作可以确认单元格。</p>
+        </div>
+        <button id="review-matrix-close" type="button" class="modal-close-button" aria-label="关闭综述矩阵"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="review-matrix-toolbar" role="toolbar" aria-label="综述矩阵操作">
+        <button id="review-matrix-create" type="button">从纳入文献新建</button>
+        <button id="review-matrix-sync-rows" type="button">同步纳入文献</button>
+        <select id="review-matrix-select" aria-label="选择综述矩阵"></select>
+        <input id="review-matrix-filter" type="search" placeholder="筛选文献或单元格" aria-label="筛选矩阵">
+        <select id="review-matrix-sort" aria-label="矩阵排序"><option value="">原顺序</option></select>
+        <button id="review-matrix-add-column" type="button">添加列</button>
+        <button id="review-matrix-prefill" type="button">AI 预填所选</button>
+        <button id="review-matrix-cancel" type="button" disabled>取消预填</button>
+        <button id="review-matrix-export-csv" type="button">CSV ZIP</button>
+        <button id="review-matrix-export-xlsx" type="button">XLSX</button>
+      </div>
+      <div id="review-matrix-status" class="review-matrix-status" role="status" aria-live="polite"></div>
+      <div id="review-matrix-table-shell" class="review-matrix-table-shell" tabindex="0" aria-label="综述矩阵表格"></div>
+    </div>
+  </div>
+
+  <!-- 新建项目弹窗 -->
+  <div id="new-project-modal" class="modal drawer-modal drawer-modal-left">
+    <div class="modal-content project-modal-content">
+      <button type="button" class="close modal-close-button" aria-label="关闭创建项目窗口">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-eyebrow">新工作空间</div>
+      <h3>创建新项目</h3>
+      <p class="modal-lead">先定义写作目标与引用规范，之后仍可在项目设置中修改。</p>
+      <div class="form-row">
+        <input type="text" id="project-title" placeholder="标题" autocomplete="off">
+        <input type="text" id="project-course" placeholder="课程名称" autocomplete="off">
+      </div>
+      <div class="form-row">
+        <input type="text" id="project-author" placeholder="作者" autocomplete="off">
+        <select id="project-degree">
+          <option value="">学位级别</option>
+          <option value="本科">本科</option>
+          <option value="硕士">硕士</option>
+          <option value="博士">博士</option>
+          <option value="其他">其他</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <input type="number" id="project-word-limit" placeholder="字数限制（不含空格）" min="1">
+        <select id="project-reference-style">
+          <option value="">引用格式</option>
+          <option value="APA">APA 7th</option>
+          <option value="MLA">MLA 9th</option>
+          <option value="Chicago">Chicago 17th</option>
+          <option value="IEEE">IEEE</option>
+          <option value="Harvard">Harvard</option>
+          <option value="GB/T">GB/T 7714</option>
+        </select>
+      </div>
+      <textarea id="project-abstract" placeholder="摘要（可选）" rows="3"></textarea>
+      <button id="modal-create">创建模板</button>
+    </div>
+  </div>
+
+  <!-- 项目列表弹窗（× 关闭） -->
+  <div id="projects-modal" class="modal project-center-modal">
+    <div class="modal-content project-list-content">
+      <button type="button" class="close modal-close-button" aria-label="关闭项目中心">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <header class="project-center-header">
+        <div class="modal-eyebrow">EssayFlow Workspace</div>
+        <h3>项目中心</h3>
+        <p>继续最近的写作，或管理版本、备份与归档。</p>
+      </header>
+      <div class="project-center-toolbar" role="toolbar" aria-label="项目中心工具">
+        <button id="project-checkpoint-btn" class="btn-back project-tool-button"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/></svg><span>创建检查点</span></button>
+        <button id="workspace-backup-btn" class="btn-back project-tool-button"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v13H4z"/><path d="M8 3h8l2 4H6z"/></svg><span>备份全部</span></button>
+        <button id="workspace-import-btn" class="btn-back project-tool-button"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 19h14"/></svg><span>导入备份</span></button>
+        <button id="project-trash-btn" class="btn-back project-tool-button"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3m3 0-1 14H7L6 7"/></svg><span>回收站</span><span id="project-trash-count" class="project-trash-count" aria-label="回收站项目数">0</span></button>
+      </div>
+      <div class="project-list-heading"><span>最近项目</span><span id="project-count" class="project-count">0 个项目</span></div>
+      <div id="projects-list" class="projects-list"></div>
+    </div>
+  </div>
+
+  <div id="project-data-modal" class="modal drawer-modal drawer-modal-left">
+    <div class="modal-content project-data-content">
+      <button type="button" class="close modal-close-button" aria-label="关闭项目记录">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-eyebrow">项目记录</div>
+      <h3 id="project-data-title">版本历史</h3>
+      <div id="project-data-summary" class="project-data-summary"></div>
+      <div id="project-data-list" class="projects-list"></div>
+    </div>
+  </div>
+
+  <div id="essayflow-confirm-modal" class="modal ef-confirm-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="essayflow-confirm-title" aria-describedby="essayflow-confirm-message">
+    <div class="modal-content ef-confirm-content">
+      <button id="essayflow-confirm-close" type="button" class="modal-close-button" aria-label="关闭确认窗口">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="essayflow-confirm-icon" class="ef-confirm-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3m3 0-1 14H7L6 7"/></svg>
+      </div>
+      <div id="essayflow-confirm-eyebrow" class="modal-eyebrow">项目管理</div>
+      <h3 id="essayflow-confirm-title">确认操作</h3>
+      <p id="essayflow-confirm-message" class="ef-confirm-message"></p>
+      <div id="essayflow-confirm-details" class="ef-confirm-details"></div>
+      <label id="essayflow-confirm-phrase-row" class="ef-confirm-phrase" hidden>
+        <span id="essayflow-confirm-phrase-label"></span>
+        <input id="essayflow-confirm-phrase" type="text" autocomplete="off" spellcheck="false">
+      </label>
+      <div class="ef-confirm-actions">
+        <button id="essayflow-confirm-cancel" type="button" class="ef-confirm-cancel">取消</button>
+        <button id="essayflow-confirm-accept" type="button" class="ef-confirm-accept">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast 通知 -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- 参考文献区域（文末自动生成） -->
+  <div id="references-section" style="display:none;">
+    <div id="references-content"></div>
+  </div>
+
+  <!-- 导入文献弹窗 -->
+  <div id="import-literature-modal" class="modal drawer-modal drawer-modal-left">
+    <div class="modal-content import-modal-content">
+      <button type="button" class="close modal-close-button" aria-label="关闭导入文献窗口">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-eyebrow">文库</div>
+      <h3>导入文献到文库</h3>
+      <p class="modal-lead">拖入本地资料，EssayFlow 会提取可编辑的文献信息。</p>
+      <div class="import-type-tabs">
+        <button class="import-tab active" data-type="paper">论文</button>
+        <button class="import-tab" data-type="book">书籍</button>
+      </div>
+      <div id="import-paper-form">
+        <div class="file-drop-zone" id="import-file-drop">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:8px;">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <p style="margin:0;font-size:13px;color:#666;">拖拽文件到此处或点击选择</p>
+          <p style="margin:4px 0 0;font-size:11px;color:#999;">支持 PDF、TXT、DOCX</p>
+          <input type="file" id="import-file-input" accept=".pdf,.txt,.docx" style="display:none;">
+        </div>
+      </div>
+      <div id="import-book-form" style="display:none;">
+        <div class="file-drop-zone" id="import-book-drop">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:8px;">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <p style="margin:0;font-size:13px;color:#666;">拖拽文件到此处或点击选择</p>
+          <p style="margin:4px 0 0;font-size:11px;color:#999;">支持 PDF、TXT、DOCX</p>
+          <input type="file" id="import-book-file-input" accept=".pdf,.txt,.docx" style="display:none;">
+        </div>
+      </div>
+      <!-- 导入进度条 -->
+      <div id="import-progress-area" class="import-progress-area" style="display:none;">
+        <div class="import-progress-bar-track">
+          <div class="import-progress-bar-fill" id="import-progress-fill" style="width:0%"></div>
+        </div>
+        <div class="import-progress-text" id="import-progress-text">准备导入...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 编辑文献弹窗 -->
+  <div id="edit-literature-modal" class="modal drawer-modal drawer-modal-left">
+    <div class="modal-content import-modal-content">
+      <button type="button" class="close modal-close-button" aria-label="关闭编辑文献窗口">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-eyebrow">文库</div>
+      <h3>编辑文献信息</h3>
+      <input type="hidden" id="edit-paper-id">
+      <input type="text" id="edit-paper-title" placeholder="标题 *" autocomplete="off">
+      <input type="text" id="edit-paper-authors" placeholder="作者（逗号分隔）" autocomplete="off">
+      <input type="text" id="edit-paper-year" placeholder="发表/出版年份" autocomplete="off">
+      <input type="text" id="edit-paper-source" placeholder="期刊 / 出版社" autocomplete="off">
+      <input type="text" id="edit-paper-doi" placeholder="DOI / URL / ISBN" autocomplete="off">
+      <textarea id="edit-paper-abstract" placeholder="摘要" rows="3"></textarea>
+      <button id="btn-do-edit">保存修改</button>
+    </div>
+  </div>
+
+  <!-- 设置面板 -->
+  <div id="settings-panel" class="settings-panel" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="settings-page-title">
+    <div class="settings-overlay"></div>
+    <div class="settings-content">
+      <div class="settings-sidebar">
+        <div class="settings-brand">
+          <div class="settings-brand-mark" aria-hidden="true">E</div>
+          <div><div class="settings-sidebar-title">EssayFlow</div><div class="settings-sidebar-caption">偏好设置</div></div>
+        </div>
+        <div class="settings-tabs" role="tablist" aria-label="设置分类">
+          <button class="settings-tab active" data-tab="general" data-title="通用" data-description="调整外观、引用规范与常用交互。" role="tab" aria-selected="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a8 8 0 0 0-1.7-1L14.5 3h-5L9 6.1a8 8 0 0 0-1.7 1l-2.4-1-2 3.4L5 11a7 7 0 0 0 0 2l-2.1 1.5 2 3.4 2.4-1a8 8 0 0 0 1.7 1l.5 3.1h5l.5-3.1a8 8 0 0 0 1.7-1l2.4 1 2-3.4L19 13a7 7 0 0 0 .1-1z"/></svg><span><strong>通用</strong><small>外观与来源</small></span></button>
+          <button class="settings-tab" data-tab="ai-features" data-title="AI 功能" data-description="选择哪些辅助能力可以参与写作流程。" role="tab" aria-selected="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.4 5.1L18 10l-4.6 1.9L12 17l-1.4-5.1L6 10l4.6-1.9L12 3z"/><path d="M19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7L19 15z"/></svg><span><strong>AI 功能</strong><small>辅助能力开关</small></span></button>
+          <button class="settings-tab" data-tab="ai" data-title="AI 服务" data-description="配置模型服务与本机安全凭据。" role="tab" aria-selected="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="6" width="16" height="12" rx="3"/><path d="M9 11h.01M15 11h.01M9 15h6M12 3v3"/></svg><span><strong>AI 服务</strong><small>模型与凭据</small></span></button>
+          <button class="settings-tab" data-tab="shortcuts" data-title="快捷键" data-description="定制适合自己写作习惯的操作方式。" role="tab" aria-selected="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 10h.01M11 10h.01M15 10h2M7 14h3M12 14h5"/></svg><span><strong>快捷键</strong><small>键盘与滚轮</small></span></button>
+        </div>
+        <div class="settings-sidebar-note"><span></span>设置会保存在当前设备</div>
+      </div>
+      <button class="settings-close" aria-label="关闭设置">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="settings-body">
+        <header class="settings-page-header">
+          <div class="modal-eyebrow">Preferences</div>
+          <h2 id="settings-page-title">通用</h2>
+          <p id="settings-page-description">调整外观、引用规范与常用交互。</p>
+        </header>
+        <div class="settings-section" data-section="general" role="tabpanel">
+          <h3>写作与外观</h3>
+          <div class="settings-form-row">
+            <label for="default-reference-style">默认引用格式</label>
+            <select id="default-reference-style">
+              <option value="APA">APA 7th</option>
+              <option value="MLA">MLA 9th</option>
+              <option value="Chicago">Chicago 17th</option>
+              <option value="IEEE">IEEE</option>
+              <option value="Harvard">Harvard</option>
+              <option value="GB/T">GB/T 7714</option>
+            </select>
+          </div>
+          <div class="settings-form-row toggle-row">
+            <div class="toggle-label">
+              <div>深色模式</div>
+              <div class="toggle-desc">切换应用为深色/浅色主题。</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="theme-dark-toggle" aria-label="深色模式">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <!-- 论文来源配置 -->
+          <div class="settings-form-row source-config-row">
+            <div class="source-config-header" id="source-config-toggle">
+              <span class="settings-row-label">配置论文来源</span>
+              <svg class="source-config-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </div>
+            <div class="source-config-body" id="source-config-body" style="display:none;">
+              <div class="source-list" id="source-list"></div>
+              <button class="source-add-btn" id="source-add-btn" title="添加来源">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="settings-form-row toggle-row">
+            <div class="toggle-label">
+              <div>鼠标移开自动关闭浮窗</div>
+              <div class="toggle-desc">开启后，鼠标移出浮窗区域时自动关闭；关闭时，需要点击空白处关闭。</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toolbar-autoclose-toggle" aria-label="鼠标移开自动关闭浮窗">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-section" data-section="ai-features" style="display:none;" role="tabpanel">
+          <h3>辅助能力</h3>
+          <div class="settings-form-row toggle-row">
+            <div class="toggle-label">
+              <div>AI 识别文献信息</div>
+              <div class="toggle-desc">开启后，导入文献时将调用 AI 自动识别标题、作者、发布时间等信息。关闭则使用程序自动识别。</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="ai-literature-toggle" aria-label="AI 识别文献信息">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="settings-form-row toggle-row">
+            <div class="toggle-label">
+              <div>AI 文献验证</div>
+              <div class="toggle-desc">开启后，AI 助手可以使用 //verify 命令验证引用真实性，通过 Crossref 和 Semantic Scholar 权威数据库核实 DOI、标题和引用数。</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="ai-verify-toggle" aria-label="AI 文献验证">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+              <div class="settings-form-row toggle-row">
+                <div class="toggle-label">
+                  <div>AI 智能关键词总结</div>
+                  <div class="toggle-desc">开启后，AI 将自动阅读您的文章内容并总结最适合搜索论文的学术关键词，与自动提取的关键词合并搜索。</div>
+                </div>
+                <label class="toggle-switch">
+              <input type="checkbox" id="ai-search-toggle" aria-label="AI 智能关键词总结">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-section" data-section="ai" style="display:none;" role="tabpanel">
+          <h3>模型服务</h3>
+          <div class="settings-form-row">
+            <label for="ai-provider">提供商</label>
+            <select id="ai-provider">
+              <option value="deepseek">DeepSeek</option>
+              <option value="kimi">Kimi</option>
+              <option value="custom">自定义</option>
+            </select>
+          </div>
+          <div class="settings-form-row">
+            <label for="ai-base-url">API Base URL</label>
+            <input type="text" id="ai-base-url" placeholder="https://api.example.com/v1">
+          </div>
+          <div class="settings-form-row">
+            <label for="ai-api-key">API Key</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="ai-api-key" placeholder="sk-...">
+              <button id="ai-toggle-key" class="toggle-password-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="settings-form-row">
+            <label for="ai-model">模型名称</label>
+            <input type="text" id="ai-model" placeholder="模型名称">
+          </div>
+          <button id="ai-test-connection" class="settings-test-btn">测试连接</button>
+        </div>
+        <div class="settings-section" data-section="shortcuts" style="display:none;" role="tabpanel">
+          <h3>键盘与滚轮</h3>
+          <div class="shortcut-desc">点击快捷键输入框，按下组合键即可设置；按 Esc 取消录制。冲突的快捷键不会生效。</div>
+          <div id="shortcuts-list" class="shortcuts-list"></div>
+          <div class="shortcut-special-section">
+            <h4>特殊按键</h4>
+            <div id="shortcuts-special-list" class="shortcuts-special-list"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 优先关键词悬浮提示 -->
+  <div id="priority-keyword-tooltip" class="priority-keyword-tooltip" style="display:none;">
+    <span class="priority-keyword-tooltip-text">已设为优先关键词</span>
+    <button class="priority-keyword-remove">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- 表格插入对话框 -->
+  <div id="table-insert-dialog" class="table-insert-dialog" style="display:none;" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="table-insert-title">
+    <div id="table-insert-title" class="table-insert-title">插入表格</div>
+    <div class="table-insert-body">
+      <div class="table-input-row">
+        <label>行数</label>
+        <input type="number" id="table-rows" min="1" max="50" value="3">
+      </div>
+      <div class="table-input-row">
+        <label>列数</label>
+        <input type="number" id="table-cols" min="1" max="50" value="3">
+      </div>
+    </div>
+    <div class="table-insert-footer">
+      <button id="table-insert-cancel" class="table-btn-secondary">取消</button>
+      <button id="table-insert-confirm" class="table-btn-primary">插入</button>
+    </div>
+  </div>
+
+  <div id="table-cell-edit-dialog" class="table-insert-dialog table-cell-edit-dialog" style="display:none;" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="table-cell-edit-title">
+    <div id="table-cell-edit-title" class="table-insert-title">编辑单元格</div>
+    <div class="table-insert-body">
+      <textarea id="table-cell-edit-input" rows="5" maxlength="5000" aria-label="单元格内容"></textarea>
+    </div>
+    <div class="table-insert-footer">
+      <button id="table-cell-edit-cancel" class="table-btn-secondary">取消</button>
+      <button id="table-cell-edit-save" class="table-btn-primary">保存</button>
+    </div>
+  </div>
+
+  <!-- 表格右键菜单 -->
+  <div id="table-context-menu" class="table-context-menu" style="display:none;" role="menu" aria-hidden="true">
+    <div class="table-ctx-item" data-action="edit-cell">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+      <span>编辑单元格</span>
+    </div>
+    <div class="table-ctx-divider"></div>
+    <div class="table-ctx-item" data-action="insert-row-above">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>上方插入行</span>
+    </div>
+    <div class="table-ctx-item" data-action="insert-row-below">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>下方插入行</span>
+    </div>
+    <div class="table-ctx-item" data-action="delete-row">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>删除行</span>
+    </div>
+    <div class="table-ctx-divider"></div>
+    <div class="table-ctx-item" data-action="insert-col-left">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg>
+      <span>左侧插入列</span>
+    </div>
+    <div class="table-ctx-item" data-action="insert-col-right">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg>
+      <span>右侧插入列</span>
+    </div>
+    <div class="table-ctx-item" data-action="delete-col">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>删除列</span>
+    </div>
+    <div class="table-ctx-divider"></div>
+    <div class="table-ctx-item table-ctx-danger" data-action="delete-table">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+      <span>删除表格</span>
+    </div>
+  </div>
+
+  <!-- 匹配操作浮窗（逐个确认） -->
+  <div id="match-action-float" class="match-action-float" style="display:none;">
+    <button class="match-btn match-replace" data-tooltip="替换此项">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    </button>
+    <button class="match-btn match-skip" data-tooltip="跳过此项">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- 思维导图浮窗（fixed 定位，通过 JS 动态计算位置） -->
+  <div id="mindmap-panel" class="mindmap-panel">
+    <div class="mindmap-header">
+      <span>文章导图</span>
+      <button id="mindmap-close" class="btn-back btn-back-sm" style="display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mindmap-container" class="mindmap-container"></div>
+  </div>
+
+  <!-- 添加/编辑来源浮窗 -->
+  <div id="source-modal" class="source-modal" style="display:none;" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="source-modal-title">
+    <div class="source-modal-overlay"></div>
+    <div class="source-modal-content">
+      <div class="source-modal-header">
+        <h3 id="source-modal-title">添加来源</h3>
+        <button class="source-modal-close" id="source-modal-close" aria-label="关闭来源设置">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="source-modal-body">
+        <div class="settings-form-row">
+          <label>来源名称</label>
+          <input type="text" id="source-modal-name" placeholder="例如：PubMed">
+        </div>
+        <div class="settings-form-row">
+          <label>API URL</label>
+          <input type="text" id="source-modal-url" placeholder="https://api.example.com/search">
+        </div>
+        <div class="settings-form-row">
+          <label>API Key（可选）</label>
+          <input type="text" id="source-modal-key" placeholder="留空表示不需要认证">
+        </div>
+      </div>
+      <div class="source-modal-footer">
+        <button class="source-modal-cancel" id="source-modal-cancel">取消</button>
+        <button class="source-modal-save" id="source-modal-save">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 删除来源确认弹窗 -->
+  <div id="source-delete-confirm" class="source-delete-confirm" style="display:none;" role="dialog" aria-modal="true" aria-hidden="true" aria-label="确认删除来源">
+    <div class="source-delete-overlay"></div>
+    <div class="source-delete-content">
+      <div class="source-delete-text">确定要删除这个来源吗？</div>
+      <div class="source-delete-actions">
+        <button class="source-delete-cancel" id="source-delete-cancel">取消</button>
+        <button class="source-delete-confirm-btn" id="source-delete-confirm-btn">删除</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 运行时依赖全部从安装包本地加载。脚本放在所有界面节点之后，消除初始化竞态。 -->
+  <script src="../node_modules/quill/dist/quill.js"></script>
+  <script src="../node_modules/html2pdf.js/dist/html2pdf.bundle.min.js"></script>
+  <script src="../node_modules/mammoth/mammoth.browser.min.js"></script>
+  <script src="data-client.js"></script>
+  <script src="app.js"></script>
+  <script src="ai-assistant.js"></script>
+  <script src="settings.js"></script>
+  <script src="pdf-evidence.js"></script>
+  <script src="evidence.js"></script>
+  <script src="trusted-ai-ui.js"></script>
+  <script src="search.js"></script>
+  <script src="review-matrix-ui.js"></script>
+
+</body>
+</html>

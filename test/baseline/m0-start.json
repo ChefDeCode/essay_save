@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-07-16T00:00:00.000Z",
+  "gitRepositoryAvailable": false,
+  "changedLinesCoverageClaimed": false,
+  "sourceTreeSha256": "77d6854405a2cdd729c592d65904fec613cc9cfd869c4bf86d5d21de911db932",
+  "fileCount": 16,
+  "packageLockSha256": "eec06ab196cd45d495ca67eea4dead471c49c66ce100f1887fa75206dff2bc0a",
+  "handoff": "Previous optimization work was complete and all other agents had stopped before M0 writes began. Existing autosave, atomic base writes, search cancellation, PDF lazy rendering, AI SSE, table editing, window hardening and pinned local dependencies are part of this baseline."
+}

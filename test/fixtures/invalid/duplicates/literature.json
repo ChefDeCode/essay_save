@@ -1,0 +1,12 @@
+[
+  {
+    "id": "duplicate-doi-a",
+    "title": "Synthetic DOI A",
+    "doi": "10.5555/EssayFlow.Duplicate"
+  },
+  {
+    "id": "duplicate-doi-b",
+    "title": "Synthetic DOI B",
+    "doi": "https://doi.org/10.5555/essayflow.duplicate"
+  }
+]

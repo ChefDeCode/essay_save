@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 999,
+  "workspaceId": "synthetic-future-schema",
+  "createdAt": "2026-07-16T00:00:00.000Z",
+  "projects": [],
+  "expectedBehavior": "read-only-and-refuse-write",
+  "synthetic": true
+}

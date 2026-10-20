@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "suite": "library-responsive",
+  "passed": true,
+  "sourceTreeSha256": "ecfe0613956c93c97d451b57c462aab0727374a82fd74d6ac365abb0524dea63",
+  "sourceTreeFileCount": 173,
+  "widths": [
+    {
+      "requestedWidth": 480,
+      "actualWidth": 480,
+      "headerLayout": {
+        "height": 105,
+        "flexDirection": "row",
+        "actionsBottom": 95,
+        "controlsTop": 105,
+        "overlapsControls": false
+      },
+      "horizontalOverflow": 0,
+      "escaped": [],
+      "headerEscaped": [],
+      "chipCount": 2,
+      "filterExpanded": "true",
+      "darkMode": true,
+      "filterAnimationDuration": 320,
+      "actionMotion": {
+        "start": 226,
+        "middle": 498,
+        "end": 516
+      },
+      "idleFieldBackground": "rgba(0, 0, 0, 0)",
+      "customSelect": {
+        "open": true,
+        "focusedBackground": "rgb(230, 180, 34)",
+        "menuTransitionMs": 300,
+        "controlCount": 12
+      },
+      "queryFocused": true,
+      "fieldClassName": "library-search-field",
+      "fieldMatchesFocusWithin": true,
+      "queryOutlineStyle": "none",
+      "queryBoxShadow": "none",
+      "fieldFocusShadow": "none",
+      "fieldFocusBorderColor": "rgba(0, 0, 0, 0)",
+      "serious": [],
+      "screenshot": "artifacts/a11y/library-panel-480.png"
+    },
+    {
+      "requestedWidth": 360,
+      "actualWidth": 360,
+      "headerLayout": {
+        "height": 105,
+        "flexDirection": "column",
+        "actionsBottom": 94,
+        "controlsTop": 105,
+        "overlapsControls": false
+      },
+      "horizontalOverflow": 0,
+      "escaped": [],
+      "headerEscaped": [],
+      "chipCount": 2,
+      "filterExpanded": "true",
+      "darkMode": true,
+      "filterAnimationDuration": 0,
+      "actionMotion": null,
+      "idleFieldBackground": "rgba(0, 0, 0, 0)",
+      "customSelect": null,
+      "queryFocused": true,
+      "fieldClassName": "library-search-field",
+      "fieldMatchesFocusWithin": true,
+      "queryOutlineStyle": "none",
+      "queryBoxShadow": "none",
+      "fieldFocusShadow": "none",
+      "fieldFocusBorderColor": "rgba(0, 0, 0, 0)",
+      "serious": [],
+      "screenshot": "artifacts/a11y/library-panel-360.png"
+    },
+    {
+      "requestedWidth": 280,
+      "actualWidth": 280,
+      "headerLayout": {
+        "height": 105,
+        "flexDirection": "column",
+        "actionsBottom": 94,
+        "controlsTop": 105,
+        "overlapsControls": false
+      },
+      "horizontalOverflow": 0,
+      "escaped": [],
+      "headerEscaped": [],
+      "chipCount": 2,
+      "filterExpanded": "true",
+      "darkMode": true,
+      "filterAnimationDuration": 0,
+      "actionMotion": null,
+      "idleFieldBackground": "rgba(0, 0, 0, 0)",
+      "customSelect": null,
+      "queryFocused": true,
+      "fieldClassName": "library-search-field",
+      "fieldMatchesFocusWithin": true,
+      "queryOutlineStyle": "none",
+      "queryBoxShadow": "none",
+      "fieldFocusShadow": "none",
+      "fieldFocusBorderColor": "rgba(0, 0, 0, 0)",
+      "serious": [],
+      "screenshot": "artifacts/a11y/library-panel-280.png"
+    }
+  ],
+  "customSelectPreview": {
+    "open": true,
+    "activeLabel": "BibTeX",
+    "activeBackground": "rgb(230, 180, 34)",
+    "screenshot": "artifacts/a11y/library-custom-select-gold.png"
+  },
+  "interaction": {
+    "chips": 1,
+    "batchHidden": false,
+    "escaped": [],
+    "batchAnimationDuration": 320
+  },
+  "emptyLibrary": {
+    "text": "暂无论文，请从“发现”或标准引用文件导入",
+    "color": "rgb(137, 137, 146)",
+    "bodyColor": "rgb(245, 245, 247)"
+  },
+  "evidenceSearch": {
+    "initiallyHidden": true,
+    "compactOpenedOnHover": true,
+    "detailedOpenedOnClick": true,
+    "compactClosedOnClick": true,
+    "activeElement": "evidence-query",
+    "ariaExpanded": "true"
+  },
+  "collapsePreview": {
+    "before": {
+      "panelWidth": 360,
+      "workspaceWidth": 1011
+    },
+    "partiallyDraggedWidth": 330,
+    "partiallyDraggedSettledWidth": 330,
+    "restoredDragWidth": 360,
+    "collapsed": true,
+    "panelWidth": 1,
+    "workspaceWidth": 1371,
+    "panelAriaHidden": "true",
+    "panelInert": true,
+    "railClass": true,
+    "toggleLabel": "展开资料栏",
+    "toggleExpanded": "false",
+    "toggleOpacity": "1",
+    "toggleVisibleText": "",
+    "railPointerY": 541.96,
+    "expectedPointerY": 541.96,
+    "toggleCenterY": 541.9530944824219,
+    "toggleBorderStyle": "none",
+    "toggleBackground": "rgba(0, 0, 0, 0)",
+    "highlightOpacity": "1",
+    "railActive": true,
+    "persistedCollapsed": true,
+    "persistedExpandedRight": 360,
+    "screenshot": "artifacts/a11y/research-pane-collapsed.png"
+  },
+  "railReset": {
+    "pointerY": 398.5,
+    "centerY": 398.5,
+    "highlightOpacity": 0.28,
+    "toggleOpacity": 0,
+    "railActive": false
+  },
+  "aiAutoExpandedPane": {
+    "collapsed": false,
+    "panelWidth": 360,
+    "panelAriaHidden": null,
+    "panelInert": false,
+    "toggleLabel": "收起资料栏",
+    "toggleExpanded": "true",
+    "persistedCollapsed": false,
+    "aiVisible": true,
+    "aiDisplay": "flex",
+    "dividerColor": "rgba(255, 255, 255, 0.1)",
+    "expectedDividerColor": "rgba(255, 255, 255, 0.1)",
+    "inputBackground": "rgb(28, 28, 30)",
+    "expectedInputBackground": "rgb(28, 28, 30)",
+    "moreButtonColor": "rgb(199, 199, 204)",
+    "expectedMoreButtonColor": "rgb(199, 199, 204)",
+    "moreIconStroke": "rgb(199, 199, 204)",
+    "privacyEnhanced": true,
+    "privacyNativeDisplay": "none",
+    "privacyMenuOpen": true,
+    "privacyTriggerBackground": "color(srgb 0.137148 0.131322 0.121918 / 0.865726)",
+    "privacyMenuBackground": "rgb(32, 33, 36)",
+    "privacyHighlightBackground": "rgb(230, 180, 34)",
+    "privacyHighlightColor": "rgb(43, 33, 0)",
+    "screenshot": "artifacts/a11y/dark-ai-assistant.png"
+  },
+  "aiHintAnchoring": {
+    "expandedBefore": {
+      "workspaceWidth": 1011,
+      "lineViewportLeft": 121.9296875,
+      "hintViewportLeft": 121.9296875,
+      "inlineLeft": 69.9297,
+      "expectedLeft": 69.9296875,
+      "delta": 0.000012499999996862243,
+      "visible": true
+    },
+    "collapsed": {
+      "workspaceWidth": 1371,
+      "lineViewportLeft": 287.5,
+      "hintViewportLeft": 287.5,
+      "inlineLeft": 235.5,
+      "expectedLeft": 235.5,
+      "delta": 0,
+      "visible": true
+    },
+    "expandedAfter": {
+      "workspaceWidth": 1011,
+      "lineViewportLeft": 121.9296875,
+      "hintViewportLeft": 121.9296875,
+      "inlineLeft": 69.9297,
+      "expectedLeft": 69.9296875,
+      "delta": 0.000012499999996862243,
+      "visible": true
+    },
+    "screenshot": "artifacts/a11y/ai-hint-anchored.png"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "buildRunId": "5b049293-885e-41eb-b136-b9f75b5504c6",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "target": "win-unpacked",
+  "artifact": "dist/win-unpacked/EssayFlow.exe",
+  "targetArtifactSha256": null,
+  "executableSha256": "069f0302fd59bed6e398e1b32d2b4dd8adcc142529f14466e7ebfe109d7d2666",
+  "appPayloadSha256": "df542697699da59c4388c7f1bace61df081933c5f46a6cafb33be32de03019c1",
+  "extractedAppPayloadSha256": "df542697699da59c4388c7f1bace61df081933c5f46a6cafb33be32de03019c1",
+  "winUnpackedTreeSha256": "aa530f7de0bac9a4a0d10c8ca2fd129021b5a002def7577b8c75cc265a8867da",
+  "signature": {
+    "Status": "NotSigned",
+    "Signer": "",
+    "TimeStamper": ""
+  },
+  "internalTestOnly": true,
+  "smoke": {
+    "attempted": true,
+    "exitCode": 0
+  },
+  "extraction": [],
+  "failures": [
+    "产物缺少可验证的 Authenticode 签名和时间戳，只能作为内部测试包"
+  ],
+  "passed": false
+}

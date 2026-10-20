@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "milestone": "m4",
+  "scenario": "grounded answer, invalid token, review Diff, audit, attachment retention and local-only",
+  "fixtureData": "synthetic",
+  "passed": true,
+  "sourceTreeSha256": "713c75e423bcd51582f1c7d25f2e70d7134a1e120e3e74096ee900f226df523c",
+  "sourceTreeFileCount": 173,
+  "mockTransport": {
+    "requestCount": 8,
+    "authorizationPresentCount": 8,
+    "payloadSha256": [
+      "32a57e5f78630e4df5dcdc3f6beab2bbc374ab68e542b67aae3adf53300ff016",
+      "c516c1f848e247a74035ff3e224fef12ff28afc86ca4e8ba184489d1475fd62d",
+      "c0c696c87fceb939b2bf0521bbc19528c3e7de687d359df367eae3bb17cd485f",
+      "2a3708ea759f187da8d33d01165ede4501b55c77159c027949fcbe4ecfb4a845",
+      "0062242d089217413f26f01136ff5f82b5b22697606fc4111675a53083310cbc",
+      "f535a54da517f554a69c5be03e9e8a630e1ebe2f9a1043fdfbc5ed44954c756d",
+      "f535a54da517f554a69c5be03e9e8a630e1ebe2f9a1043fdfbc5ed44954c756d",
+      "54d7b14491a428e87758bb78e84bcb5f68c20b6b532ce7a836827794c358a751"
+    ]
+  },
+  "first": {
+    "projectId": "beadb966-f62b-4162-9995-bf2c51ce4495",
+    "sourcedButtons": [
+      {
+        "text": "M4 Evidence Fixture · PDF 第 1 页",
+        "quote": "The comparison group showed no measurable improvement."
+      },
+      {
+        "text": "M4 Evidence Fixture · PDF 第 1 页",
+        "quote": "The intervention improved the primary outcome."
+      }
+    ],
+    "groundedKinds": [
+      "已关联来源",
+      "已关联来源",
+      "AI 推断"
+    ],
+    "groundedSanitizations": [
+      {
+        "code": "model-review-authority-dropped",
+        "path": "segments[0].userReviewStatus",
+        "reason": "模型无权把用户审阅状态设为 confirmed，已强制改为 unreviewed"
+      }
+    ],
+    "paraphraseUnchanged": true,
+    "paraphraseSourceVisible": true,
+    "paraphraseAccepted": true,
+    "insufficientSourceCount": 0,
+    "e99SourceCount": 0,
+    "unchangedBeforeDecision": true,
+    "acceptedText": "M4 可信 AI 验收\nRevised fixture sentence for assessment.\nThe primary outcome improved following the intervention.\n",
+    "restoredText": "M4 可信 AI 验收\nFixture sentence for review.\nThe primary outcome improved following the intervention.\n",
+    "restoredRevision": 31,
+    "retainedMode": "retain-excerpt",
+    "auditRows": 20,
+    "localOnlyBefore": 0,
+    "blockedAuditType": "ai-blocked",
+    "scholarlyBlocked": true,
+    "pdfBlocked": true,
+    "pdfBlockedAudit": true,
+    "historyStates": [
+      "来源后来已归档",
+      "来源后来已变更"
+    ],
+    "secretLeakCount": 0
+  },
+  "restart": {
+    "privacyMode": "local-only",
+    "chatRestored": true,
+    "retainedModes": [
+      "retain-excerpt"
+    ],
+    "auditSequences": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ]
+  },
+  "screenshot": "artifacts/screenshots/m4-trusted-ai.png"
+}

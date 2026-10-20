@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "milestone": "m5",
+  "scenario": "ten-paper review matrix, proposed evidence, abstract drafts, corrupt isolation, CSV/XLSX and local-only",
+  "fixtureData": "synthetic",
+  "passed": true,
+  "sourceTreeSha256": "713c75e423bcd51582f1c7d25f2e70d7134a1e120e3e74096ee900f226df523c",
+  "sourceTreeFileCount": 173,
+  "mockTransport": {
+    "requestCount": 9,
+    "authorizationPresentCount": 9,
+    "payloadSha256": [
+      "d1a508005086251ca54801952958eb380220a412c484b3718e44e8724c7db8c0",
+      "fd8c9c6a8987a6f1e99d077d734239c47afac4e2bc13a525984fe2c2074eb374",
+      "d269299956b798bbe216a097e60d49a5b21216593ae3d97167f8f17e1412d88b",
+      "15dbe34c49b68029bfd48727a999ea3ef046d0139467e90773aa72e9d3910a40",
+      "7982cb8790a2730470d844fd6d352508a7f06b5a69609f14f42493bd9cfcd5b3",
+      "fc9d1b04f8e3a28c5d66342f874fa0d6c41b147b3d937ba5b694c5774161f983",
+      "4d53a26157aab53d686019bc67019c501c4506fc1b6dcaf6f18ed721757f4880",
+      "daa89c2a1cb2859402b99f1e1ab7d7baca9bec894c6fd3bd1052436f5e3363c7",
+      "a874cffe86899fd260aa73f55ccfc3284f7039f4c4bb7ff0a4beda5818a252ae"
+    ]
+  },
+  "first": {
+    "projectId": "4dbbab9d-b243-4162-8f8c-2736633dc6aa",
+    "matrixId": "c3970013-bf07-4d8f-9af1-1eb3e964afab",
+    "rowCount": 10,
+    "pdfRowCount": 7,
+    "abstractRowCount": 2,
+    "failedRowCount": 1,
+    "protectedValue": "用户先写的方法，不得被默认覆盖",
+    "protectedUserEdited": true,
+    "evidenceBoundCellCount": 20,
+    "abstractSnapshotCount": 6,
+    "abstractCellCount": 6,
+    "cellsMissingCitationId": 0,
+    "confirmMessages": [
+      "覆盖手工内容？\n\n文献：M5 候选文献 1\n字段：方法\n当前值：用户先写的方法，不得被默认覆盖",
+      "确认向 http://127.0.0.1:49291 / m5-deterministic-model 发送本批矩阵范围？\n\n合计：10 篇｜7 页｜预计发送 4848 字符\n\nM5 候选文献 1｜pdf｜1 页｜532 字符\nM5 候选文献 9｜abstract｜0 页｜562 字符\nM5 候选文献 5｜pdf｜1 页｜532 字符\nM5 候选文献 8｜abstract｜0 页｜562 字符\nM5 候选文献 6｜pdf｜1 页｜532 字符\nM5 候选文献 7｜pdf｜1 页｜532 字符\nM5 候选文献 2｜pdf｜1 页｜532 字符\nM5 候选文献 10｜corrupt｜0 页｜0 字符\nM5 候选文献 3｜pdf｜1 页｜532 字符\nM5 候选文献 4｜pdf｜1 页｜532 字符",
+      "覆盖手工内容？\n\n文献：M5 候选文献 1\n字段：方法\n当前值：用户先写的方法，不得被默认覆盖"
+    ],
+    "evidenceRevisionCount": 20,
+    "proposedEvidenceCount": 20,
+    "modelConfirmedCellCount": 0,
+    "blockedAudit": true,
+    "blockedAuditOperations": [
+      "matrix-extraction"
+    ],
+    "durablePrivacyMode": "local-only",
+    "beforeBlockedRequests": 0,
+    "finalRevision": 54,
+    "localOnlyManual": true,
+    "statusText": "已导出 XLSX：12795 字节"
+  },
+  "restart": {
+    "privacyMode": "local-only",
+    "matrixCount": 1,
+    "rowCount": 10,
+    "manualRestored": true,
+    "renderedRows": 10,
+    "modalHidden": "false",
+    "matrixStatus": "显示 10/10 篇；已选 0 篇",
+    "matrixOptionCount": 1
+  },
+  "exports": {
+    "csvZip": "../../AppData/Local/Temp/essayflow-m5-e2e-ZlxccH/TestExports/EssayFlow-Matrix-CSV.zip",
+    "xlsx": "../../AppData/Local/Temp/essayflow-m5-e2e-ZlxccH/TestExports/EssayFlow-Matrix.xlsx"
+  },
+  "screenshot": "artifacts/screenshots/m5-review-matrix.png"
+}

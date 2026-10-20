@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "formats": {
+    "csl-json": {
+      "lossless": true,
+      "unsupportedFields": []
+    },
+    "bibtex": {
+      "lossless": false,
+      "unsupportedFields": [
+        "metadataProvenance",
+        "verifiedAt",
+        "fieldConfidence",
+        "privateNote",
+        "tags",
+        "starred",
+        "assetRefs"
+      ],
+      "conditionalLoss": {
+        "accessed": "BibTeX does not have a canonical accessed-date field; exporters may encode it as note/urldate.",
+        "literal-author": "Institution authors are representable with braces, but third-party importers may reinterpret them as personal names."
+      }
+    },
+    "ris": {
+      "lossless": false,
+      "unsupportedFields": [
+        "metadataProvenance",
+        "verifiedAt",
+        "fieldConfidence",
+        "privateNote",
+        "tags",
+        "starred",
+        "assetRefs",
+        "title-short",
+        "publisher-place",
+        "language"
+      ],
+      "conditionalLoss": {
+        "literal-author": "RIS has no reliable organization-author marker; compatible tools may reinterpret the name.",
+        "date-precision": "RIS readers commonly preserve year but may discard month/day precision."
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "suite": "unit",
+  "updatedAt": "2026-07-16T10:33:59.028Z",
+  "nodeVersion": "v24.18.0",
+  "thresholds": {
+    "lines": 85,
+    "functions": 85,
+    "branches": 80
+  },
+  "maximumDropPercentagePoints": 2,
+  "sourceTreeSha256": "9475bf1b9cd7f1a9fc085c2127065f742e19eae7df9174ab2cd739e9c3a55bd8",
+  "sourceTreeFileCount": 82,
+  "metrics": {
+    "lines": 90.16,
+    "functions": 93.75,
+    "branches": 82.55
+  },
+  "sourceFiles": [
+    "scripts/generate-fixtures.js",
+    "scripts/lib/architecture-ratchet.js",
+    "scripts/lib/cdp-client.js",
+    "scripts/lib/electron-driver.js",
+    "scripts/lib/package-verifier.js",
+    "scripts/lib/profile-guard.js",
+    "scripts/lib/runtime-assets.js",
+    "scripts/lib/source-tree.js",
+    "scripts/run-packaged-smoke.js",
+    "scripts/run-tests.js",
+    "scripts/verify-package.js",
+    "scripts/verify-runtime-assets.js"
+  ],
+  "lcovSha256": "fb4c2f597dcf0a2c5b441e535712939e78c1cfd7a43d29358cb15b9f6176c00d"
+}

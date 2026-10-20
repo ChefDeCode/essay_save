@@ -1,0 +1,61 @@
+TY  - JOUR
+ID  - synthetic-article
+TI  - 合成证据研究 Synthetic Evidence Study
+AU  - Wang, Wei
+AU  - 王, 伟
+AU  - Synthetic Research Institute
+PY  - 2025
+JO  - Fixture Journal
+VL  - 12
+IS  - 3
+SP  - 10
+EP  - 24
+DO  - 10.5555/essayflow.article
+ER  -
+
+TY  - CHAP
+ID  - synthetic-chapter
+TI  - A Synthetic Book Chapter
+AU  - Fixture, Alice
+A2  - Example, Erin
+T2  - Handbook of Generated Scholarship
+PB  - Fixture Press
+PY  - 2024
+SP  - 101
+EP  - 120
+ER  -
+
+TY  - CONF
+ID  - synthetic-conference
+TI  - Deterministic Conference Fixture
+AU  - Tester, Bo
+T2  - Proceedings of the Synthetic Methods Conference
+PY  - 2023
+SP  - 1
+EP  - 8
+ER  -
+
+TY  - THES
+ID  - synthetic-thesis
+TI  - 合成学位论文
+AU  - Li, Ming
+PB  - Synthetic University
+PY  - 2022
+ER  -
+
+TY  - RPRT
+ID  - synthetic-institution
+TI  - Institutional Fixture Report
+AU  - Synthetic Research Institute
+PB  - Synthetic Research Institute
+PY  - 2021
+ER  -
+
+TY  - ELEC
+ID  - synthetic-web
+TI  - Synthetic Web Resource
+AU  - EssayFlow Fixture Group
+PY  - 2020
+UR  - https://example.invalid/synthetic-resource
+Y2  - 2026/07/16
+ER  -

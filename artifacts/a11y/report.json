@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "suite": "a11y",
+  "scope": "M5 review matrix modal",
+  "engine": {
+    "name": "axe-core",
+    "version": "4.12.1"
+  },
+  "passed": true,
+  "axeCriticalSerious": 0,
+  "overflowOverlapDetectorFailures": 0,
+  "sourceTreeSha256": "ecfe0613956c93c97d451b57c462aab0727374a82fd74d6ac365abb0524dea63",
+  "sourceTreeFileCount": 173,
+  "keyboard": {
+    "count": 55,
+    "beforeForward": true,
+    "beforeBackward": true,
+    "wrappedForward": true,
+    "wrappedBackward": true,
+    "closed": true,
+    "closeMotionDuration": 430,
+    "focusHeldDuringExit": true,
+    "namedControls": true
+  },
+  "scales": [
+    {
+      "scalePercent": 100,
+      "viewport": {
+        "width": 1500,
+        "height": 900
+      },
+      "darkMode": true,
+      "tableShellBackground": "rgb(29, 29, 31)",
+      "toolbarButtonRadius": 11,
+      "serious": [],
+      "allViolations": [],
+      "incompleteCount": 3,
+      "escaped": [],
+      "screenshot": "artifacts/a11y/m5-matrix-100.png"
+    },
+    {
+      "scalePercent": 125,
+      "viewport": {
+        "width": 1200,
+        "height": 720
+      },
+      "darkMode": true,
+      "tableShellBackground": "rgb(29, 29, 31)",
+      "toolbarButtonRadius": 11,
+      "serious": [],
+      "allViolations": [],
+      "incompleteCount": 3,
+      "escaped": [],
+      "screenshot": "artifacts/a11y/m5-matrix-125.png"
+    },
+    {
+      "scalePercent": 150,
+      "viewport": {
+        "width": 1000,
+        "height": 600
+      },
+      "darkMode": true,
+      "tableShellBackground": "rgb(29, 29, 31)",
+      "toolbarButtonRadius": 11,
+      "serious": [],
+      "allViolations": [],
+      "incompleteCount": 3,
+      "escaped": [],
+      "screenshot": "artifacts/a11y/m5-matrix-150.png"
+    }
+  ]
+}

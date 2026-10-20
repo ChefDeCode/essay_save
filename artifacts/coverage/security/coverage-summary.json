@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "suite": "security",
+  "generatedAt": "2026-07-17T16:28:27.997Z",
+  "startedAt": "2026-07-17T16:28:26.728Z",
+  "nodeVersion": "v24.18.0",
+  "platform": "win32-x64",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "thresholds": {
+    "lines": 85,
+    "functions": 85,
+    "branches": 80
+  },
+  "maximumBaselineDropPercentagePoints": 2,
+  "baselineMode": "compare",
+  "acceptedBaselinePath": "test/baseline/coverage.json",
+  "acceptedBaselineMetrics": null,
+  "passed": true,
+  "processExitCode": 0,
+  "failures": [],
+  "testFiles": [
+    "test/security/secure-transport.test.js"
+  ],
+  "lcov": {
+    "path": "artifacts/coverage/security/lcov.info",
+    "sha256": "507e5525396b91f1fcfdfd95662631acd5449d3107bced426ce5303f05f4a70b"
+  },
+  "coverage": {
+    "totals": {
+      "lines": {
+        "found": 176,
+        "hit": 167,
+        "percent": 94.89
+      },
+      "functions": {
+        "found": 19,
+        "hit": 17,
+        "percent": 89.47
+      },
+      "branches": {
+        "found": 114,
+        "hit": 95,
+        "percent": 83.33
+      }
+    },
+    "files": [
+      {
+        "file": "src/main/ai/secure-transport.js",
+        "lines": {
+          "found": 176,
+          "hit": 167,
+          "percent": 94.89
+        },
+        "functions": {
+          "found": 19,
+          "hit": 17,
+          "percent": 89.47
+        },
+        "branches": {
+          "found": 114,
+          "hit": 95,
+          "percent": 83.33
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "fixtureType": "corrupt-index-intact-project",
+  "recoverableProjectId": "recoverable-project",
+  "expectedRecoveredTitle": "未命名（已恢复）",
+  "synthetic": true
+}

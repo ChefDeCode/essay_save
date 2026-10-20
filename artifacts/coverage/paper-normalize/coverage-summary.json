@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "suite": "paper-normalize",
+  "generatedAt": "2026-07-17T16:28:03.429Z",
+  "startedAt": "2026-07-17T16:28:03.270Z",
+  "nodeVersion": "v24.18.0",
+  "platform": "win32-x64",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "thresholds": {
+    "lines": 90,
+    "functions": 90,
+    "branches": 85
+  },
+  "maximumBaselineDropPercentagePoints": 2,
+  "baselineMode": "compare",
+  "acceptedBaselinePath": "test/baseline/coverage.json",
+  "acceptedBaselineMetrics": null,
+  "passed": true,
+  "processExitCode": 0,
+  "failures": [],
+  "testFiles": [
+    "test/paper-normalize/paper-normalize.test.js"
+  ],
+  "lcov": {
+    "path": "artifacts/coverage/paper-normalize/lcov.info",
+    "sha256": "977e526fd341e100dd1c13b60b211148c769cf70f76384a11763e4a7112b84ee"
+  },
+  "coverage": {
+    "totals": {
+      "lines": {
+        "found": 498,
+        "hit": 492,
+        "percent": 98.8
+      },
+      "functions": {
+        "found": 43,
+        "hit": 42,
+        "percent": 97.67
+      },
+      "branches": {
+        "found": 315,
+        "hit": 293,
+        "percent": 93.02
+      }
+    },
+    "files": [
+      {
+        "file": "src/main/citation/merge.js",
+        "lines": {
+          "found": 125,
+          "hit": 125,
+          "percent": 100
+        },
+        "functions": {
+          "found": 13,
+          "hit": 13,
+          "percent": 100
+        },
+        "branches": {
+          "found": 65,
+          "hit": 59,
+          "percent": 90.77
+        }
+      },
+      {
+        "file": "src/main/citation/model.js",
+        "lines": {
+          "found": 373,
+          "hit": 367,
+          "percent": 98.39
+        },
+        "functions": {
+          "found": 30,
+          "hit": 29,
+          "percent": 96.67
+        },
+        "branches": {
+          "found": 250,
+          "hit": 234,
+          "percent": 93.6
+        }
+      }
+    ]
+  }
+}

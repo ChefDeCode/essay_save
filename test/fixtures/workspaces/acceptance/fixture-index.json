@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "fixtureSet": "EssayFlow M0 acceptance",
+  "seed": 20260716,
+  "syntheticDataOnly": true,
+  "categories": {
+    "emptyProfile": "../../profiles/empty-first-start",
+    "legacyProfile": "../../profiles/legacy",
+    "libraryStorage": "../../storage/library",
+    "richProject": "../../projects/rich",
+    "corruptIndex": "../../profiles/corrupt-index",
+    "truncatedJson": "../../invalid/truncated",
+    "duplicates": "../../invalid/duplicates",
+    "futureSchema": "../../invalid/future-schema",
+    "pdf": "../../pdf",
+    "citationExchange": "../../citations",
+    "scale": "../../scale"
+  }
+}

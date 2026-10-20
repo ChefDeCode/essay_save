@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "suite": "trusted-ai",
+  "generatedAt": "2026-07-17T16:28:26.610Z",
+  "startedAt": "2026-07-17T16:28:19.540Z",
+  "nodeVersion": "v24.18.0",
+  "platform": "win32-x64",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "thresholds": {
+    "lines": 85,
+    "functions": 85,
+    "branches": 80
+  },
+  "maximumBaselineDropPercentagePoints": 2,
+  "baselineMode": "compare",
+  "acceptedBaselinePath": "test/baseline/coverage.json",
+  "acceptedBaselineMetrics": null,
+  "passed": true,
+  "processExitCode": 0,
+  "failures": [],
+  "testFiles": [
+    "test/trusted-ai/ai-model.test.js",
+    "test/trusted-ai/gateway-surface.test.js",
+    "test/trusted-ai/trusted-ai-service.test.js"
+  ],
+  "lcov": {
+    "path": "artifacts/coverage/trusted-ai/lcov.info",
+    "sha256": "13177c3f44f3618b46839dd2eca76ac826098de5044360d422818ecd677d5211"
+  },
+  "coverage": {
+    "totals": {
+      "lines": {
+        "found": 1994,
+        "hit": 1941,
+        "percent": 97.34
+      },
+      "functions": {
+        "found": 173,
+        "hit": 165,
+        "percent": 95.38
+      },
+      "branches": {
+        "found": 745,
+        "hit": 604,
+        "percent": 81.07
+      }
+    },
+    "files": [
+      {
+        "file": "src/main/ai/model.js",
+        "lines": {
+          "found": 499,
+          "hit": 468,
+          "percent": 93.79
+        },
+        "functions": {
+          "found": 46,
+          "hit": 45,
+          "percent": 97.83
+        },
+        "branches": {
+          "found": 196,
+          "hit": 156,
+          "percent": 79.59
+        }
+      },
+      {
+        "file": "src/main/ai/trusted-ai-service.js",
+        "lines": {
+          "found": 1495,
+          "hit": 1473,
+          "percent": 98.53
+        },
+        "functions": {
+          "found": 127,
+          "hit": 120,
+          "percent": 94.49
+        },
+        "branches": {
+          "found": 549,
+          "hit": 448,
+          "percent": 81.6
+        }
+      }
+    ]
+  }
+}

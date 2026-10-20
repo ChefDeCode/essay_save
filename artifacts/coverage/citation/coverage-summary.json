@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "suite": "citation",
+  "generatedAt": "2026-07-17T16:28:03.155Z",
+  "startedAt": "2026-07-17T16:27:59.905Z",
+  "nodeVersion": "v24.18.0",
+  "platform": "win32-x64",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "thresholds": {
+    "lines": 90,
+    "functions": 90,
+    "branches": 85
+  },
+  "maximumBaselineDropPercentagePoints": 2,
+  "baselineMode": "compare",
+  "acceptedBaselinePath": "test/baseline/coverage.json",
+  "acceptedBaselineMetrics": null,
+  "passed": true,
+  "processExitCode": 0,
+  "failures": [],
+  "testFiles": [
+    "test/citation/citation-engine.test.js",
+    "test/citation/citation-exchange.test.js"
+  ],
+  "lcov": {
+    "path": "artifacts/coverage/citation/lcov.info",
+    "sha256": "ea2c42036a2e150fca7afa29ff2bc23694cdb745b1c194399ee765d4a0dd83d1"
+  },
+  "coverage": {
+    "totals": {
+      "lines": {
+        "found": 574,
+        "hit": 553,
+        "percent": 96.34
+      },
+      "functions": {
+        "found": 55,
+        "hit": 55,
+        "percent": 100
+      },
+      "branches": {
+        "found": 279,
+        "hit": 245,
+        "percent": 87.81
+      }
+    },
+    "files": [
+      {
+        "file": "src/main/citation/audit.js",
+        "lines": {
+          "found": 157,
+          "hit": 156,
+          "percent": 99.36
+        },
+        "functions": {
+          "found": 11,
+          "hit": 11,
+          "percent": 100
+        },
+        "branches": {
+          "found": 87,
+          "hit": 78,
+          "percent": 89.66
+        }
+      },
+      {
+        "file": "src/main/citation/engine.js",
+        "lines": {
+          "found": 206,
+          "hit": 192,
+          "percent": 93.2
+        },
+        "functions": {
+          "found": 22,
+          "hit": 22,
+          "percent": 100
+        },
+        "branches": {
+          "found": 117,
+          "hit": 100,
+          "percent": 85.47
+        }
+      },
+      {
+        "file": "src/main/citation/exchange.js",
+        "lines": {
+          "found": 211,
+          "hit": 205,
+          "percent": 97.16
+        },
+        "functions": {
+          "found": 22,
+          "hit": 22,
+          "percent": 100
+        },
+        "branches": {
+          "found": 75,
+          "hit": 67,
+          "percent": 89.33
+        }
+      }
+    ]
+  }
+}

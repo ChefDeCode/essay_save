@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "buildRunId": "5b049293-885e-41eb-b136-b9f75b5504c6",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeManifestSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "knownDirtyUntracked": {
+    "available": false,
+    "reason": "当前环境没有可靠 Git metadata；全部实际构建输入已由 canonical source tree 纳入"
+  },
+  "packageLockSha256": "6fda94c57626b763cbbeadca2140d87f04e225124086422d6e2dbef69c3c5b4d",
+  "fixtureManifestSha256": "8fdb21dedb4abe022c8bc85e4740efa6b0a6e9e4fb90c23d9f8b833bf2734ea8",
+  "coverageBaselineSha256": "c843d3437cc351a71c91c4c52d1125b8806f0d6e6d2680e7b75a904a0a8469a9",
+  "environment": {
+    "node": "v24.18.0",
+    "npm": "11.16.0",
+    "electron": "28.3.3",
+    "os": "win32 10.0.26200 x64"
+  },
+  "commands": [
+    {
+      "name": "npm-ci",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js ci",
+      "startedAt": "2026-07-17T16:29:32.230Z",
+      "completedAt": "2026-07-17T16:29:53.233Z",
+      "exitCode": 0,
+      "stdoutSha256": "c2a9ff4b4c0762127f9805cea146d9225f48fe8940e89678bf6fed541ad0095c",
+      "stderrSha256": "d0c27c8b972b6d5d43e2da672e9e9a93939627a1a119c3d08099c05646e35308"
+    },
+    {
+      "name": "gate-m5",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run gate:m5",
+      "startedAt": "2026-07-17T16:29:53.234Z",
+      "completedAt": "2026-07-17T16:29:58.694Z",
+      "exitCode": 1,
+      "stdoutSha256": "904522cd3694c3aed4e1f187387fbbc50f9aa3ea944d2a8dfe89db8d6d74f493",
+      "stderrSha256": "8a241b59571e4caaba426a865eec0b6e405165bc8b5ed769894af0a4eba166dc"
+    },
+    {
+      "name": "build-win-unpacked",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run build -- --dir",
+      "startedAt": "2026-07-17T16:29:58.695Z",
+      "completedAt": "2026-07-17T16:30:13.597Z",
+      "exitCode": 0,
+      "stdoutSha256": "881305f2ab3c41729f169e4aa791918a89751a0567594133ff9615dcb34cdb43",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "verify-package",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run verify:package -- --app C:\\Users\\KMYZl\\Desktop\\essay_save\\dist\\win-unpacked\\EssayFlow.exe",
+      "startedAt": "2026-07-17T16:30:13.598Z",
+      "completedAt": "2026-07-17T16:30:14.677Z",
+      "exitCode": 0,
+      "stdoutSha256": "5f030487766bc74fa40a44b139f3b012c1c8c22595b9abe4eb01630be62e0d30",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "offline",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:offline -- --app C:\\Users\\KMYZl\\Desktop\\essay_save\\dist\\win-unpacked\\EssayFlow.exe",
+      "startedAt": "2026-07-17T16:30:14.678Z",
+      "completedAt": "2026-07-17T16:30:15.174Z",
+      "exitCode": 1,
+      "stdoutSha256": "9373137f1cfdb33cb090ff91d87e0cea995a909eccc59f1dda63e25337ef86ec",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "build-windows-artifacts",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run build",
+      "startedAt": "2026-07-17T16:30:15.175Z",
+      "completedAt": "2026-07-17T16:32:14.507Z",
+      "exitCode": 0,
+      "stdoutSha256": "92b001601bcbc3b07f0063ca42e96eab32adee1f0be622cbe5bb9f01a9d19955",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "artifact-win-unpacked",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:artifact -- --target win-unpacked",
+      "startedAt": "2026-07-17T16:32:14.508Z",
+      "completedAt": "2026-07-17T16:32:17.962Z",
+      "exitCode": 1,
+      "stdoutSha256": "d64c7462f15f310b1510ab8bd9f3c3a5c567df8f83339d353157e0a94101b5e4",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "artifact-portable",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:artifact -- --target portable",
+      "startedAt": "2026-07-17T16:32:17.963Z",
+      "completedAt": "2026-07-17T16:32:28.886Z",
+      "exitCode": 1,
+      "stdoutSha256": "15c166caa573ce5595c3262d8df382294f23dfaf26509f91aee7e36e7acf9880",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "artifact-nsis",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:artifact -- --target nsis",
+      "startedAt": "2026-07-17T16:32:28.887Z",
+      "completedAt": "2026-07-17T16:32:33.163Z",
+      "exitCode": 1,
+      "stdoutSha256": "88ca23535f296f466c444e76ef75c6373b4f8e3ff77c47ed30be57a5e6b8de54",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "packaged-performance",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:perf -- --app C:\\Users\\KMYZl\\Desktop\\essay_save\\dist\\win-unpacked\\EssayFlow.exe",
+      "startedAt": "2026-07-17T16:32:33.164Z",
+      "completedAt": "2026-07-17T16:32:37.099Z",
+      "exitCode": 0,
+      "stdoutSha256": "9f496f39e80c4cdce9d24b00fd02285f97caf252b067640eab0556c8b6fe73c0",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "verify-data",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run verify:data -- --profile test/fixtures/workspaces/acceptance --deep",
+      "startedAt": "2026-07-17T16:32:37.101Z",
+      "completedAt": "2026-07-17T16:32:37.559Z",
+      "exitCode": 0,
+      "stdoutSha256": "8eeead299a911c6d87448dda67c1843c30089480a24a596a2b292aac81ff0c5f",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "integrity-10000",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:integrity -- --operations 10000 --seed 20260716",
+      "startedAt": "2026-07-17T16:32:37.559Z",
+      "completedAt": "2026-07-17T16:32:38.384Z",
+      "exitCode": 0,
+      "stdoutSha256": "1dcfbfea25095e99398d5293928eddaaf213dfb08f3bc903854e4e8dfeeb84fd",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "dependencies",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run verify:dependencies",
+      "startedAt": "2026-07-17T16:32:38.385Z",
+      "completedAt": "2026-07-17T16:32:41.066Z",
+      "exitCode": 1,
+      "stdoutSha256": "da7d7c931827ef916e1a1a997aa8cddf538aee93c77e8e2661c03ef96a1745ad",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    }
+  ],
+  "appPayloadSha256": "df542697699da59c4388c7f1bace61df081933c5f46a6cafb33be32de03019c1",
+  "winUnpackedTreeSha256": "aa530f7de0bac9a4a0d10c8ca2fd129021b5a002def7577b8c75cc265a8867da",
+  "targets": {
+    "portable": {
+      "targetArtifactSha256": "c2d64644f01aa89f6decf113f691c6d47f4e71a0f6cc5e64341483ba17075c91",
+      "appPayloadSha256": "df542697699da59c4388c7f1bace61df081933c5f46a6cafb33be32de03019c1"
+    },
+    "nsis": {
+      "targetArtifactSha256": "9f48c319e62279f97d557078bc216f1b93b4ee60fa9bf55dd96c4f33a6da28f0",
+      "appPayloadSha256": "df542697699da59c4388c7f1bace61df081933c5f46a6cafb33be32de03019c1"
+    }
+  },
+  "reports": [
+    {
+      "path": "artifacts/quality-summary.json",
+      "sha256": "8733671c8d034acc00df807f88e239a41d3c8fa1cc0ad6ef9fa316c19c928760"
+    },
+    {
+      "path": "artifacts/migration-matrix.json",
+      "sha256": "69f39960187206938f0d5c5098abae79d54fc469f1f1df96fdf800c9272c96f4"
+    },
+    {
+      "path": "artifacts/crash-matrix.json",
+      "sha256": "0ef4cf0110b2213faf98f73c013af48e32f50b7c7f0ababf95550500bd7cd349"
+    },
+    {
+      "path": "artifacts/ipc-fuzz.json",
+      "sha256": "ecd0dc32b2e14233003e7ead3b9b49ad6e194685ff89065d9f173d8ae49a82e2"
+    },
+    {
+      "path": "artifacts/integrity-report.json",
+      "sha256": "38cad9bf2753b934b53acb74f824650cb7b0a1779bf2985e5f06d94a4adc873a"
+    },
+    {
+      "path": "artifacts/perf-baseline.json",
+      "sha256": "f17860795e3f61f3b240e9095fa676de2b9bc589a3420ce72c0514db09a4d316"
+    },
+    {
+      "path": "artifacts/offline-network-trace.json",
+      "sha256": "e396288036a4aa5a1ca8d0249bb875e9470bc769ffddc617a441a5027cdd9ab8"
+    },
+    {
+      "path": "artifacts/package-asset-manifest.json",
+      "sha256": "736e74c8a3e4a8d0df787d4b9d9a378426211068680c3bdafa04f1383cedf7f2"
+    },
+    {
+      "path": "artifacts/dependency-audit.json",
+      "sha256": "112a8e7b48814f7e5cdbcc0e237883235796311006db15c43b567a15a60aa9c6"
+    },
+    {
+      "path": "artifacts/sbom.json",
+      "sha256": "539745397ff92db469dfbdb1f77e3217445e666d74cad54d4332502d6f907848"
+    },
+    {
+      "path": "artifacts/a11y/report.json",
+      "sha256": "81d023395782f54962673cc5ffed1101c0fd02d409217d6c55f2ce86b6fd321a"
+    },
+    {
+      "path": "artifacts/a11y/library-responsive-report.json",
+      "sha256": "e9769455ea8bd8426c1609921af98e02934767bf818b821ac7f9996048b4c675"
+    },
+    {
+      "path": "artifacts/e2e/m5/report.json",
+      "sha256": "7cc681670de8eb174eec9cddff8421b30af6feff12e522d9b7219c6968b67253"
+    },
+    {
+      "path": "artifacts/artifact-win-unpacked.json",
+      "sha256": "852a687c6174d066a869959c78e832e09dab6b6f1df2b3eae803244a18500513"
+    },
+    {
+      "path": "artifacts/artifact-portable.json",
+      "sha256": "a15280b066d0411730f16c3e8817871998ca954d96e4dc3bd24cba5746294e79"
+    },
+    {
+      "path": "artifacts/artifact-nsis.json",
+      "sha256": "9b67a89639b512a39beb527e28cacde88d9f0a1cd25213a60cd16fafdce6c942"
+    }
+  ],
+  "failures": [
+    "M5 quality summary 未同源通过",
+    "offline 门禁未通过",
+    "dependency 门禁未通过",
+    "一个或多个 artifact 门禁未通过",
+    "artifacts/perf-baseline.json 未绑定本次 buildRunId/sourceTreeSha256",
+    "artifacts/integrity-report.json 未绑定本次 buildRunId/sourceTreeSha256",
+    "perf-baseline 仍是 M2 5000 条文库基线，未覆盖 release 的 30/20 样本、D1/L1/F1、冷暖启动和内存/静置指标",
+    "未生成并验证 release 要求的 10,000 操作随机完整性报告 artifacts/integrity-random.json"
+  ],
+  "passed": false
+}

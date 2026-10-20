@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "buildRunId": "5b049293-885e-41eb-b136-b9f75b5504c6",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "app": "C:\\Users\\KMYZl\\Desktop\\essay_save\\dist\\win-unpacked\\EssayFlow.exe",
+  "attempts": [
+    {
+      "index": 1,
+      "startedAt": "2026-07-17T16:30:15.029Z",
+      "completedAt": "2026-07-17T16:30:15.104Z",
+      "exitCode": 1
+    }
+  ],
+  "networkLayers": {
+    "osLevel": {
+      "attempted": false,
+      "blocked": false,
+      "reason": "当前 runner 未提供可验证的 Windows Firewall 隔离策略或干净 VM"
+    },
+    "electronSessionWebRequest": {
+      "attempted": true,
+      "blocked": true,
+      "completed": 0,
+      "origins": []
+    },
+    "mainProcessBroker": {
+      "attempted": true,
+      "blocked": true,
+      "completed": 0,
+      "origins": []
+    }
+  },
+  "styleInlineDebt": {
+    "present": true,
+    "reason": "Quill/UI 动态样式仍需 style-src unsafe-inline",
+    "convergencePlan": "迁移动态样式到 class/CSS 变量后移除"
+  },
+  "failures": [
+    "连续 10 次 win-unpacked smoke 未全部通过",
+    "缺少可验证的 OS 级网络阻断；不能声称完整离线门禁通过"
+  ],
+  "passed": false
+}

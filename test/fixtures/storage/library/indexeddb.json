@@ -1,0 +1,29 @@
+{
+  "database": "EssayFlowDB",
+  "version": 1,
+  "stores": {
+    "library": [
+      {
+        "id": "library-paper-001",
+        "title": "Synthetic Storage Paper",
+        "authors": "A. Fixture",
+        "published": "2023",
+        "doi": "10.5555/essayflow.storage.1",
+        "synthetic": true
+      },
+      {
+        "id": "library-paper-002",
+        "title": "合成文库存储记录",
+        "authors": "测试作者",
+        "published": "2022",
+        "doi": "10.5555/essayflow.storage.2",
+        "synthetic": true
+      },
+      {
+        "id": "__essayflow_library_meta__",
+        "updatedAt": 1784160000000,
+        "type": "meta"
+      }
+    ]
+  }
+}

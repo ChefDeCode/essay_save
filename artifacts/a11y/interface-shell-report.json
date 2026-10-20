@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "suite": "interface-shell",
+  "passed": true,
+  "sourceTreeSha256": "ecfe0613956c93c97d451b57c462aab0727374a82fd74d6ac365abb0524dea63",
+  "sourceTreeFileCount": 173,
+  "projectCenter": {
+    "tooltip": "项目中心",
+    "heading": "项目中心",
+    "projectCount": 2,
+    "fitsViewport": true,
+    "actionIsCompactRectangle": true,
+    "transitionDuration": "0.26s, 0.42s"
+  },
+  "settingsWide": {
+    "open": true,
+    "fitsViewport": true,
+    "selectedTabs": 1,
+    "pageTitle": "通用",
+    "surfaces": [
+      {
+        "title": "通用",
+        "headerBackground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(255, 255, 255)"
+      },
+      {
+        "title": "AI 功能",
+        "headerBackground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(255, 255, 255)"
+      },
+      {
+        "title": "AI 服务",
+        "headerBackground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(255, 255, 255)"
+      },
+      {
+        "title": "快捷键",
+        "headerBackground": "rgb(255, 255, 255)",
+        "bodyBackground": "rgb(255, 255, 255)"
+      }
+    ],
+    "serious": []
+  },
+  "settingsCompact": {
+    "fitsViewport": true,
+    "bodyHasHorizontalOverflow": false,
+    "tabCount": 4
+  },
+  "moreTools": {
+    "open": true,
+    "menuRadius": 16,
+    "menuColorScheme": "dark",
+    "enhanced": true,
+    "nativeDisplay": "none",
+    "selectOpen": true,
+    "selectRadius": 11,
+    "selectBackground": "color(srgb 0.137148 0.131322 0.121918 / 0.865726)",
+    "menuBackground": "rgb(32, 33, 36)",
+    "hoveredBackground": "rgb(230, 180, 34)",
+    "hoveredColor": "rgb(43, 33, 0)"
+  },
+  "drawer": {
+    "open": true,
+    "drawerClass": true,
+    "fitsViewport": true,
+    "heading": "创建新项目"
+  },
+  "screenshots": [
+    "artifacts/a11y/interface-project-center.png",
+    "artifacts/a11y/interface-project-delete-confirm.png",
+    "artifacts/a11y/interface-settings-wide.png",
+    "artifacts/a11y/interface-settings-compact.png",
+    "artifacts/a11y/interface-more-tools-dark.png",
+    "artifacts/a11y/interface-paragraph-format-dark.png",
+    "artifacts/a11y/interface-new-project-drawer.png"
+  ]
+}

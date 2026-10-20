@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "milestone": "m3",
+  "scenario": "PDF text layer, canonical evidence anchors, insertion, stable backlink and degraded source",
+  "fixtureData": "synthetic",
+  "passed": true,
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "firstPhase": {
+    "projectId": "ebc98e04-5707-4d98-a38c-a2ec057b09f9",
+    "evidenceIds": [
+      "382f7e03-c1c1-41ce-9e20-8a0c17fcba9c",
+      "dbdfc921-3d5e-47f5-9c31-bee6b4372fb6"
+    ],
+    "evidenceRevisionIds": [
+      "818bb542-a4d1-4056-b483-fbb156d119b9",
+      "d94e6862-d1fa-4dff-aa58-561e4ccf7910",
+      "818bb542-a4d1-4056-b483-fbb156d119b9"
+    ],
+    "linkIds": [
+      "2b1c412a-560f-43b1-8a2b-a27148ffd6b5",
+      "42eb4f60-212e-4a40-8250-3047fcdfd536",
+      "e5109a62-829d-4c52-8eaf-996ba9c709db"
+    ],
+    "englishAssetId": "affc9c74-bb2f-5eb3-b99f-05db73b2b4dd",
+    "rotations": [
+      0,
+      90
+    ],
+    "rects": [
+      [
+        {
+          "height": 0.03489736070381244,
+          "width": 0.6004948441700269,
+          "x": 0.11759072580645162,
+          "y": 0.8713938782991202
+        }
+      ],
+      [
+        {
+          "height": 0.38260143649193556,
+          "width": 0.058444022770398465,
+          "x": 0.09094916192283366,
+          "y": 0.11759072580645162
+        }
+      ]
+    ],
+    "quoteInserted": true,
+    "paraphraseInserted": true,
+    "citationLinkCount": 4
+  },
+  "restart": {
+    "evidenceCount": 2,
+    "activeStatus": "active",
+    "highlightCount": 2,
+    "anchorIds": [
+      "6a12c819-6024-4e03-8a96-b63e6eab247b",
+      "42eb4f60-212e-4a40-8250-3047fcdfd536",
+      "e5109a62-829d-4c52-8eaf-996ba9c709db",
+      "2b1c412a-560f-43b1-8a2b-a27148ffd6b5"
+    ],
+    "linkIds": [
+      "2b1c412a-560f-43b1-8a2b-a27148ffd6b5",
+      "42eb4f60-212e-4a40-8250-3047fcdfd536",
+      "6a12c819-6024-4e03-8a96-b63e6eab247b",
+      "e5109a62-829d-4c52-8eaf-996ba9c709db"
+    ]
+  },
+  "missing": {
+    "status": "source-missing",
+    "jumped": false,
+    "pdfVisible": false,
+    "auditCodes": [
+      "IMPORTED_IDENTITY_UNVERIFIED",
+      "IMPORTED_IDENTITY_UNVERIFIED",
+      "DUPLICATE_DOI",
+      "DUPLICATE_TITLE",
+      "EVIDENCE_SOURCE_MISSING",
+      "RETRACTION_STATUS_NOT_CHECKED"
+    ],
+    "auditBlockingCount": 1
+  }
+}

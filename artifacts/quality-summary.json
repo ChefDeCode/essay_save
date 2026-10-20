@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "gate": "m5",
+  "startedAt": "2026-07-17T16:29:53.567Z",
+  "passed": false,
+  "steps": [
+    {
+      "name": "fixtures",
+      "command": "\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" scripts/generate-fixtures.js --check",
+      "startedAt": "2026-07-17T16:29:53.568Z",
+      "completedAt": "2026-07-17T16:29:53.698Z",
+      "exitCode": 0,
+      "stdoutSha256": "1dce2b227510433bd5322a89a4627934b20489efda949e19629595186242fbd8",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "runtime-assets",
+      "command": "\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" scripts/verify-runtime-assets.js",
+      "startedAt": "2026-07-17T16:29:53.700Z",
+      "completedAt": "2026-07-17T16:29:53.908Z",
+      "exitCode": 0,
+      "stdoutSha256": "1783c214047b8e2e653d13e87f2ffc16f0a60586972eaac2da38e80b486c8c8b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "architecture",
+      "command": "\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" scripts/check-architecture.js",
+      "startedAt": "2026-07-17T16:29:53.908Z",
+      "completedAt": "2026-07-17T16:29:54.034Z",
+      "exitCode": 0,
+      "stdoutSha256": "046c98c2f0d3bad1954c3e6c99dad39b04e91e48f05f9b8ea0b9416dc7b71f5f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "unit",
+      "command": "\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" scripts/run-tests.js --suite unit",
+      "startedAt": "2026-07-17T16:29:54.034Z",
+      "completedAt": "2026-07-17T16:29:55.796Z",
+      "exitCode": 0,
+      "stdoutSha256": "59f9370309cec5badf47960041f8f3099c1b847325678306f32d5cb1c5f58612",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "smoke-development",
+      "command": "\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" scripts/run-electron-smoke.js --target development",
+      "startedAt": "2026-07-17T16:29:55.796Z",
+      "completedAt": "2026-07-17T16:29:58.662Z",
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "0b67daa9f406f16a3a2f7f8a8fe6b52c8c70bb4fd1ac7bbc2bc14cc7b03f0ed5"
+    }
+  ],
+  "completedAt": "2026-07-17T16:29:58.662Z",
+  "failedStep": "smoke-development"
+}

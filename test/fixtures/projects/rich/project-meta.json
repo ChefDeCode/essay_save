@@ -1,0 +1,8 @@
+{
+  "id": "rich-project-001",
+  "title": "合成富文本项目 Synthetic Rich Project",
+  "author": "Fixture Author",
+  "createdAt": "2026-07-16T00:00:00.000Z",
+  "updatedAt": "2026-07-16T00:00:00.000Z",
+  "synthetic": true
+}

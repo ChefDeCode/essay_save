@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "milestone": "m1",
+  "startedAt": "2026-07-17T16:27:51.345Z",
+  "completedAt": "2026-07-17T16:27:55.880Z",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "repetitionsPerHook": 10,
+  "hooks": [
+    "temp-write",
+    "journal",
+    "document",
+    "citations",
+    "manifest",
+    "atomic-replace"
+  ],
+  "rows": [
+    {
+      "hook": "temp-write",
+      "repetition": 0,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 1,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 2,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 3,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 4,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 5,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 6,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 7,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 8,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "repetition": 9,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 0,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 1,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 2,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 3,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 4,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 5,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 6,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 7,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 8,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "journal",
+      "repetition": 9,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 0,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 1,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 2,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 3,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 4,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 5,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 6,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 7,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 8,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "document",
+      "repetition": 9,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 0,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 1,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 2,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 3,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 4,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 5,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 6,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 7,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 8,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "citations",
+      "repetition": 9,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 0,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 1,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 2,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 3,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 4,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 5,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 6,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 7,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 8,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "manifest",
+      "repetition": 9,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 0,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 1,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 2,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 3,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 4,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 5,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 6,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 7,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 8,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "atomic-replace",
+      "repetition": 9,
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "osCode": "ENOSPC",
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "osCode": "EACCES",
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "temp-write",
+      "osCode": "EBUSY",
+      "outcome": "complete-N",
+      "recoveredRevision": 0
+    },
+    {
+      "hook": "HEAD-replaced-before-ACK",
+      "outcome": "complete-N+1",
+      "recoveredRevision": 1
+    },
+    {
+      "hook": "after-durable-ACK",
+      "outcome": "complete-N+1",
+      "recoveredRevision": 1
+    }
+  ],
+  "mixed": 0,
+  "corrupt": 0,
+  "passed": true
+}

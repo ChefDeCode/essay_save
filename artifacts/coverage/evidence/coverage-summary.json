@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "suite": "evidence",
+  "generatedAt": "2026-07-17T16:28:13.978Z",
+  "startedAt": "2026-07-17T16:28:11.892Z",
+  "nodeVersion": "v24.18.0",
+  "platform": "win32-x64",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "thresholds": {
+    "lines": 85,
+    "functions": 85,
+    "branches": 80
+  },
+  "maximumBaselineDropPercentagePoints": 2,
+  "baselineMode": "compare",
+  "acceptedBaselinePath": "test/baseline/coverage.json",
+  "acceptedBaselineMetrics": null,
+  "passed": true,
+  "processExitCode": 0,
+  "failures": [],
+  "testFiles": [
+    "test/evidence/evidence-service.test.js"
+  ],
+  "lcov": {
+    "path": "artifacts/coverage/evidence/lcov.info",
+    "sha256": "5a34d369e08550812a7987af721af5ec8037f7396bcca04c37830eeea2afda67"
+  },
+  "coverage": {
+    "totals": {
+      "lines": {
+        "found": 434,
+        "hit": 430,
+        "percent": 99.08
+      },
+      "functions": {
+        "found": 60,
+        "hit": 59,
+        "percent": 98.33
+      },
+      "branches": {
+        "found": 183,
+        "hit": 160,
+        "percent": 87.43
+      }
+    },
+    "files": [
+      {
+        "file": "src/main/evidence/evidence-service.js",
+        "lines": {
+          "found": 434,
+          "hit": 430,
+          "percent": 99.08
+        },
+        "functions": {
+          "found": 60,
+          "hit": 59,
+          "percent": 98.33
+        },
+        "branches": {
+          "found": 183,
+          "hit": 160,
+          "percent": 87.43
+        }
+      }
+    ]
+  }
+}

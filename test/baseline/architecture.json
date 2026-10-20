@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "milestone": "m0",
+  "capturedAt": "2026-07-16T10:34:14.569Z",
+  "sourceTreeSha256": "e0853b650bb6ebcf9eb4b752b52ce8dcacc7c6ca0a2a02484a281121b3620399",
+  "sourceFileCount": 82,
+  "findings": [
+    {
+      "fingerprint": "f7a98717aeeb615a1cea9d0a1bc64126b15749b95f004d01d6fc5a005e26aec8",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.mkdirSync(automationConfig.testExports, { recursive: true });",
+      "count": 1
+    },
+    {
+      "fingerprint": "f4ea955ffb7c11dfc78e877edf3372146fd7850587d201873b4004c2053ccc65",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.mkdirSync(directory, { recursive: true });",
+      "count": 1
+    },
+    {
+      "fingerprint": "02e331f6fb786bc369446b651afcb98723e8d896b816e615f5aa9839b055b597",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.mkdirSync(imageDir, { recursive: true });",
+      "count": 1
+    },
+    {
+      "fingerprint": "f05a3fe07d65b0d67cdb356e677b65e9437d01f16b8eebc32e399d3bdbc47483",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.mkdirSync(isolatedCandidate, { recursive: true });",
+      "count": 1
+    },
+    {
+      "fingerprint": "e40eda5d59bdd8f2d5cbc0808fd93835b1761c008a331a78fa3acc02789422c0",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.mkdirSync(localPdfDir, { recursive: true });",
+      "count": 1
+    },
+    {
+      "fingerprint": "2d1f8d079d5ae4a2b378b00910a48e9365ea86d3ae9d60bd432c92dd95ec2fdf",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.mkdirSync(path.dirname(candidate), { recursive: true });",
+      "count": 1
+    },
+    {
+      "fingerprint": "3dd0b509809556dac3c697907b7152eaab99441cbe731cc4f09b484106c99446",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.mkdirSync(projectsDir, { recursive: true });",
+      "count": 1
+    },
+    {
+      "fingerprint": "f0652daa9e50ddb4cacef89384eb47af0700cb848dfd49000c50f62d36189103",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.mkdirSync(targetDir, { recursive: true });",
+      "count": 1
+    },
+    {
+      "fingerprint": "f50e7510cd3a4713aacb3307dc7b6196b9628b9beb62b24b8a272be0fe21d8b0",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.renameSync(tempPath, filePath);",
+      "count": 2
+    },
+    {
+      "fingerprint": "87c75efd48f9431a68b1b93347b5c3e952c78dff962cbb6dab2ac8117edcb317",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.unlinkSync(safePath);",
+      "count": 1
+    },
+    {
+      "fingerprint": "0592bc253d04258c3c208290f7b591548668e790bf7d8fa447fa120bddc7d84f",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "fs.writeFileSync(tempPath, data, encoding);",
+      "count": 1
+    },
+    {
+      "fingerprint": "c268788797bfb75857b66102cd85c02bf11d3c5deef88b09e0d6987a82ab978f",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "if (fs.existsSync(contentPath)) fs.unlinkSync(contentPath);",
+      "count": 1
+    },
+    {
+      "fingerprint": "5e0d272d549ee89907c3a75d04068b0167a889c8ee3fc389e97dbc0bbddbf07e",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "if (fs.existsSync(filePath)) fs.unlinkSync(filePath);",
+      "count": 1
+    },
+    {
+      "fingerprint": "3eb5a484440da4fc8997e4a314b39cec9e5f86805101cf1dbfc9b93ec2f89752",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "try { fs.copyFileSync(projectsIndexFile, backupPath); } catch (_) {}",
+      "count": 1
+    },
+    {
+      "fingerprint": "51ca516c4e966f00634fb2028194eea79e8c1e88a93fd2f09451e38416d5278c",
+      "rule": "main-direct-business-fs-write",
+      "file": "main.js",
+      "snippet": "try { fs.unlinkSync(tempPath); } catch (_) {}",
+      "count": 2
+    },
+    {
+      "fingerprint": "df01ab5d2b41a0b47842165c795d6db6d2cf06339c4f0e91b078eb20295f90c1",
+      "rule": "preload-arbitrary-network-broker",
+      "file": "preload.js",
+      "snippet": "netRequest: (options) => ipcRenderer.invoke('net-request', options),",
+      "count": 1
+    },
+    {
+      "fingerprint": "a656e24d5a43d4e393de43f9a0db4aa1f762cb3509e13a4538980a514dcbca2f",
+      "rule": "preload-arbitrary-network-broker",
+      "file": "preload.js",
+      "snippet": "netStream: (options) => {",
+      "count": 1
+    },
+    {
+      "fingerprint": "42af4dca3fe2d3edefd856c76d2ed86d3ecfefd580cb42ed74e18587fa61ce17",
+      "rule": "preload-path-write-capability",
+      "file": "preload.js",
+      "snippet": "saveDocx: ({ wordXml, images }) => ipcRenderer.invoke('save-docx', { wordXml, images }),",
+      "count": 1
+    },
+    {
+      "fingerprint": "148533f13a26ea73e910bf837716839df31d901bfcca682915dbafa04ce8669d",
+      "rule": "preload-path-write-capability",
+      "file": "preload.js",
+      "snippet": "saveFile: (base64Data, filePath) => ipcRenderer.invoke('save-file', base64Data, filePath),",
+      "count": 1
+    },
+    {
+      "fingerprint": "db981613bb925e758b20ec3ccab91a213f45454f8898034a92c68cd59f74b5a5",
+      "rule": "preload-path-write-capability",
+      "file": "preload.js",
+      "snippet": "saveProject: (projectData) => ipcRenderer.invoke('save-project', projectData),",
+      "count": 1
+    },
+    {
+      "fingerprint": "fd4cb0eee0640c6a5449628fa1ed525156d97d23dee8dbf762196e58ec1d83f6",
+      "rule": "preload-secret-roundtrip",
+      "file": "preload.js",
+      "snippet": "decryptApiKey: (encryptedBase64) => ipcRenderer.invoke('decrypt-api-key', encryptedBase64),",
+      "count": 1
+    },
+    {
+      "fingerprint": "4c72c64f0f39fb0c3d5c7b8a7cefc7f677d6c4a9b4520b338af2a79cb77edad8",
+      "rule": "preload-secret-roundtrip",
+      "file": "preload.js",
+      "snippet": "encryptApiKey: (plainText) => ipcRenderer.invoke('encrypt-api-key', plainText),",
+      "count": 1
+    },
+    {
+      "fingerprint": "c5c31e96c94cc95dfaf22a744a933839680b02e5e934c07489932df07735d409",
+      "rule": "raw-ipc-registration",
+      "file": "main.js",
+      "snippet": "ipcMain.handle(channel, async (event, ...args) => {",
+      "count": 1
+    },
+    {
+      "fingerprint": "d6f851d5bac176adeb4fbcf9554954cd45cc2becc2ef99c5604f969bd1026653",
+      "rule": "raw-ipc-registration",
+      "file": "main.js",
+      "snippet": "ipcMain.on('net-request-cancel', (event, requestId) => {",
+      "count": 1
+    },
+    {
+      "fingerprint": "b65a2a48e58007689130e341876eae9acf80b90bc7eadb80e1e4ec60e0cb3c09",
+      "rule": "raw-ipc-registration",
+      "file": "main.js",
+      "snippet": "ipcMain.on('net-stream-cancel', (event, eventId) => {",
+      "count": 1
+    },
+    {
+      "fingerprint": "3e70cc2f06628e755170cb7fdae56a5df8bd3123f7542880b5c4f11a6bb2197c",
+      "rule": "raw-ipc-registration",
+      "file": "main.js",
+      "snippet": "ipcMain.on('net-stream', (event, payload) => {",
+      "count": 1
+    },
+    {
+      "fingerprint": "70fad248821ef450ec303a4a5207f9b344b8179179dd37aca79e43ffab11bead",
+      "rule": "renderer-business-localstorage",
+      "file": "src/app.js",
+      "snippet": "localStorage.setItem('essay_citations_v2', JSON.stringify(all));",
+      "count": 2
+    },
+    {
+      "fingerprint": "25097bd465a1de1d368799a1081fb8911e3b980828f69631d7bc670556e0adb8",
+      "rule": "renderer-business-localstorage",
+      "file": "src/app.js",
+      "snippet": "localStorage.setItem('essay_citations_v2', JSON.stringify(allCitations));",
+      "count": 1
+    },
+    {
+      "fingerprint": "8097305b7648a700fe98bbf5b13258a6d4e2ae20e953efa18c98c5c1d37d2d5a",
+      "rule": "renderer-business-localstorage",
+      "file": "src/app.js",
+      "snippet": "localStorage.setItem('essay_horizontal_flex', JSON.stringify({",
+      "count": 1
+    },
+    {
+      "fingerprint": "1b0157f63316edfb490f77583ed0833d1bad6e335f206c68e06701c4d33b8219",
+      "rule": "renderer-business-localstorage",
+      "file": "src/app.js",
+      "snippet": "localStorage.setItem('essay_shortcuts', JSON.stringify(cleaned));",
+      "count": 1
+    },
+    {
+      "fingerprint": "8c5c0ddb90ad495dc58971b8fc5703b7a5ccdfaf59bd4704c5799c6a04014cdd",
+      "rule": "renderer-business-localstorage",
+      "file": "src/app.js",
+      "snippet": "localStorage.setItem('essay_theme', isDark ? 'dark' : 'light');",
+      "count": 1
+    },
+    {
+      "fingerprint": "e0872f986227531ad710fc6f9662c61a36cd27abe12c86983be2147bda416266",
+      "rule": "renderer-business-localstorage",
+      "file": "src/app.js",
+      "snippet": "localStorage.setItem('essay_vertical_flex', JSON.stringify({",
+      "count": 1
+    },
+    {
+      "fingerprint": "4a13ee1759db63286bc5ef318dd31029eff40d1333680ca769f03069cc03f8bc",
+      "rule": "renderer-business-localstorage",
+      "file": "src/app.js",
+      "snippet": "localStorage.setItem('mindmap_collapsed_' + mindMapDataProjectId, JSON.stringify(collapsedState));",
+      "count": 1
+    },
+    {
+      "fingerprint": "4d282894713cb7311d6f026ac86e33ad7caf0bdd984a3b39e15c1634c64a297e",
+      "rule": "renderer-business-localstorage",
+      "file": "src/app.js",
+      "snippet": "localStorage.setItem(`essay_project_meta_${currentProjectId}`, JSON.stringify(currentProjectMeta));",
+      "count": 1
+    },
+    {
+      "fingerprint": "9ac1798ddc976ccf73ac9af726b4588441b3c66f1d04d61a9689a8e854032277",
+      "rule": "renderer-business-localstorage",
+      "file": "src/search.js",
+      "snippet": "localStorage.setItem('essay_library', data);",
+      "count": 1
+    },
+    {
+      "fingerprint": "cbda848892fec7499dc583616328d9141e51c7e70471c79b3b75ed73d9005098",
+      "rule": "renderer-business-localstorage",
+      "file": "src/search.js",
+      "snippet": "localStorage.setItem('essay_library', JSON.stringify(libraryPapers));",
+      "count": 1
+    },
+    {
+      "fingerprint": "093e0c6159135aa9fcd9305a23bc68358d01d46fff0cfe306318909f330cd811",
+      "rule": "renderer-business-localstorage",
+      "file": "src/search.js",
+      "snippet": "localStorage.setItem(LIBRARY_UPDATED_AT_KEY, String(libraryLastUpdated));",
+      "count": 2
+    },
+    {
+      "fingerprint": "6eda108d364649a9e5b6d2d2f8f83ed50a1b4dc475b534b1074b1992a7d22aef",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_ai_config', JSON.stringify(config));",
+      "count": 1
+    },
+    {
+      "fingerprint": "611a3755fa93a8f75ad3136825bf78583c0e3240b74a6a4d5205bd2631e9ea56",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_ai_literature_enabled', literatureToggle.checked ? 'true' : 'false');",
+      "count": 1
+    },
+    {
+      "fingerprint": "8ea24f91ae816974e7f1b4ced710b2526f36b09cc098ec0e1b3b6de3881e9da9",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_ai_search_enabled', searchToggle.checked ? 'true' : 'false');",
+      "count": 1
+    },
+    {
+      "fingerprint": "cf1bb9eb5d6c89a4de79dbe2a8b35bd15eb4b044314d4bc330dfe87981ca7525",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_ai_verify_enabled', verifyToggle.checked ? 'true' : 'false');",
+      "count": 1
+    },
+    {
+      "fingerprint": "08626a163765379b7b43ba8b6484b3c7e99cf48eaa59105fcb3166abc7d29e8d",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_default_reference_style', refStyleSelect.value);",
+      "count": 1
+    },
+    {
+      "fingerprint": "2dfd7c89e29e62a8bd229bbde3bb05abfbf64ca37e69503da750bb8ea1d3c8ba",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_search_sources', JSON.stringify(sources));",
+      "count": 1
+    },
+    {
+      "fingerprint": "f842b1687921498bc6e08cb6030ee859bf73853e4492925af02e2c67fd0dc4a8",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_shortcuts', JSON.stringify(normalized));",
+      "count": 1
+    },
+    {
+      "fingerprint": "d25747bcb2dec28a698cc25dd248f8e1f8aec659a63c053ceb41235964a28b74",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_toolbar_autoclose', toolbarAutocloseToggle.checked ? 'true' : 'false');",
+      "count": 1
+    },
+    {
+      "fingerprint": "185d070b720abcce3a7898c96d6dd8bf314126670c8b498c26593580ad399426",
+      "rule": "renderer-business-localstorage",
+      "file": "src/settings.js",
+      "snippet": "localStorage.setItem('essay_wheel_scroll_key', key);",
+      "count": 1
+    },
+    {
+      "fingerprint": "61b8da5f4d51b16f3b61ff193c468e3fb12d298121ecc88a1de645c79c2263b2",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "'Authorization': 'Bearer ' + apiKey",
+      "count": 1
+    },
+    {
+      "fingerprint": "b0e9320e40d07be66938b6ee5d777247ae5a3bf42865b10abc524875a43cf51d",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "api_key: typeof config.api_key === 'string' ? config.api_key.trim() : '',",
+      "count": 1
+    },
+    {
+      "fingerprint": "949208fb6e7cd273b3876014cdd0d4986276489badf049cc7b63cf3b07ed3e69",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "const apiKey = await raceWithAbort(resolveAIApiKey(config), effectiveSignal);",
+      "count": 1
+    },
+    {
+      "fingerprint": "45e76c9128f02d2a208a4d5e17756ab55549a75669a566a74a2686a9bf3b3763",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "const result = await window.electronAPI.decryptApiKey(config.api_key);",
+      "count": 1
+    },
+    {
+      "fingerprint": "7079c0bbc2e5fa45c9be1e90dad07d22f10db70c82ddb768418ff670356d3323",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "if (!config || !config.base_url || !config.api_key || !config.model) {",
+      "count": 1
+    },
+    {
+      "fingerprint": "72a873dc5b31abb610fea38b2b44941691e5b31ab3271635077a2ba1ec17fa68",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "if (config.encryption !== 'encrypted') return config.api_key;",
+      "count": 1
+    },
+    {
+      "fingerprint": "72bb13eaf197ae9c845a620d490963c1cf9cb7f6339ac76df1e93789096493f8",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "if (window._aiPlainApiKey && window._aiPlainApiKeySource === config.api_key) {",
+      "count": 1
+    },
+    {
+      "fingerprint": "01827028cf2416f789d99eec6020c549838453cb5e6c084d4e48ef63acd03ed1",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "return !!(config?.base_url && config.api_key && config.model && !window._aiKeyDecryptionFailed);",
+      "count": 1
+    },
+    {
+      "fingerprint": "32e03af984ed43d4f3e8c464e1651ad71c658a4c70d007a78f0e7dd4417672e2",
+      "rule": "renderer-secret-material",
+      "file": "src/ai-assistant.js",
+      "snippet": "window._aiPlainApiKeySource = config.api_key;",
+      "count": 1
+    },
+    {
+      "fingerprint": "5086b443ece692b803fa4e9b1647d099237ea25d0922db39fae089bfbc809348",
+      "rule": "renderer-secret-material",
+      "file": "src/app.js",
+      "snippet": "if (!config || !config.base_url || !config.api_key) {",
+      "count": 1
+    },
+    {
+      "fingerprint": "f184cbfa59ff43e7392c3615be4a3035c774cea075697c1279d5093ba7b54781",
+      "rule": "renderer-secret-material",
+      "file": "src/search.js",
+      "snippet": "const hasAI = aiEnabled && config && config.base_url && config.api_key && config.model;",
+      "count": 1
+    },
+    {
+      "fingerprint": "60d8881ad18039071baf8d9e6b6399a1f5f919e2aad6ada7633f34ba2d90a379",
+      "rule": "renderer-secret-material",
+      "file": "src/search.js",
+      "snippet": "headers['Authorization'] = 'Bearer ' + source.apiKey;",
+      "count": 1
+    },
+    {
+      "fingerprint": "938ccbc4f8bbd8a9548284b97d637525485f4a29f12c2085c6445475f1aeecec",
+      "rule": "renderer-secret-material",
+      "file": "src/search.js",
+      "snippet": "if (!aiEnabled || !config || !config.base_url || !config.api_key || !config.model) {",
+      "count": 1
+    },
+    {
+      "fingerprint": "ef2ffb98476e6d21c3934e4fac2eb501299c9b823795de7fc829accda9688530",
+      "rule": "renderer-secret-material",
+      "file": "src/search.js",
+      "snippet": "if (source.apiKey) {",
+      "count": 1
+    },
+    {
+      "fingerprint": "ffc33213fe0dd99a18d53e287c96a3d1255bb8da8ee4493f6ec50d37ac437a53",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "apiKey = '';",
+      "count": 2
+    },
+    {
+      "fingerprint": "2dc816261b188bb55c1ceced96e4ebda35784eff72238973c75675ffa15d02f3",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "apiKey = typeof result?.plainText === 'string' ? result.plainText : '';",
+      "count": 1
+    },
+    {
+      "fingerprint": "5542f7da45bc2545c4bb88ed9cb2d8275395bf75965fdc6fc1c0bd2fcc8d2c28",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "apiKey = window._aiPlainApiKey;",
+      "count": 1
+    },
+    {
+      "fingerprint": "28ff13b5b99f5ea4ddf9dadbb193536117008742301803fb595f86d453875ffe",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "apiKey: key,",
+      "count": 1
+    },
+    {
+      "fingerprint": "99156ca7f12dabd4cd2261682a54a599f3328ab4a2c849bd263fd0b379a5a4e6",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "apiKey: typeof source.apiKey === 'string' ? source.apiKey.slice(0, 4096) : '',",
+      "count": 1
+    },
+    {
+      "fingerprint": "533b5268238fa1a3d789b0be7daac1fe993cc4ae841b2eed88559947889712c9",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "const apiKey = document.getElementById('ai-api-key')?.value?.trim() || '';",
+      "count": 1
+    },
+    {
+      "fingerprint": "21221ac0002e488e209e462d744377e3b073c11216882c4ff3913e1ec0b3d746",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "const config = { provider, base_url: baseUrl, api_key: storedApiKey, model, encryption };",
+      "count": 1
+    },
+    {
+      "fingerprint": "a0742c69670a714fc2754aa86bb698fc236d47755df4039ba5f754656eca0c66",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "const result = await window.electronAPI.decryptApiKey(apiKey);",
+      "count": 1
+    },
+    {
+      "fingerprint": "3ceab0944f6e58bbd61bff522f53f48b00623cf852093ad66f6daaaeda55c35d",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "const result = await window.electronAPI.encryptApiKey(apiKey);",
+      "count": 1
+    },
+    {
+      "fingerprint": "ceaac39355d1c973110e2b0352647eedca44a4c65d86e7f7ed6948614b5276f0",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "if (!config || !config.base_url || !config.api_key || !config.model) {",
+      "count": 1
+    },
+    {
+      "fingerprint": "58c6a2c24049e6d8e68cedd6a4e56d3d2411e3723e98894aa3c3f349e7abfa5a",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "if (!config?.base_url || !config.api_key || !config.model || window._aiKeyDecryptionFailed) return false;",
+      "count": 1
+    },
+    {
+      "fingerprint": "8fe932926415a8330b93a136056c125c8ed5ab7cfa05fc4d479d9dc6502650bf",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "if (apiKey && window.electronAPI?.encryptApiKey) {",
+      "count": 1
+    },
+    {
+      "fingerprint": "028eea73f9a40627361fbf5118ca3407ebf49325fc3722689332a229f98cb1e7",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "if (keyInput) keyInput.value = apiKey;",
+      "count": 1
+    },
+    {
+      "fingerprint": "2ca74f75029697545a733455843f379b651b6a39850d5a543b74a24fcc329312",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "if (window._aiPlainApiKey && window._aiPlainApiKeySource === config.api_key) {",
+      "count": 1
+    },
+    {
+      "fingerprint": "caac0b3a31aff2e2d574c0389c9ab2e30442c5a711077b21dd54758624cd6ac1",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "keyInput.value = source.apiKey || '';",
+      "count": 1
+    },
+    {
+      "fingerprint": "e8185325290c9957a2277cd502d8dc5453f30cd91b64628ae9ce070fdaa0bd95",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "let apiKey = config.api_key || '';",
+      "count": 1
+    },
+    {
+      "fingerprint": "bdced7547ae8107c959d7db83088f359994e0d79203157a63478d99d7622540d",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "let storedApiKey = apiKey;",
+      "count": 1
+    },
+    {
+      "fingerprint": "fef93995c735c823a3b3480277a6f40d2fd83cb3d4dea54ec9da3b0fb1181ee6",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "source.apiKey = key;",
+      "count": 1
+    },
+    {
+      "fingerprint": "02a0f46e23119ee85ac32f5f108eca55bc731187864e4dda99609106e45d496e",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "window._aiKeyDecryptionFailed = !apiKey;",
+      "count": 1
+    },
+    {
+      "fingerprint": "14aaffee337e07713878731db4a150fde980bc530db110149aa224cbf91905e3",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "window._aiPlainApiKey = apiKey;",
+      "count": 3
+    },
+    {
+      "fingerprint": "4fb94af91396232ec11345386260669196b82ecbca993a2d216c2b959a092406",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "window._aiPlainApiKeySource = apiKey;",
+      "count": 1
+    },
+    {
+      "fingerprint": "97043c77bc15861d5c3ec553a705be4b8eb6d367f770049140f9c405446c03cb",
+      "rule": "renderer-secret-material",
+      "file": "src/settings.js",
+      "snippet": "window._aiPlainApiKeySource = config.api_key;",
+      "count": 1
+    }
+  ]
+}

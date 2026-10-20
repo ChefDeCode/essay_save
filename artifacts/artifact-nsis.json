@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "buildRunId": "5b049293-885e-41eb-b136-b9f75b5504c6",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "target": "nsis",
+  "artifact": "dist/EssayFlow Setup 1.0.0.exe",
+  "targetArtifactSha256": "9f48c319e62279f97d557078bc216f1b93b4ee60fa9bf55dd96c4f33a6da28f0",
+  "executableSha256": "9f48c319e62279f97d557078bc216f1b93b4ee60fa9bf55dd96c4f33a6da28f0",
+  "appPayloadSha256": "df542697699da59c4388c7f1bace61df081933c5f46a6cafb33be32de03019c1",
+  "extractedAppPayloadSha256": "df542697699da59c4388c7f1bace61df081933c5f46a6cafb33be32de03019c1",
+  "winUnpackedTreeSha256": "aa530f7de0bac9a4a0d10c8ca2fd129021b5a002def7577b8c75cc265a8867da",
+  "signature": {
+    "Status": "NotSigned",
+    "Signer": "",
+    "TimeStamper": ""
+  },
+  "internalTestOnly": true,
+  "smoke": {
+    "attempted": false,
+    "exitCode": null,
+    "reason": "当前 runner 不是声明的干净 Windows VM，未执行安装/升级/卸载破坏性流程"
+  },
+  "extraction": [
+    {
+      "input": "EssayFlow Setup 1.0.0.exe",
+      "exitCode": 0
+    }
+  ],
+  "failures": [
+    "当前 runner 不是声明的干净 Windows VM，未执行安装/升级/卸载破坏性流程",
+    "产物缺少可验证的 Authenticode 签名和时间戳，只能作为内部测试包"
+  ],
+  "passed": false
+}

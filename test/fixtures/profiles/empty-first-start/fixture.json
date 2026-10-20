@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "fixtureType": "empty-first-start",
+  "userDataDirectory": "userData",
+  "expectedEntries": 0,
+  "synthetic": true
+}

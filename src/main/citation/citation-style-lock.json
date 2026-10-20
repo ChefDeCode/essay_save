@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "engine": {
+    "name": "citeproc-js",
+    "adapter": "@citation-js/plugin-csl",
+    "adapterVersion": "0.7.18"
+  },
+  "locales": {
+    "en-US": {
+      "file": "locales/locales-en-US.xml",
+      "version": "1.0",
+      "updated": "2026-01-10T00:00:00+00:00",
+      "sha256": "ac864c7c21166b4390d82c31792cdc509400727fa0060b43d8aa17e07f9cb079"
+    },
+    "zh-CN": {
+      "file": "locales/locales-zh-CN.xml",
+      "version": "1.0",
+      "updated": "2025-10-16T11:24:00+08:00",
+      "sha256": "95cebc667f2da8fb5b9864e49941e3f867d59f79feba929bc58e8ed6bfd4d582"
+    }
+  },
+  "styles": {
+    "apa-7": {
+      "label": "APA 7th",
+      "officialStyleId": "http://www.zotero.org/styles/apa",
+      "edition": "7th",
+      "citationFormat": "author-date",
+      "file": "styles/apa.csl",
+      "updated": "2026-02-07T00:00:00+00:00",
+      "locale": "en-US",
+      "sha256": "1ece4fb3c295e66d04b4394e295aa58a87741ceeef1658192437eb9953c2f13e"
+    },
+    "mla-9": {
+      "label": "MLA 9th",
+      "officialStyleId": "http://www.zotero.org/styles/modern-language-association",
+      "edition": "9th",
+      "citationFormat": "author",
+      "file": "styles/mla-9.csl",
+      "updated": "2026-02-03T00:00:00+00:00",
+      "locale": "en-US",
+      "sha256": "e1432698ef28938d044b06bd45ddcc57d6b974cec25f71007075646a11f99484"
+    },
+    "chicago-17-author-date": {
+      "label": "Chicago 17th (author-date)",
+      "officialStyleId": "http://www.zotero.org/styles/chicago-author-date-17th-edition",
+      "edition": "17th",
+      "citationFormat": "author-date",
+      "file": "styles/chicago-author-date-17th.csl",
+      "updated": "2025-02-09T00:00:00+00:00",
+      "locale": "en-US",
+      "sha256": "72e5568fe512aeb8fd608da4ee1989b4a53bc9d4814b3d34fe1b7cd7becca4e4"
+    },
+    "ieee": {
+      "label": "IEEE Reference Guide 2023",
+      "officialStyleId": "http://www.zotero.org/styles/ieee",
+      "edition": "11.29.2023",
+      "citationFormat": "numeric",
+      "file": "styles/ieee.csl",
+      "updated": "2024-03-27T11:41:27+00:00",
+      "locale": "en-US",
+      "sha256": "b4c7619fc16c45a31e4cc3271eab94ffe83192d3b4c7fc729470a3b459448de3"
+    },
+    "harvard-cite-them-right-12": {
+      "label": "Cite Them Right 12th (Harvard)",
+      "officialStyleId": "http://www.zotero.org/styles/harvard-cite-them-right",
+      "edition": "12th",
+      "citationFormat": "author-date",
+      "file": "styles/harvard-cite-them-right.csl",
+      "updated": "2026-02-12T10:08:06+00:00",
+      "locale": "en-US",
+      "sha256": "0ca3d2c7c881cd98cdd81098b5349f5921edf430498aa9a5a41918621cf7cc45"
+    },
+    "gb-t-7714-2015-numeric": {
+      "label": "GB/T 7714-2015 (numeric)",
+      "officialStyleId": "http://www.zotero.org/styles/china-national-standard-gb-t-7714-2015-numeric",
+      "edition": "2015",
+      "citationFormat": "numeric",
+      "file": "styles/gb-t-7714-2015-numeric.csl",
+      "updated": "2024-01-22T22:07:03+08:00",
+      "locale": "zh-CN",
+      "sha256": "d9cd04f94bc21a99dc320d0a2230d5a1fb47e3634c17c5820cf975c40db3c0c7"
+    }
+  }
+}

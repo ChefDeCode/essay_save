@@ -1,0 +1,12 @@
+[
+  {
+    "id": "duplicate-project-id",
+    "title": "Synthetic Duplicate A",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  },
+  {
+    "id": "duplicate-project-id",
+    "title": "Synthetic Duplicate B",
+    "updatedAt": "2026-07-16T00:00:00.000Z"
+  }
+]

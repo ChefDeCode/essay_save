@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "milestone": "m2",
+  "passed": true,
+  "fixture": "test/fixtures/scale/library-5000.jsonl",
+  "fixtureItemCount": 5000,
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "sourceTreeFileCount": 172,
+  "runtime": {
+    "node": "v24.18.0",
+    "platform": "win32-x64",
+    "cpuCount": 24
+  },
+  "thresholds": {
+    "firstInteractiveMs": 2000,
+    "searchP95Ms": 300,
+    "maximumDomPaperCards": 200
+  },
+  "firstScreen": {
+    "interactiveMs": 228.16,
+    "itemCount": 100
+  },
+  "localSearchAndCombinedFilters": {
+    "samples": 80,
+    "p50Ms": 4.441,
+    "p95Ms": 28.846,
+    "maxMs": 30.482
+  },
+  "maximumRenderedPaperCards": 100,
+  "paginationLimit": 100
+}

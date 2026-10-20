@@ -1,0 +1,4 @@
+{
+  "essay_project_meta_legacy-project-001": "{\"title\":\"合成旧版项目 Synthetic Legacy Project\",\"author\":\"Fixture Author\",\"course\":\"Synthetic Research 101\",\"wordLimit\":5000}",
+  "essay_citations_v2": "{\"legacy-project-001\":[{\"paperId\":\"legacy-paper-001\",\"number\":1,\"paper\":{\"id\":\"legacy-paper-001\",\"title\":\"Synthetic Legacy Citation\",\"authors\":\"Fixture Author\",\"year\":\"2024\",\"doi\":\"10.5555/essayflow.legacy\"}}]}"
+}

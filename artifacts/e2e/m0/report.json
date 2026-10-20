@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "scenario": "M0 baseline create-save-restart-reload-export",
+  "fixtureData": "synthetic",
+  "startedAt": "2026-07-20T12:03:09.515Z",
+  "completedAt": "2026-07-20T12:03:17.497Z",
+  "sourceTreeSha256": "ecfe0613956c93c97d451b57c462aab0727374a82fd74d6ac365abb0524dea63",
+  "isolatedProfile": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-m0-e2e-rJNwOP",
+  "phases": [
+    {
+      "name": "create-and-save",
+      "result": {
+        "projectId": "8814a22a-d3a9-4eb6-9005-c7028e017f82",
+        "title": "EssayFlow M0 中英文验收",
+        "hasTable": true,
+        "hasImage": true,
+        "hasPriorityKeyword": true,
+        "hasCitation": true,
+        "hasCitationLink": true,
+        "hasReferences": true,
+        "citationInstanceId": "ee623642-9629-40b1-86fa-12bfba338c1d",
+        "citationItemId": "42045fb4-1d22-4777-b756-93e593f7fda2",
+        "autosave": {
+          "states": [
+            {
+              "state": "saved",
+              "at": 2337.399999976158
+            },
+            {
+              "state": "unsaved",
+              "at": 2351.899999976158
+            },
+            {
+              "state": "unsaved",
+              "at": 2712.199999988079
+            },
+            {
+              "state": "saving",
+              "at": 3719.399999976158
+            },
+            {
+              "state": "saved",
+              "at": 3803.699999988079
+            }
+          ],
+          "startRevision": 11,
+          "startSavedRevision": 11,
+          "finalRevision": 13,
+          "finalSavedRevision": 13,
+          "firstInputAt": 2341.699999988079,
+          "lastInputAt": 2708.800000011921,
+          "savingDelayAfterLastInputMs": 1010.5999999642372,
+          "savedDelayAfterLastInputMs": 1094.8999999761581,
+          "saveState": "saved",
+          "hasSentinel": true
+        }
+      }
+    },
+    {
+      "name": "reload-and-export",
+      "result": {
+        "listed": true,
+        "title": "EssayFlow M0 中英文验收",
+        "hasChineseEnglish": true,
+        "hasAutosaveSentinel": true,
+        "hasTable": true,
+        "hasImage": true,
+        "hasPriorityKeyword": true,
+        "hasCitation": true,
+        "hasCitationLink": true,
+        "hasReferences": true,
+        "finalToast": "PDF 导出成功"
+      }
+    }
+  ],
+  "exports": {
+    "docx": {
+      "path": "C:\\Users\\KMYZl\\Desktop\\essay_save\\artifacts\\e2e\\m0\\EssayFlow.docx",
+      "bytes": 2514,
+      "sha256": "1adb9f317f981f4623f47d438010e918eeda9bb1982df7ac20c5917d20350ffa"
+    },
+    "pdf": {
+      "path": "C:\\Users\\KMYZl\\Desktop\\essay_save\\artifacts\\e2e\\m0\\EssayFlow.pdf",
+      "bytes": 225120,
+      "sha256": "d0e35b7406a1da52771233c383c0ccde80482bfe97b5c8414f263afa1030907a"
+    }
+  },
+  "realProfile": {
+    "path": "C:\\Users\\KMYZl\\AppData\\Roaming\\essay-app",
+    "beforeFileCount": 131,
+    "afterFileCount": 131,
+    "beforeContentTreeSha256": "f82c6ccf6288034767b2c19e2097b59d1f9d4ffd35412331427ad7b7aab5d032",
+    "afterContentTreeSha256": "f82c6ccf6288034767b2c19e2097b59d1f9d4ffd35412331427ad7b7aab5d032",
+    "unchanged": true,
+    "differences": []
+  },
+  "passed": true
+}

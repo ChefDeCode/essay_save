@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "milestone": "m2",
+  "scenario": "standard exchange, library organization, CSL rendering and restart persistence",
+  "fixtureData": "synthetic",
+  "passed": true,
+  "sourceTreeSha256": "713c75e423bcd51582f1c7d25f2e70d7134a1e120e3e74096ee900f226df523c",
+  "sourceTreeFileCount": 173,
+  "firstPhase": {
+    "projectId": "4eeab162-d2d2-4f38-931b-e182bbd67454",
+    "citationInstanceId": "24d6415e-2e36-4654-8b4a-4968672ed2fe",
+    "libraryCount": 4,
+    "bibConflicts": 2,
+    "originalIds": [
+      "9f21b6e8-c0e1-4b01-af52-f99842f1132b",
+      "bad40391-89c1-4de1-a89b-ba6efa9ee1cc",
+      "bd860a20-e23c-4ac6-bf5e-8213347e41c5",
+      "dae115c8-6e28-5166-9005-dc66c9f991ee"
+    ],
+    "cslRoundTripIds": [
+      "9f21b6e8-c0e1-4b01-af52-f99842f1132b",
+      "bad40391-89c1-4de1-a89b-ba6efa9ee1cc",
+      "bd860a20-e23c-4ac6-bf5e-8213347e41c5",
+      "dae115c8-6e28-5166-9005-dc66c9f991ee"
+    ],
+    "bibRoundTripCount": 4,
+    "risRoundTripCount": 4,
+    "exportReports": {
+      "csl": "文库导出报告CSL-JSON 已导出 4 条，支持字段无损。保存位置：C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-m2-e2e-0gPWDf\\TestExports\\EssayFlow-Library.json关闭",
+      "bib": "文库导出报告BIBTEX 已导出 4 条；4 条存在格式无法表达的字段。保存位置：C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-m2-e2e-0gPWDf\\TestExports\\EssayFlow-Library.bib9f21b6e8-c0e1-4b01-af52-f99842f1132b：未表达 metadataProvenance、starred；[object Object]；[object Object]bad40391-89c1-4de1-a89b-ba6efa9ee1cc：未表达 metadataProvenance、starred；[object Object]bd860a20-e23c-4ac6-bf5e-8213347e41c5：未表达 metadataProvenance、starreddae115c8-6e28-5166-9005-dc66c9f991ee：未表达 metadataProvenance、privateNote、tags、starred；[object Object]关闭",
+      "ris": "文库导出报告RIS 已导出 4 条；4 条存在格式无法表达的字段。保存位置：C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-m2-e2e-0gPWDf\\TestExports\\EssayFlow-Library.ris9f21b6e8-c0e1-4b01-af52-f99842f1132b：未表达 metadataProvenance、starred、language；[object Object]；[object Object]bad40391-89c1-4de1-a89b-ba6efa9ee1cc：未表达 metadataProvenance、starred；[object Object]bd860a20-e23c-4ac6-bf5e-8213347e41c5：未表达 metadataProvenance、starreddae115c8-6e28-5166-9005-dc66c9f991ee：未表达 metadataProvenance、privateNote、tags、starred；[object Object]关闭"
+    },
+    "createdRevision": 0,
+    "editedRevision": 1,
+    "styleBodies": {
+      "apa": "(n.d.; 参见 跨语言证据研究院 & Zhao, n.d., p. 12，重点)",
+      "ieee": "参见 [1, p. 12]，重点, [2]",
+      "gbt": "[参见 1，重点,2]"
+    },
+    "finalEntry": {
+      "citationItemEntryId": "332dcc65-12c0-4211-8764-243cca6282c3",
+      "citationItemId": "4cbf6572-b0e0-4288-8878-32743fe84cb9",
+      "evidenceRevisionIds": [],
+      "label": "page",
+      "locator": "33",
+      "order": 0,
+      "prefix": "另见 ",
+      "sourceCitationSnapshots": [],
+      "status": "active",
+      "suffix": "，复核",
+      "suppressAuthor": true,
+      "paper": {
+        "DOI": "10.5555/m2.csl",
+        "URL": "https://example.invalid/m2-csl",
+        "abstract": "仅用于确定性验收的合成摘要。",
+        "author": [
+          {
+            "literal": "跨语言证据研究院"
+          },
+          {
+            "family": "Zhao",
+            "given": "Lin"
+          }
+        ],
+        "container-title": "结构化数据期刊",
+        "issue": "4",
+        "language": "zh-CN",
+        "libraryItemId": "9f21b6e8-c0e1-4b01-af52-f99842f1132b",
+        "page": "88-102",
+        "title": "CSL 结构化机构作者记录",
+        "type": "article-journal",
+        "volume": "5",
+        "id": "9f21b6e8-c0e1-4b01-af52-f99842f1132b"
+      }
+    },
+    "domPaperCardCount": 4
+  },
+  "restart": {
+    "citationInstanceId": "24d6415e-2e36-4654-8b4a-4968672ed2fe",
+    "locator": "33",
+    "label": "page",
+    "prefix": "另见 ",
+    "suffix": "，复核",
+    "suppressAuthor": true,
+    "itemCount": 2,
+    "referenceCount": 2,
+    "anchorCount": 1
+  },
+  "exports": {
+    "json": {
+      "path": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-m2-e2e-0gPWDf\\TestExports\\EssayFlow-Library.json",
+      "bytes": 4097,
+      "sha256": "d0125ea6b35e2a83228d1ceed6e13093400e09a5a66715ab2e81aac2ddc7619e"
+    },
+    "bib": {
+      "path": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-m2-e2e-0gPWDf\\TestExports\\EssayFlow-Library.bib",
+      "bytes": 1171,
+      "sha256": "3079f1fe38c29f7ebdc2fd2500ae724c6fe672bee70058a21ed4b96020ea67c5"
+    },
+    "ris": {
+      "path": "C:\\Users\\KMYZl\\AppData\\Local\\Temp\\essayflow-m2-e2e-0gPWDf\\TestExports\\EssayFlow-Library.ris",
+      "bytes": 994,
+      "sha256": "1d07a34ca018769d65becf5dad95e121fceaa193382ef0eee641760df39b07f3"
+    }
+  }
+}

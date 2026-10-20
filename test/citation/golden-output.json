@@ -1,0 +1,90 @@
+{
+  "items": [
+    {
+      "citationItemId": "10000000-0000-4000-8000-000000000001",
+      "type": "article-journal",
+      "title": "Alpha Evidence",
+      "author": [{ "family": "Wang", "given": "Wei" }],
+      "issued": { "date-parts": [[2024]] },
+      "container-title": "Journal of Tests",
+      "volume": "2",
+      "issue": "1",
+      "page": "10-20",
+      "DOI": "10.5555/alpha"
+    },
+    {
+      "citationItemId": "10000000-0000-4000-8000-000000000002",
+      "type": "book",
+      "title": "Beta Methods",
+      "author": [{ "family": "Li", "given": "Ming" }],
+      "issued": { "date-parts": [[2023]] },
+      "publisher": "Fixture Press"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "20000000-0000-4000-8000-000000000001",
+      "items": [
+        {
+          "citationItemEntryId": "30000000-0000-4000-8000-000000000001",
+          "citationItemId": "10000000-0000-4000-8000-000000000001",
+          "locator": "12",
+          "label": "page",
+          "prefix": "see ",
+          "suffix": " note",
+          "order": 0
+        },
+        {
+          "citationItemEntryId": "30000000-0000-4000-8000-000000000002",
+          "citationItemId": "10000000-0000-4000-8000-000000000002",
+          "locator": "33",
+          "label": "page",
+          "suppressAuthor": true,
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000002",
+      "items": [
+        {
+          "citationItemEntryId": "30000000-0000-4000-8000-000000000003",
+          "citationItemId": "10000000-0000-4000-8000-000000000001",
+          "order": 0
+        }
+      ]
+    }
+  ],
+  "expected": {
+    "apa-7": {
+      "citationFormat": "author-date",
+      "citations": ["(2023, p. 33; see Wang, 2024, p. 12 note)", "(Wang, 2024)"],
+      "bibliography": ["Li, M. (2023). Beta Methods. Fixture Press.\n", "Wang, W. (2024). Alpha Evidence. Journal of Tests, 2(1), 10–20. https://doi.org/10.5555/alpha\n"]
+    },
+    "mla-9": {
+      "citationFormat": "author",
+      "citations": ["(see Wang 12 note; 33)", "(Wang)"],
+      "bibliography": ["Li, Ming. Beta Methods. Fixture Press, 2023.\n", "Wang, Wei. “Alpha Evidence.” Journal of Tests, vol. 2, no. 1, 2024, pp. 10–20, https://doi.org/10.5555/alpha.\n"]
+    },
+    "chicago-17-author-date": {
+      "citationFormat": "author-date",
+      "citations": ["(see Wang 2024, 12 note; 2023, 33)", "(Wang 2024)"],
+      "bibliography": ["Li, Ming. 2023. Beta Methods. Fixture Press.\n", "Wang, Wei. 2024. “Alpha Evidence.” Journal of Tests 2 (1): 10–20. https://doi.org/10.5555/alpha.\n"]
+    },
+    "ieee": {
+      "citationFormat": "numeric",
+      "citations": ["see [1, p. 12] note, [2, p. 33]", "[1]"],
+      "bibliography": ["[1] W. Wang, “Alpha Evidence,” Journal of Tests, vol. 2, no. 1, pp. 10–20, 2024, doi: 10.5555/alpha.\n", "[2] M. Li, Beta Methods. Fixture Press, 2023.\n"]
+    },
+    "harvard-cite-them-right-12": {
+      "citationFormat": "author-date",
+      "citations": ["(2023, p. 33; see Wang, 2024, p. 12 note)", "(Wang, 2024)"],
+      "bibliography": ["Li, M. (2023) Beta Methods. Fixture Press.\n", "Wang, W. (2024) “Alpha Evidence,” Journal of Tests, 2(1), pp. 10–20. Available at: https://doi.org/10.5555/alpha.\n"]
+    },
+    "gb-t-7714-2015-numeric": {
+      "citationFormat": "numeric",
+      "citations": ["[see 1 note,2]", "[1]"],
+      "bibliography": ["[1] WANG W. Alpha Evidence[J/OL]. Journal of Tests, 2024, 2(1): 10-20. DOI:10.5555/alpha.\n", "[2] LI M. Beta Methods[M]. Fixture Press, 2023.\n"]
+    }
+  }
+}

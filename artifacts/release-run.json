@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "buildRunId": "5b049293-885e-41eb-b136-b9f75b5504c6",
+  "sourceTreeSha256": "ea4fafaea553dba277f744838b777b1e89b72a3bec0204ea47a069ef11f5a5bb",
+  "startedAt": "2026-07-17T16:29:32.228Z",
+  "passed": false,
+  "environment": {
+    "node": "v24.18.0",
+    "npm": "11.16.0"
+  },
+  "steps": [
+    {
+      "name": "npm-ci",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js ci",
+      "startedAt": "2026-07-17T16:29:32.230Z",
+      "completedAt": "2026-07-17T16:29:53.233Z",
+      "exitCode": 0,
+      "stdoutSha256": "c2a9ff4b4c0762127f9805cea146d9225f48fe8940e89678bf6fed541ad0095c",
+      "stderrSha256": "d0c27c8b972b6d5d43e2da672e9e9a93939627a1a119c3d08099c05646e35308"
+    },
+    {
+      "name": "gate-m5",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run gate:m5",
+      "startedAt": "2026-07-17T16:29:53.234Z",
+      "completedAt": "2026-07-17T16:29:58.694Z",
+      "exitCode": 1,
+      "stdoutSha256": "904522cd3694c3aed4e1f187387fbbc50f9aa3ea944d2a8dfe89db8d6d74f493",
+      "stderrSha256": "8a241b59571e4caaba426a865eec0b6e405165bc8b5ed769894af0a4eba166dc"
+    },
+    {
+      "name": "build-win-unpacked",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run build -- --dir",
+      "startedAt": "2026-07-17T16:29:58.695Z",
+      "completedAt": "2026-07-17T16:30:13.597Z",
+      "exitCode": 0,
+      "stdoutSha256": "881305f2ab3c41729f169e4aa791918a89751a0567594133ff9615dcb34cdb43",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "verify-package",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run verify:package -- --app C:\\Users\\KMYZl\\Desktop\\essay_save\\dist\\win-unpacked\\EssayFlow.exe",
+      "startedAt": "2026-07-17T16:30:13.598Z",
+      "completedAt": "2026-07-17T16:30:14.677Z",
+      "exitCode": 0,
+      "stdoutSha256": "5f030487766bc74fa40a44b139f3b012c1c8c22595b9abe4eb01630be62e0d30",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "offline",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:offline -- --app C:\\Users\\KMYZl\\Desktop\\essay_save\\dist\\win-unpacked\\EssayFlow.exe",
+      "startedAt": "2026-07-17T16:30:14.678Z",
+      "completedAt": "2026-07-17T16:30:15.174Z",
+      "exitCode": 1,
+      "stdoutSha256": "9373137f1cfdb33cb090ff91d87e0cea995a909eccc59f1dda63e25337ef86ec",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "build-windows-artifacts",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run build",
+      "startedAt": "2026-07-17T16:30:15.175Z",
+      "completedAt": "2026-07-17T16:32:14.507Z",
+      "exitCode": 0,
+      "stdoutSha256": "92b001601bcbc3b07f0063ca42e96eab32adee1f0be622cbe5bb9f01a9d19955",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "artifact-win-unpacked",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:artifact -- --target win-unpacked",
+      "startedAt": "2026-07-17T16:32:14.508Z",
+      "completedAt": "2026-07-17T16:32:17.962Z",
+      "exitCode": 1,
+      "stdoutSha256": "d64c7462f15f310b1510ab8bd9f3c3a5c567df8f83339d353157e0a94101b5e4",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "artifact-portable",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:artifact -- --target portable",
+      "startedAt": "2026-07-17T16:32:17.963Z",
+      "completedAt": "2026-07-17T16:32:28.886Z",
+      "exitCode": 1,
+      "stdoutSha256": "15c166caa573ce5595c3262d8df382294f23dfaf26509f91aee7e36e7acf9880",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "artifact-nsis",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:artifact -- --target nsis",
+      "startedAt": "2026-07-17T16:32:28.887Z",
+      "completedAt": "2026-07-17T16:32:33.163Z",
+      "exitCode": 1,
+      "stdoutSha256": "88ca23535f296f466c444e76ef75c6373b4f8e3ff77c47ed30be57a5e6b8de54",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "packaged-performance",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:perf -- --app C:\\Users\\KMYZl\\Desktop\\essay_save\\dist\\win-unpacked\\EssayFlow.exe",
+      "startedAt": "2026-07-17T16:32:33.164Z",
+      "completedAt": "2026-07-17T16:32:37.099Z",
+      "exitCode": 0,
+      "stdoutSha256": "9f496f39e80c4cdce9d24b00fd02285f97caf252b067640eab0556c8b6fe73c0",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "verify-data",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run verify:data -- --profile test/fixtures/workspaces/acceptance --deep",
+      "startedAt": "2026-07-17T16:32:37.101Z",
+      "completedAt": "2026-07-17T16:32:37.559Z",
+      "exitCode": 0,
+      "stdoutSha256": "8eeead299a911c6d87448dda67c1843c30089480a24a596a2b292aac81ff0c5f",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "integrity-10000",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run test:integrity -- --operations 10000 --seed 20260716",
+      "startedAt": "2026-07-17T16:32:37.559Z",
+      "completedAt": "2026-07-17T16:32:38.384Z",
+      "exitCode": 0,
+      "stdoutSha256": "1dcfbfea25095e99398d5293928eddaaf213dfb08f3bc903854e4e8dfeeb84fd",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "dependencies",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run verify:dependencies",
+      "startedAt": "2026-07-17T16:32:38.385Z",
+      "completedAt": "2026-07-17T16:32:41.066Z",
+      "exitCode": 1,
+      "stdoutSha256": "da7d7c931827ef916e1a1a997aa8cddf538aee93c77e8e2661c03ef96a1745ad",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    },
+    {
+      "name": "verify-evidence",
+      "command": "C:\\Program Files\\nodejs\\node.exe C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js run verify:evidence",
+      "startedAt": "2026-07-17T16:32:41.067Z",
+      "completedAt": "2026-07-17T16:32:41.497Z",
+      "exitCode": 1,
+      "stdoutSha256": "b338252111544892795f214f6320da1aa0a15e1afcf1b17ba6da874c2f4a9dfd",
+      "stderrSha256": "c9a0dc4cd5b864870354abef19c42a35e61866bcaefb1aecd4e21b35f9f5e850"
+    }
+  ],
+  "completedAt": "2026-07-17T16:32:41.498Z",
+  "failedSteps": [
+    "gate-m5",
+    "offline",
+    "artifact-win-unpacked",
+    "artifact-portable",
+    "artifact-nsis",
+    "dependencies",
+    "verify-evidence"
+  ]
+}

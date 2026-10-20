@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "suite": "unit",
+  "generatedAt": "2026-07-19T06:17:53.714Z",
+  "startedAt": "2026-07-19T06:17:52.202Z",
+  "nodeVersion": "v24.18.0",
+  "platform": "win32-x64",
+  "sourceTreeSha256": "a87a967d72f234aa66515ea43661511149e63a2ba79e9068b47fd50a7bedb9ef",
+  "sourceTreeFileCount": 173,
+  "thresholds": {
+    "lines": 85,
+    "functions": 85,
+    "branches": 80
+  },
+  "maximumBaselineDropPercentagePoints": 2,
+  "baselineMode": "compare",
+  "acceptedBaselinePath": "test/baseline/coverage.json",
+  "acceptedBaselineMetrics": {
+    "lines": 90.16,
+    "functions": 93.75,
+    "branches": 82.55
+  },
+  "passed": true,
+  "processExitCode": 0,
+  "failures": [],
+  "testFiles": [
+    "test/unit/architecture-ratchet.test.js",
+    "test/unit/builder-cache.test.js",
+    "test/unit/cdp-client.test.js",
+    "test/unit/electron-driver.test.js",
+    "test/unit/fixtures.test.js",
+    "test/unit/package-verifier.test.js",
+    "test/unit/profile-guard.test.js",
+    "test/unit/run-tests.test.js",
+    "test/unit/runtime-assets.test.js",
+    "test/unit/source-tree.test.js"
+  ],
+  "lcov": {
+    "path": "artifacts/coverage/lcov.info",
+    "sha256": "788d50b5e38b5da7c3ec81369317e76fdf6dc8097261a3d7841a8b9a6f0acf87"
+  },
+  "coverage": {
+    "totals": {
+      "lines": {
+        "found": 2997,
+        "hit": 2718,
+        "percent": 90.69
+      },
+      "functions": {
+        "found": 200,
+        "hit": 187,
+        "percent": 93.5
+      },
+      "branches": {
+        "found": 710,
+        "hit": 589,
+        "percent": 82.96
+      }
+    },
+    "files": [
+      {
+        "file": "scripts/build.js",
+        "lines": {
+          "found": 35,
+          "hit": 35,
+          "percent": 100
+        },
+        "functions": {
+          "found": 2,
+          "hit": 2,
+          "percent": 100
+        },
+        "branches": {
+          "found": 18,
+          "hit": 15,
+          "percent": 83.33
+        }
+      },
+      {
+        "file": "scripts/generate-fixtures.js",
+        "lines": {
+          "found": 673,
+          "hit": 648,
+          "percent": 96.29
+        },
+        "functions": {
+          "found": 28,
+          "hit": 27,
+          "percent": 96.43
+        },
+        "branches": {
+          "found": 45,
+          "hit": 39,
+          "percent": 86.67
+        }
+      },
+      {
+        "file": "scripts/lib/architecture-ratchet.js",
+        "lines": {
+          "found": 202,
+          "hit": 199,
+          "percent": 98.51
+        },
+        "functions": {
+          "found": 20,
+          "hit": 20,
+          "percent": 100
+        },
+        "branches": {
+          "found": 52,
+          "hit": 48,
+          "percent": 92.31
+        }
+      },
+      {
+        "file": "scripts/lib/builder-cache.js",
+        "lines": {
+          "found": 108,
+          "hit": 103,
+          "percent": 95.37
+        },
+        "functions": {
+          "found": 4,
+          "hit": 4,
+          "percent": 100
+        },
+        "branches": {
+          "found": 30,
+          "hit": 27,
+          "percent": 90
+        }
+      },
+      {
+        "file": "scripts/lib/cdp-client.js",
+        "lines": {
+          "found": 150,
+          "hit": 150,
+          "percent": 100
+        },
+        "functions": {
+          "found": 19,
+          "hit": 18,
+          "percent": 94.74
+        },
+        "branches": {
+          "found": 70,
+          "hit": 59,
+          "percent": 84.29
+        }
+      },
+      {
+        "file": "scripts/lib/electron-driver.js",
+        "lines": {
+          "found": 204,
+          "hit": 90,
+          "percent": 44.12
+        },
+        "functions": {
+          "found": 15,
+          "hit": 13,
+          "percent": 86.67
+        },
+        "branches": {
+          "found": 35,
+          "hit": 27,
+          "percent": 77.14
+        }
+      },
+      {
+        "file": "scripts/lib/package-verifier.js",
+        "lines": {
+          "found": 474,
+          "hit": 430,
+          "percent": 90.72
+        },
+        "functions": {
+          "found": 41,
+          "hit": 39,
+          "percent": 95.12
+        },
+        "branches": {
+          "found": 126,
+          "hit": 78,
+          "percent": 61.9
+        }
+      },
+      {
+        "file": "scripts/lib/profile-guard.js",
+        "lines": {
+          "found": 123,
+          "hit": 113,
+          "percent": 91.87
+        },
+        "functions": {
+          "found": 11,
+          "hit": 9,
+          "percent": 81.82
+        },
+        "branches": {
+          "found": 30,
+          "hit": 24,
+          "percent": 80
+        }
+      },
+      {
+        "file": "scripts/lib/runtime-assets.js",
+        "lines": {
+          "found": 55,
+          "hit": 55,
+          "percent": 100
+        },
+        "functions": {
+          "found": 0,
+          "hit": 0,
+          "percent": 100
+        },
+        "branches": {
+          "found": 1,
+          "hit": 1,
+          "percent": 100
+        }
+      },
+      {
+        "file": "scripts/lib/source-tree.js",
+        "lines": {
+          "found": 123,
+          "hit": 121,
+          "percent": 98.37
+        },
+        "functions": {
+          "found": 13,
+          "hit": 13,
+          "percent": 100
+        },
+        "branches": {
+          "found": 29,
+          "hit": 27,
+          "percent": 93.1
+        }
+      },
+      {
+        "file": "scripts/run-packaged-smoke.js",
+        "lines": {
+          "found": 82,
+          "hit": 69,
+          "percent": 84.15
+        },
+        "functions": {
+          "found": 7,
+          "hit": 5,
+          "percent": 71.43
+        },
+        "branches": {
+          "found": 13,
+          "hit": 6,
+          "percent": 46.15
+        }
+      },
+      {
+        "file": "scripts/run-tests.js",
+        "lines": {
+          "found": 446,
+          "hit": 434,
+          "percent": 97.31
+        },
+        "functions": {
+          "found": 24,
+          "hit": 22,
+          "percent": 91.67
+        },
+        "branches": {
+          "found": 164,
+          "hit": 158,
+          "percent": 96.34
+        }
+      },
+      {
+        "file": "scripts/verify-package.js",
+        "lines": {
+          "found": 79,
+          "hit": 47,
+          "percent": 59.49
+        },
+        "functions": {
+          "found": 3,
+          "hit": 2,
+          "percent": 66.67
+        },
+        "branches": {
+          "found": 15,
+          "hit": 11,
+          "percent": 73.33
+        }
+      },
+      {
+        "file": "scripts/verify-runtime-assets.js",
+        "lines": {
+          "found": 243,
+          "hit": 224,
+          "percent": 92.18
+        },
+        "functions": {
+          "found": 13,
+          "hit": 13,
+          "percent": 100
+        },
+        "branches": {
+          "found": 82,
+          "hit": 69,
+          "percent": 84.15
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "fixtureType": "truncated-json",
+  "expectedError": "parse-error",
+  "mustNotSilentlyRecoverAsEmpty": true,
+  "synthetic": true
+}
